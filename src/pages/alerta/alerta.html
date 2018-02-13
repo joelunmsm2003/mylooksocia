@@ -1,0 +1,76 @@
+
+<ion-header>
+
+  <ion-navbar color='white'>
+    <ion-title>Detalle de servicio</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+
+  <ion-buttons float-end class="current-location">
+    <button ion-button icon-only (click)="currentLocation()">
+      <img src="./assets/icon/current-location.png" alt="">
+    </button>
+  </ion-buttons>
+
+  <ion-searchbar autocorrect="off" autocapitalize="off" spellcheck="off" #searchbar placeholder="Search..." class="search-box"></ion-searchbar>
+
+  <div #map id="map" class="map"></div>
+  <div class="centerMarker"></div>
+  <div class="address-view">
+    <ion-list>
+      <ion-item no-lines class="help-text">
+        
+      </ion-item>
+       
+
+     
+    </ion-list>
+  </div>
+
+
+  <ion-card>
+
+  <ion-row>
+
+
+    <ion-col col-4><img src='{{host}}/{{photo_cliente}}'></ion-col>
+    <ion-col col-8 padding>{{nombre_cliente}}</ion-col>
+  
+   </ion-row> 
+ 
+
+  <ion-item *ngFor="let item of ped">
+
+
+   <ion-row>
+    <ion-col col-2><img src='{{host}}/{{item.subcategoria__categoria__icono}}'></ion-col>
+    <ion-col col-10><h2>{{item.subcategoria__nombre}}</h2>
+    <p>S/. {{item.subcategoria__precio}}</p></ion-col>
+   </ion-row>
+
+
+
+    
+    
+  </ion-item>
+
+
+  <button block ion-button color="dark" round (click)='aceptar()'>Aceptar</button>
+
+
+
+
+
+</ion-card>
+
+
+
+
+  
+  
+
+</ion-content>

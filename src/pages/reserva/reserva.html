@@ -1,0 +1,135 @@
+
+
+<!-- <ion-nav [root]="rootPage"></ion-nav>
+
+ -->
+
+<!-- 	<ion-list style='margin-top: 72px;
+    padding: 15px;'>
+
+
+<div class="row">
+<div class="col-30"><div class='circulo'>1</div></div>
+<div class="col-70" style='font-family: "Didact Gothic", sans-serif;padding: 9px;'>Que dia y aque hora quieres el servicio?</div>
+</div>
+
+  <ion-item>
+  <ion-label>Date</ion-label>
+  <ion-datetime displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="myDate"></ion-datetime>
+</ion-item>
+
+
+
+ <div class="spacer" style="height:20px;"></div>
+
+<div class="row">
+<div class="col-30"><div class='circulo'>1</div></div>
+<div class="col-70" style='font-family: "Didact Gothic", sans-serif;padding: 9px;'>En donde deseas el servicio?</div>
+</div>
+
+
+</ion-list> -->
+
+
+ <ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>Resumen de tu pedido</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+
+
+
+<ion-list>
+  <ion-item ion-item *ngFor="let item of pedidos">
+
+    <ion-icon name="ios-remove-circle-outline" style='padding-right: 4px;' [hidden]="!item.muestradescripcion" (click)='item.muestradescripcion=false'></ion-icon>
+
+     <ion-icon name="ios-add-circle-outline" style='padding-right: 4px;' [hidden]="item.muestradescripcion" (click)='item.muestradescripcion=true'></ion-icon>
+
+
+
+
+       {{item.nombre}} 
+
+       <span style='float: right;
+    margin-right: -2px;
+    position: absolute;
+    right: 48px;'>S/. {{item.precio}}</span> 
+     <ion-icon style='float:right;font-size: 21px;' name="trash"  (click)='quitacarrito(item)'></ion-icon>
+    
+      <p [hidden]="!item.muestradescripcion"  class='detallesubcategoria'> {{item.descripcion}}</p>
+
+
+
+  </ion-item>
+
+
+
+</ion-list>
+
+
+<ion-list >
+  <button ion-item>
+   Total a pagar S/. <span style='float: right;
+    margin-right: -2px;
+    position: absolute;
+    right: 48px;'>S/. {{precio}}</span>
+  </button> 
+</ion-list>
+
+<ion-list >
+  <button ion-item>
+   
+   Fecha: 
+
+   <span style='float: right;
+    margin-right: -2px;
+    position: absolute;
+    right: 48px;'>{{dia}} </span>
+  </button> 
+</ion-list>
+
+<ion-list >
+  <button ion-item>
+   
+   Hora: 
+
+   <span style='float: right;
+    margin-right: -2px;
+    position: absolute;
+    right: 48px;'> {{hora}}</span>
+  </button> 
+</ion-list>
+
+<ion-list >
+  <button ion-item>
+   
+   Referencia: 
+
+   <span style='float: right;
+    margin-right: -2px;
+    position: absolute;
+    right: 48px;'> {{referencia}}</span>
+  </button> 
+</ion-list>
+
+
+
+<div style='padding: 12px;'>
+<button block ion-button color="dark" round (click)='confirma()'>Confirmar pedido</button>
+</div>
+
+
+
+
+
+</ion-content> 
+ 
+ 
+<mytabs></mytabs>

@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Donde deseas el servicio</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+
+  <ion-buttons float-end class="current-location">
+    <button ion-button icon-only (click)="currentLocation()">
+      <img src="./assets/icon/current-location.png" alt="">
+    </button>
+  </ion-buttons>
+
+  <ion-searchbar autocorrect="off" autocapitalize="off" spellcheck="off" #searchbar placeholder="Search..." class="search-box"></ion-searchbar>
+
+  <div #map id="map" class="map"></div>
+  <div class="centerMarker"></div>
+  <div class="address-view">
+    <ion-list>
+      <ion-item no-lines class="help-text">
+        Arrastrar mapa para seleccionar una ubicacion
+      </ion-item>
+      <!-- <ion-item no-lines class="address-item">
+        <ion-label stacked class="title-label">ADDRESS</ion-label>
+        <ion-textarea class="address" [(ngModel)]="address"></ion-textarea>
+      </ion-item> -->
+     
+
+     
+    </ion-list>
+  </div>
+
+   <button ion-button block  color='dark' [navPush]="cuandoPage">Continuar</button>
+     
+</ion-content>
+
+<

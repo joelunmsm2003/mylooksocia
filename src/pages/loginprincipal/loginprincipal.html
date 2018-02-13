@@ -1,0 +1,66 @@
+
+
+
+<ion-content>
+
+
+<ion-navbar>
+  
+  <ion-title> </ion-title>
+
+  <ion-buttons>
+      
+      <button ion-button (click)='closeModal()'>Cerrar</button>
+
+  </ion-buttons>
+
+</ion-navbar>
+
+<div padding>
+    <div style="padding-top:10%"  center>
+
+      <ion-list inset>
+  <form #loginForm="ngForm" (ngSubmit)="authenticate(model.username,model.password)" autocomplete="off">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+          <ion-item>
+            <ion-input placeholder="Email" name="username" id="loginField" type="text" required [(ngModel)] = "model.username" #email></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)] = "model.password"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+
+        <button  round ion-button class="submit-btn" color='white' full type="submit" [disabled]="!loginForm.form.valid">Ingresar
+        </button>
+      </ion-col>
+    </ion-row>
+  </form>
+ <button  round ion-button  color='dark' full [navPush]="registroprincipalPage">Registrate
+        </button>
+
+     <button round ion-button  color='dark' block  [navPush]="registrosociaPage" >Conviertete en socia</button>
+<p style='color:#fff;'>Version 0.1.9</p>
+
+         
+      </ion-list>
+
+
+      
+
+ 
+      
+    </div>
+
+
+</div>
+</ion-content>
+
+
+<mytabs></mytabs>

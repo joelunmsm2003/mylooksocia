@@ -1,0 +1,64 @@
+<!--
+  Generated template for the DetalleservicioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalle de servicio</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-card>
+
+   <ion-row>
+
+
+    <ion-col col-12 padding><img style='border-radius: 50%;
+    padding: 45px;' src='{{host}}/{{socia__photo}}'></ion-col>
+    
+  
+   </ion-row>  
+ 
+
+  <ion-item *ngFor="let item of ped">
+
+
+   <ion-row>
+    <!-- <ion-col col-2><img src='{{host}}/{{item.subcategoria__categoria__icono}}'></ion-col> -->
+    <ion-col col-10><h2>{{item.subcategoria__nombre}}</h2>
+    <p>S/. {{item.subcategoria__precio}}</p></ion-col>
+   </ion-row>
+
+  </ion-item>
+
+
+  <ion-item> 
+   <ion-row>
+	<ion-col col-6>Fecha: {{fecha}}</ion-col>
+	<ion-col col-6>Hora: {{fecha_inicio}}</ion-col>
+
+
+   </ion-row>
+  </ion-item> 
+
+
+ 
+
+
+
+
+</ion-card>
+
+ <button block ion-button color="dark" round (click)='aceptar()'>Aceptar</button>
+
+
+
+</ion-content>

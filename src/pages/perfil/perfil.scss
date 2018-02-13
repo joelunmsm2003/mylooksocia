@@ -1,0 +1,58 @@
+page-perfil {
+
+	.fondito{
+
+		//background-image: url("https://www.standard.co.uk/s3fs-public/styles/hero_tablet/public/thumbnails/image/2017/10/25/15/an-132995333.jpg");
+
+   	 	
+	}
+
+
+	$primario:#000;
+	$secundario:#fff;
+
+
+	.profile-menu {
+	img {
+		border-radius: 50%;
+		max-width: 251px;
+	}
+	
+}
+
+
+
+.spacer {
+       
+
+
+   //background: url(http://stealherstyle.net/wp-content/uploads/2017/12/bella-hadid-makeup-24-500x500.jpg);
+    height: 40%;
+    background:#444;
+
+    // filter: blur(7px);
+    //   filter: grayscale(100%);
+
+  
+}
+
+  .perfil{
+    top: -70px;
+    position: absolute;
+    padding: 116px;
+		}
+	
+.side-menu {
+	background: none;
+	color: white;
+	border: 0px;
+	.item-content {
+		background: none;
+		&.activated {
+			background: rgba(255,255,255,0.4);
+		}
+		
+	}
+}
+
+}

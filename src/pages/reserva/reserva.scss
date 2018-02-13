@@ -1,0 +1,44 @@
+page-reserva {
+
+       .content-md {
+    color: #000;
+    background-color: #fff;
+    background: url(http://estokealo.com:8000/static/WhatsApp_Image_2018-01-04_at_16.34.38_1.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.list-md {
+    margin: -1px 0 0px !important;
+}
+
+
+}
+
+.circulo{
+        align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: white;
+    width: 3em;
+    border-radius: 50%;
+    vertical-align: middle;
+    height: 3em;
+    padding: 11px;
+    font-size: 13px;
+    padding-left: 17px;
+  }
+  .circulo,h4{
+    display: inline-block;
+  }
+
+
+#mapita{ background-color: rgba(0,0,0,0) !important }
+
+
+ion-app._gmaps_cdv_ .nav-decor{
+background-color: transparent !important;
+
+}

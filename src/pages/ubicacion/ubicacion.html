@@ -1,0 +1,71 @@
+
+<ion-header>
+
+  <ion-navbar color='white'>
+    <ion-title>Donde y cuando lo deseas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+ <ion-buttons float-end class="current-location">
+    <button ion-button icon-only (click)="currentLocation()">
+      <img src="./assets/icon/current-location.png" alt="">
+    </button>
+  </ion-buttons>
+
+  <ion-searchbar autocorrect="off" autocapitalize="off" spellcheck="off" #searchbar placeholder="Buscar" class="search-box"></ion-searchbar>
+
+  <div #map id="map" class="map"></div>
+  <div class="centerMarker"></div>
+  <!-- <div class="address-view">
+    <ion-list>
+      <ion-item no-lines class="help-text">
+        
+      </ion-item>
+       
+
+     
+    </ion-list>
+  </div> -->
+
+ <form #loginForm="ngForm" autocomplete="off" style="position:absolute;margin-top:0em;width: 100%;">
+    
+
+    
+
+          <ion-item>
+            <ion-label>Que dia?</ion-label>
+           <ion-datetime name="dia"  displayFormat="MM/DD/YYYY" [(ngModel)]="dia" max="2018-12-31"></ion-datetime>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label>Aque hora?</ion-label>
+            <ion-datetime name="hora"  displayFormat="HH:mm" [(ngModel)]="hora"></ion-datetime>
+          </ion-item>
+
+
+          <ion-item>
+    <ion-label color="dark">Direccion</ion-label>
+    <ion-input name="direccion"  type="text" [(ngModel)]="referencia"  ></ion-input>
+  </ion-item>
+
+
+
+ 
+
+
+
+ <button ion-button  block round color="dark" (click)='reserva(dia,hora,ubicacion,referencia)'  [navPush]="reservaPage"  >Continuar</button>
+
+</form>
+     
+
+  
+
+</ion-content>
+
+
+<mytabs></mytabs>

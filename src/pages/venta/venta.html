@@ -1,0 +1,234 @@
+<!--
+  Generated template for the VentaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="white">
+
+   <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> </ion-title>
+
+
+<button ion-button full round color="dark" *ngIf='book>0' style='background: #000;
+    color: #fff;' [navPush]="ubicacionPage" (click)='continuar()'>
+
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      {{book}}
+    </ion-col>
+    <ion-col>Continuar
+    </ion-col>
+
+    <ion-col>S/. {{precio}}
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+     </button>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+
+       <ul class="categorias-slider" >
+
+
+          <li *ngFor = 'let c of categoria' (click)='traesubcategorias(c)'>
+		
+		<div *ngIf='c.check==true' (click)='reset(c);' style="
+    width:75px;
+    height: 61px;
+    padding: 0px;
+    padding-right: 16px;
+    margin-left: 21px;">
+		<img style='border-radius: 50%;' src='{{host}}{{c.icono}}'>
+
+		</div>
+
+      <div *ngIf='c.check==false'   style="
+    width:75px;
+    height: 61px;
+    padding: 0px;
+    padding-right: 16px;
+    margin-left: 21px;">
+    <img style='border-radius: 50%;' src='{{host}}{{c.icono_seleccionado}}'>
+
+    </div>
+
+          <span > {{c.nombre}} </span></li>
+
+
+
+         
+
+          </ul>
+
+
+
+<!-- 
+  <ion-card *ngFor="let item of subcategoria">
+    <img src="{{host}}{{item.photo}}">
+    <div class="card-title">{{item.nombre}} </div>
+    <div class="card-subtitle">S/. {{item.precio}}</div>
+  </ion-card> -->
+
+<div style='height: 86px'></div>
+
+<ion-card *ngFor="let item of subcategoria">
+
+<button ion-button color='dark' style="position:absolute;right:12px;margin-top: 60px;"> S/. {{item.precio}}</button>
+
+
+  <img  src="{{host}}{{item.photo}}"/>
+  <ion-card-content>
+
+<ion-grid style='padding: 0px;'>
+  <ion-row>
+    <ion-col col-6 style='padding-top: 2px;
+'>{{item.nombre}}</ion-col>
+    <ion-col col-3 style='text-align: right;'><ion-icon style='font-size: 33px;' name="information-circle" (click)='showAlert(item)'></ion-icon></ion-col>
+    <ion-col col-3><ion-icon style='float: right;
+    font-size: 33px;
+    ' *ngIf="!item.check" name="ios-add-circle-outline"  (click)='agregacarrito(item);item.check=true'></ion-icon>
+
+
+     <ion-icon  style='float: right;
+    font-size: 33px;
+    ' *ngIf="item.check" name="ios-add-circle"  (click)='quitacarrito(item);item.check=false'></ion-icon> </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+
+
+    
+
+    
+     
+  </ion-card-content>
+</ion-card>
+<div style='height: 80px'></div>
+
+<!-- 
+
+<ion-list>
+  <ion-item ion-item *ngFor="let item of subcategoria">
+    <ion-thumbnail item-start item-avatar>
+      <img style='border-radius: 50%; padding: 3px;' src="{{host}}{{item.photo}}">
+    </ion-thumbnail>
+    <h2>{{item.nombre}}</h2>
+    <p>S/. {{item.precio}}</p>
+    <ion-icon name="information-circle" (click)='showAlert(item)'></ion-icon>
+
+    
+
+     <ion-icon item-end style='float:right;font-size: 27px;' *ngIf="!item.check" name="ios-checkmark-circle-outline"  (click)='agregacarrito(item);item.check=true'></ion-icon>
+     <ion-icon item-end  style='float:right;font-size: 27px;' *ngIf="item.check" name="ios-checkmark-circle"  (click)='quitacarrito(item);item.check=false'></ion-icon> 
+
+  </ion-item>
+
+</ion-list>
+
+ -->
+
+<!-- <ion-list>
+  <ion-item ion-item *ngFor="let item of subcategoria">
+
+    <ion-icon name="ios-remove-circle-outline" style='padding-right: 4px;' [hidden]="!item.muestradescripcion" (click)='item.muestradescripcion=false'></ion-icon>
+
+     <ion-icon name="ios-add-circle-outline" style='padding-right: 4px;' [hidden]="item.muestradescripcion" (click)='item.muestradescripcion=true'></ion-icon>
+
+      {{descripcion}}
+
+
+       {{item.nombre}} <span style='position: absolute;
+    right: 49px;color:#909090;'>S/. {{item.precio}} </span>
+     <ion-icon style='float:right;font-size: 27px;' *ngIf="!item.check" name="ios-checkmark-circle-outline"  (click)='agregacarrito(item);item.check=true'></ion-icon>
+     <ion-icon  style='float:right;font-size: 27px;' *ngIf="item.check" name="ios-checkmark-circle"  (click)='quitacarrito(item);item.check=false'></ion-icon> 
+
+      <p [hidden]="!item.muestradescripcion"  class='detallesubcategoria'> {{item.descripcion}}</p>
+
+
+
+  </ion-item>
+
+
+
+</ion-list> -->
+
+
+
+
+<!-- 
+<div  class="fixed55" >
+<button ion-button full round color="dark" *ngIf='book>0' style='background: #000;
+    color: #fff;' [navPush]="ubicacionPage" (click)='continuar()'>
+
+
+
+ <div class="row">
+    <div class="col"> {{book}}</div>
+    
+    <div class="col">  Continuar 
+</div>
+
+
+    <div class="col" ><span> S/. {{precio}}</span> </div>
+
+
+
+
+</div>
+
+
+
+
+
+     </button>
+
+</div>
+    
+
+ -->
+
+
+
+
+
+
+<!-- <button class="fixed44"  ion-button  dark >
+    <ion-icon ios="ios-cart" md="md-cart"></ion-icon>  {{book}} Productos a Reservar S/. {{precio}}
+  </button> -->
+
+
+</ion-content>
+
+  
+
+<style type="text/css">
+  
+  .active{
+-webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
+ filter: grayscale(100%); 
+    color:#fff;
+  }
+
+  .desactivo{
+
+    -webkit-filter: grayscale(0%);  Safari 6.0 - 9.0 
+ filter: grayscale(0%);
+
+
+  }
+</style>
