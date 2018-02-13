@@ -24,7 +24,7 @@ import { PerfilProvider } from '../providers/perfil/perfil';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = IntroPage;
+  rootPage: any = LoginPage;
 
   data:any;
 
@@ -76,27 +76,11 @@ export class MyApp {
            if(val){
 
              
-                  this.storage.get('grupo').then((val) => {
-
-
-                 
-                    if(val=='Socia'){
+      
 
                         this.appCtrl.getRootNav().push(HistorialsociaPage);
 
 
-                        //this.appCtrl.getRootNav().push(DetalleservicioPage, { servicio: 120 })
-
-                        
-
-                    }
-                    else{
-
-                        this.appCtrl.getRootNav().push(IntroPage);
-
-
-                    }
-          });
 
 
    

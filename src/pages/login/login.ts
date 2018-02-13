@@ -130,46 +130,13 @@ function sleep (time) {
 
          if(data.status==200){
 
-                 this.view.dismiss()
+            
 
-                 console.log('Redirigiendo...')
-                 sleep(200).then(() => {
+                          this.appCtrl.getRootNav().push(HistorialsociaPage);
 
-
-                // Do something after the sleep!
-
-                          this._perfil.miperfil()
-
-                          .subscribe(reference => 
-
-                          
-                          this.storage.set('grupo', reference[0]['user__groups__name'])
-
-                          );
+                 
 
 
-                          this.storage.get('grupo').then((val) => {
-
-
-                              
-
-                              if(val=='Socia'){
-
-                                  this.appCtrl.getRootNav().push(HistorialsociaPage);
-
-                              }
-                              else{
-
-                                  this.appCtrl.getRootNav().push(IntroPage);
-
-
-
-                              }
-                            });
-
-
-
-                  });
            
                  
          }
