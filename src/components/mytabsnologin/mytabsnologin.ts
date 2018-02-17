@@ -13,6 +13,7 @@ import { AyudaPage } from '../../pages/ayuda/ayuda';
 import { HistorialsociaPage } from '../../pages/historialsocia/historialsocia';
 import { Storage } from '@ionic/storage';
 import { RegistroPage } from '../../pages/registro/registro';
+import { RegistrosociaPage } from '../../pages/registrosocia/registrosocia';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { NotificacionProvider } from '../../providers/notificacion/notificacion';
 
@@ -57,6 +58,8 @@ export class MytabsnologinComponent {
 
   loginprincipalPage:any;
 
+  registrosociaPage:any;
+
 
 
   constructor(private _notificacion: NotificacionProvider,public appCtrl: App,private storage: Storage,public navCtrl: NavController, public navParams: NavParams,private socialSharing: SocialSharing) {
@@ -71,6 +74,8 @@ export class MytabsnologinComponent {
 
     this.loginprincipalPage = LoginprincipalPage;
 
+
+    this.registrosociaPage = RegistrosociaPage;
 
 
    this.storage.get('token').then((val) => {
@@ -107,7 +112,7 @@ export class MytabsnologinComponent {
 
     console.log('queeeee')
 
-    this.navCtrl.push(LoginprincipalPage);
+    this.navCtrl.push(RegistrosociaPage);
   }
 
 

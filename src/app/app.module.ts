@@ -10,8 +10,8 @@ import { VentaPage } from '../pages/venta/venta';
 
 import { IntroPage } from '../pages/intro/intro';
 import { AlertaPage } from '../pages/alerta/alerta';
-
-
+import { CalificacionPage } from '../pages/calificacion/calificacion';
+import { BalancePage } from '../pages/balance/balance';
 import { UbicacionPage } from '../pages/ubicacion/ubicacion';
 import { LoginPage } from '../pages/login/login';
 import { ServicioPage } from '../pages/servicio/servicio';
@@ -77,13 +77,13 @@ export function getAuthHttp(http) {
     HistorialPage,
     RegistrosociaPage,
     LoginprincipalPage,
-    
+    CalificacionPage,
     LoginPage,
     ServicioPage,
     PerfilPage,
     RegistroprincipalPage,
     AlertaPage,
-
+    BalancePage,
     TabsPage,
     AyudaPage,
 
@@ -117,7 +117,8 @@ export function getAuthHttp(http) {
     ServicioPage,
     LoginprincipalPage,
     RegistroprincipalPage,
-
+    CalificacionPage,
+    BalancePage,
 
     RegistroPage,
     TabsPage,

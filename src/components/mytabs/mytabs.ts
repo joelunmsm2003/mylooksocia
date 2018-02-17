@@ -12,7 +12,7 @@ import { HistorialPage } from '../../pages/historial/historial';
 import { HistorialsociaPage } from '../../pages/historialsocia/historialsocia';
 import { Storage } from '@ionic/storage';
 import { RegistroPage } from '../../pages/registro/registro';
-
+import { RegistrosociaPage } from '../../pages/registrosocia/registrosocia';
 import { AyudaPage } from '../../pages/ayuda/ayuda';
 
 /**
@@ -52,7 +52,7 @@ export class MytabsComponent {
 nologeado:any;
 
 
-
+registrosociaPage:any;
 
   constructor(private socialSharing: SocialSharing,public platform: Platform,public appCtrl: App,private storage: Storage,public navCtrl: NavController, public navParams: NavParams) {
 
@@ -67,7 +67,7 @@ nologeado:any;
 
     this.loginPage = LoginPage;
 
-
+this.registrosociaPage = RegistrosociaPage;
 
 
        this.storage.get('token').then((val) => {
@@ -100,13 +100,14 @@ nologeado:any;
   }
 
 
-   loginprincipal(){
+  loginprincipal(){
 
 
     console.log('queeeee')
 
-    this.navCtrl.push(LoginprincipalPage);
+    this.navCtrl.push(RegistrosociaPage);
   }
+
 
 
   ayuda(){

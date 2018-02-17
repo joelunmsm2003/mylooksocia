@@ -189,7 +189,7 @@ ion-title{
 
 .card-content-md {
     padding: 2px 16px !important;
-    font-size: 1.4rem;
+    font-size: 16px !important;
     line-height: 1.5;
     font-family: 'Didact Gothic', sans-serif !important;
 }
@@ -197,4 +197,34 @@ ion-title{
 .alert-md .alert-head {
 
     padding: 24px 24px 10px !important;
+}
+
+ .slides{
+  
+font-size: 20px; 
+    color: #fff;
+    
+    background: linear-gradient(to bottom, #030006, #a146f1);
+    line-height: 30px;
+    word-spacing: 4px;
+    padding: 25px !important;
+    
+        height: 100% !important;
+}
+
+.swiper-slide {
+font-size: 16px !important;
+}
+
+
+h1{
+  color: #ecde06;
+  text-align: center;
+letter-spacing: 4px;
+font-size: 4.0rem !important;
+font-family: 'Concert One', cursive;
+}
+
+.slider {
+    height: 100%;
 }

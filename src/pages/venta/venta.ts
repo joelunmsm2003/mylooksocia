@@ -5,7 +5,7 @@ import { CategoriasProvider } from '../../providers/categorias/categorias';
 import { Categoria } from '../../providers/categorias/categoria';
 import { Subcategoria } from '../../providers/categorias/subcategoria';
 
-
+import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ReservaPage } from '../reserva/reserva';
 import { UbicacionPage } from '../ubicacion/ubicacion';
 import { IntroPage } from '../intro/intro';
@@ -73,14 +73,18 @@ muestradescripcion:boolean=true
 
 public cate;
 
-  constructor(public alertCtrl: AlertController,public storage: Storage,private _categoria: CategoriasProvider,public navCtrl: NavController,public http: Http, public navParams: NavParams) {
+private todo : FormGroup;
+
+  constructor(private formBuilder: FormBuilder,public alertCtrl: AlertController,public storage: Storage,private _categoria: CategoriasProvider,public navCtrl: NavController,public http: Http, public navParams: NavParams) {
+
+    
 
 
   		this.reservaPage = ReservaPage;
 
       this.ubicacionPage = UbicacionPage;
 
-      this.cate = navParams.get("categoria");
+      this.cate = this.navParams.get("categoria");
 
       console.log('cate...',this.cate.id)
 
@@ -125,11 +129,21 @@ public cate;
 
 
 
+     this.todo = this.formBuilder.group({
+      email: ['', Validators.required],
+      nombre: [''],
+      password: [''],
+
+    });
+
+
+
+
   
   }
 
 
-
+    user={}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VentaPage');

@@ -1,42 +1,47 @@
 
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Donde deseas el servicio</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-<ion-content>
 
 
-  <ion-buttons float-end class="current-location">
-    <button ion-button icon-only (click)="currentLocation()">
-      <img src="./assets/icon/current-location.png" alt="">
-    </button>
-  </ion-buttons>
 
-  <ion-searchbar autocorrect="off" autocapitalize="off" spellcheck="off" #searchbar placeholder="Search..." class="search-box"></ion-searchbar>
+<ion-slides>
+  <ion-slide>
 
-  <div #map id="map" class="map"></div>
-  <div class="centerMarker"></div>
-  <div class="address-view">
-    <ion-list>
-      <ion-item no-lines class="help-text">
-        Arrastrar mapa para seleccionar una ubicacion
-      </ion-item>
-      <!-- <ion-item no-lines class="address-item">
-        <ion-label stacked class="title-label">ADDRESS</ion-label>
-        <ion-textarea class="address" [(ngModel)]="address"></ion-textarea>
-      </ion-item> -->
-     
 
-     
-    </ion-list>
-  </div>
+<h1>Bienvenido a My Look Xpress</h1>
+<br>
 
-   <button ion-button block  color='dark' [navPush]="cuandoPage">Continuar</button>
-     
-</ion-content>
+<img src="assets/Icon-1024.png" style='max-width: 9em;'>
 
-<
+  </ion-slide>
+  <ion-slide>
+
+      <h1>Hola!</h1>
+
+    <p style='text-align: left;font-family: "Varela Round"'>En <strong style='color: #ecde06;'>My Look Xpress</strong> lo mas importante eres tú,
+por eso hemos diseñado una escala de
+remuneraciones por encima del mercado, así
+como beneficios para que te actualices
+constantemente, según tu especialidad, con el
+único fin de que desarrolles tu talento y así
+poder obtener mas y mejores ingresos.</p>
+
+
+<p style='text-align: left;font-family: "Varela Round"'>Por que en <strong style='color: #ecde06;'>My Look Xpress</strong> confiamos en ti, y en tu talento</p>
+
+
+
+
+<ion-list padding>
+ <button ion-button full round color="dark" (click)='iradetalle(9)'>Comenzar</button>
+ </ion-list>
+
+
+
+
+  </ion-slide>
+
+</ion-slides>
+
+
+
+
+

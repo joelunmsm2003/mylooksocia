@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PerfilProvider } from '../../providers/perfil/perfil';
 import { User } from '../../providers/perfil/user';
-
+import { CalificacionPage } from '../../pages/calificacion/calificacion';
+import { BalancePage } from '../../pages/balance/balance';
 /**
  * Generated class for the PerfilPage page.
  *
@@ -51,5 +52,22 @@ export class PerfilPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
   }
+
+  calificacion(){
+
+       this.navCtrl.push(CalificacionPage, {
+      categoria: 9,
+    })
+
+  }
+
+  balance(){
+
+       this.navCtrl.push(BalancePage, {
+      categoria: 9,
+    })
+
+  }
+
 
 }

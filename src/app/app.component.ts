@@ -11,6 +11,7 @@ import { IntroPage } from '../pages/intro/intro';
 import { LoginprincipalPage } from '../pages/loginprincipal/loginprincipal';
 import { LoginPage } from '../pages/login/login';
 import { DetalleservicioPage } from '../pages/detalleservicio/detalleservicio';
+
 import { AlertaPage } from '../pages/alerta/alerta';
 import { HistorialsociaPage } from '../pages/historialsocia/historialsocia';
 import { Storage } from '@ionic/storage';
@@ -24,7 +25,7 @@ import { PerfilProvider } from '../providers/perfil/perfil';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
 
   data:any;
 
