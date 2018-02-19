@@ -43,7 +43,9 @@ $colors: (
 );
 
 
-
+.text-input-md {
+    text-align: right;
+}
 
 // App iOS Variables
 // --------------------------------------------------
@@ -91,6 +93,7 @@ $colors: (
 @import "noto-sans";
 
 
+
 // Slider Menu Cateforias
 .categorias-slider{
 
@@ -131,7 +134,7 @@ flex: 1;
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Varela Round';
         background: #f7f7f7;
 }
 
@@ -140,20 +143,20 @@ flex: 1;
     border-top: 0.55px solid #ffffff;
     background: #ffffff;
     color: #000;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Varela Round';
 }
 
 
 
 ion-title{
 
-	font-family: 'Didact Gothic', sans-serif;
+	font-family: 'Varela Round';
 
 }
 
 .input-wrapper {
 
-	font-family: 'Didact Gothic', sans-serif;
+	font-family: 'Varela Round';
 }
 
 .picker-md .picker-columns {
@@ -165,12 +168,12 @@ ion-title{
 
 .alert-md .alert-title {
     font-size: 16px !important;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Varela Round';
 }
 
 .alert-md .alert-sub-title {
     font-size: 14px !important;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Varela Round';
     padding-top: 13px !important;
 }
 
@@ -204,7 +207,7 @@ ion-title{
 font-size: 20px; 
     color: #fff;
     
-    background: linear-gradient(to bottom, #030006, #a146f1);
+    background: linear-gradient(to bottom, #55505a, #d9d6dc);
     line-height: 30px;
     word-spacing: 4px;
     padding: 25px !important;
@@ -227,4 +230,9 @@ font-family: 'Concert One', cursive;
 
 .slider {
     height: 100%;
+}
+
+.button-inner{
+
+    font-family: 'Varela Round';
 }

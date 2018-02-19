@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import { Observable } from 'rxjs/Observable';
 import { Categoria } from './categoria';
+import { Distrito } from './distrito';
 import { Subcategoria } from './subcategoria';
 
 /*
@@ -33,6 +34,22 @@ export class CategoriasProvider {
       .map((response: Response) => <Subcategoria[]> response.json())
   
    }
+
+
+  getdistrito(): Observable<Distrito[]> {
+      return this._http.get('http://104.236.247.3:8000/distritos/')
+      .map((response: Response) => <Distrito[]> response.json())
+  
+   }
+
+
+
+
+
+
+      
+   
+
 
 }
 

@@ -40,7 +40,7 @@ export class MytabsComponent {
 	servicioPage:any;
 
 
-  historialPage:any;
+  historialsociaPage:any;
 
 
   loginPage:any;
@@ -63,7 +63,7 @@ registrosociaPage:any;
   	this.servicioPage = ServicioPage;
 
 
-    this.historialPage = HistorialPage;
+    this.historialsociaPage = HistorialsociaPage;
 
     this.loginPage = LoginPage;
 

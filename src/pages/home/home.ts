@@ -10,7 +10,7 @@ import { CuandoPage } from '../cuando/cuando';
 import { VentaPage } from '../venta/venta';
 
 import { IntroPage } from '../../pages/intro/intro';
-
+import { RegistrosociaPage } from '../../pages/registrosocia/registrosocia';
 
 
 
@@ -54,7 +54,7 @@ console.log('entre mierdaaaaaaaaaaaaaaaaa')
 
      iradetalle(data){
 
-    this.navCtrl.push(IntroPage, {
+    this.navCtrl.push(RegistrosociaPage, {
       servicio: data.id,
     })
 

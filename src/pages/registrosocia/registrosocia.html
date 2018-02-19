@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Conviertete en Socia</ion-title>
+    <ion-title>Inscripcion</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,45 +18,72 @@
  <form (ngSubmit)="enviasocia(user)" [formGroup]="todo">
 
  
-
+      
       <ion-item>
-            <ion-input placeholder="Nombre" formControlName="nombre"  name='nombre' id="loginField" type="text" required [(ngModel)] = "user.nombre"></ion-input>
+              <ion-label>Nombre</ion-label>
+            <ion-input formControlName="nombre"  name='nombre' id="loginField" type="text" required [(ngModel)] = "user.nombre"></ion-input>
       </ion-item>
+
+
+       <ion-item>
+            <ion-label>Apellido</ion-label>
+            <ion-input formControlName="apellido"  name='apellido' id="loginField" type="text" required [(ngModel)] = "user.apellido"></ion-input>
+      </ion-item>
+
 
  
       <ion-item>
-            <ion-input placeholder="Email"  formControlName="email"  name='email' id="loginField" type="eaail" required [(ngModel)] = "user.email"></ion-input>
+            <ion-label>Email</ion-label>
+            <ion-input  formControlName="email"  name='email' id="loginField" type="email"  [(ngModel)] = "user.email"></ion-input>
       </ion-item>
 
       <ion-item>
-            <ion-input placeholder="Telefono"  formControlName="telefono"  name='telefono' id="loginField" type="number" required [(ngModel)] = "user.telefono"></ion-input>
+
+            <ion-label>Telefono</ion-label>
+            <ion-input  formControlName="telefono"  name='telefono' id="loginField" type="number"  [(ngModel)] = "user.telefono"></ion-input>
       </ion-item>
 
 
        <ion-item>
-            <ion-input placeholder="Direccion"  formControlName="direccion"  name='direccion' id="loginField" type="text" required [(ngModel)] = "user.direccion"></ion-input>
+            <ion-label>Direccion</ion-label>
+            <ion-input  formControlName="direccion"  name='direccion' id="loginField" type="text" required [(ngModel)] = "user.direccion"></ion-input>
       </ion-item>
 
 
        <ion-item>
-            <ion-input placeholder="Referencia"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.referencia"></ion-input>
+            <ion-label>Referencia</ion-label>
+            <ion-input  formControlName="referencia" name='referencia'  id="loginField" type="text" required [(ngModel)] = "user.referencia"></ion-input>
       </ion-item>
 
       <ion-item>
-            <ion-input placeholder="Numero De cuenta"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.numerocuenta"></ion-input>
+            <ion-label>No Cuenta</ion-label>
+            <ion-input   formControlName="cuenta"  name='cuenta'   id="loginField" type="text" required [(ngModel)] = "user.cuenta"></ion-input>
+      </ion-item>
+
+<!-- 
+      <ion-item>
+            <ion-input placeholder="Distrito"  formControlName="distrito"   id="loginField" type="text" required name='distrito'  [(ngModel)] = "user.distrito"></ion-input>
+      </ion-item> -->
+
+
+      <ion-item>
+      <ion-label>Distrito</ion-label>
+      <ion-select  formControlName="distrito"   id="loginField" type="text" required name='distrito'  [(ngModel)] = "user.distrito">
+      <ion-option *ngFor="let d of distrito" [value]="d">{{d.nombre}}</ion-option>
+
+      </ion-select>
       </ion-item>
 
 
       <ion-item>
-            <ion-input placeholder="Distrito"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.distrito"></ion-input>
+
+            <ion-label>Horario</ion-label>
+            <ion-input   formControlName="horario"   id="loginField" type="text" requiredname='horario'   [(ngModel)] = "user.horario"></ion-input>
       </ion-item>
 
       <ion-item>
-            <ion-input placeholder="Horario"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.horarios"></ion-input>
-      </ion-item>
-
-      <ion-item>
-            <ion-input placeholder="Experiencia Laboral Min 1 año"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.experiencia"></ion-input>
+            <ion-label>Experiencia</ion-label>
+            <ion-input  formControlName="experiencia" name='experiencia'  id="loginField" type="text" required [(ngModel)] = "user.experiencia"></ion-input>
       </ion-item>
 
  
@@ -65,14 +92,18 @@
             <ion-input placeholder="Compartir de imagenes de trabajos realizados"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.compartir"></ion-input>
       </ion-item> -->
 
-          <ion-item>
-      <ion-textarea placeholder="Comentanos sobre tu experiencia laboral"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.experiencia"></ion-textarea>
+
+      
+
+      <ion-item>
+      <ion-label>Comentario</ion-label>
+      <ion-textarea  name='comentario' formControlName="comentario"   id="loginField" type="text" required [(ngModel)] = "user.comentario"></ion-textarea>
       </ion-item>
 
 
-            <ion-item>
+           <!--  <ion-item>
             <ion-input placeholder="Terminos y Condiciones"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.terminos"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
 
 
@@ -110,6 +141,9 @@
       </ion-item>
 
  -->
+
+
+
 
 
 

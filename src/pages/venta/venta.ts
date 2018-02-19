@@ -1,17 +1,17 @@
 import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams,Tabs,AlertController } from 'ionic-angular';
-import { Http } from '@angular/http';
+import { App,IonicPage, NavController, NavParams,Tabs,AlertController,ToastController } from 'ionic-angular';
 import { CategoriasProvider } from '../../providers/categorias/categorias';
 import { Categoria } from '../../providers/categorias/categoria';
 import { Subcategoria } from '../../providers/categorias/subcategoria';
-
+import { Http,RequestOptions, Headers } from '@angular/http';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ReservaPage } from '../reserva/reserva';
 import { UbicacionPage } from '../ubicacion/ubicacion';
 import { IntroPage } from '../intro/intro';
 import { PerfilPage } from '../perfil/perfil';
+import { RegistrosociaPage } from '../registrosocia/registrosocia';
 import { Storage } from '@ionic/storage';
-
+import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
 /**
  * Generated class for the VentaPage page.
  *
@@ -26,6 +26,9 @@ import { Storage } from '@ionic/storage';
   providers: [CategoriasProvider]
 })
 export class VentaPage {
+
+
+
 
 categoria: Categoria[];
 
@@ -63,9 +66,16 @@ introPage: any;
 
 perfilPage: any;
 
+togglecategoria:any;
+
 book: number=0;
 
 precio: number=0
+
+button:any;
+
+detalle:any;
+
 
 pedido = new Array();
 
@@ -75,9 +85,24 @@ public cate;
 
 private todo : FormGroup;
 
-  constructor(private formBuilder: FormBuilder,public alertCtrl: AlertController,public storage: Storage,private _categoria: CategoriasProvider,public navCtrl: NavController,public http: Http, public navParams: NavParams) {
+  constructor(private authHttp: AuthHttp,private toastCtrl: ToastController,public appCtrl: App,private formBuilder: FormBuilder,public alertCtrl: AlertController,public storage: Storage,private _categoria: CategoriasProvider,public navCtrl: NavController,public http: Http, public navParams: NavParams) {
 
     
+       this.storage.get('token').then((val) => {
+
+
+        console.log('...TOKEN...',val)
+
+      });
+
+
+
+
+
+
+       this.togglecategoria=false
+
+       this.host='http://estokealo.com:8000'
 
 
   		this.reservaPage = ReservaPage;
@@ -86,7 +111,7 @@ private todo : FormGroup;
 
       this.cate = this.navParams.get("categoria");
 
-      console.log('cate...',this.cate.id)
+      console.log('cate...',this.cate)
 
 
 	    this._categoria.getcategorias()
@@ -130,9 +155,10 @@ private todo : FormGroup;
 
 
      this.todo = this.formBuilder.group({
-      email: ['', Validators.required],
-      nombre: [''],
-      password: [''],
+
+      experiencia: [''],
+      comentario: [''],
+      referencia:['']
 
     });
 
@@ -149,6 +175,20 @@ private todo : FormGroup;
     console.log('ionViewDidLoad VentaPage');
 
 
+  }
+
+    presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'User was added successfully',
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
   }
 
     showAlert(data) {
@@ -274,6 +314,67 @@ console.log(data.id)
 
 
   }
+
+//   guardacategoria(data){
+
+
+
+
+
+// this.storage.get('token').then((val) => {
+
+
+//         console.log(val)
+
+//          this.presentToast()
+
+//            if(val==null){
+  
+//                      this.navCtrl.push(RegistrosociaPage, {
+//                         subcategoria: this.subcategoria,
+//                       })
+//            }
+//            else{
+
+
+//              this.enviasocia(data)
+//            }
+
+//       });
+
+
+//   }
+
+
+  enviasocia(data){
+
+
+
+
+   console.log('detalle..',data)
+
+    
+  let creds = JSON.stringify({ categoria: this.subcategoria, socia: null,detalle: null});
+
+  console.log('uuu',creds)
+
+
+
+      let options: RequestOptions = new RequestOptions({
+      headers: new Headers({ 'Content-Type': 'application/json' })
+    });
+
+
+
+        this.authHttp.post('http://104.236.247.3:8000/asignasocia/', creds, options)
+        .subscribe(
+          data => {
+
+
+
+        })
+
+        }
 
 
   reset(data){

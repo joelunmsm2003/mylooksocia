@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Http,RequestOptions, Headers } from '@angular/http';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App,IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { CategoriasProvider } from '../../providers/categorias/categorias';
 import { Categoria } from '../../providers/categorias/categoria';
-
+import { Distrito } from '../../providers/categorias/distrito';
+import { SpinnerProvider } from '../../providers/spinner/spinner'
+import { Storage } from '@ionic/storage';
+import { IntroPage } from '../../pages/intro/intro';
 /**
  * Generated class for the RegistrosociaPage page.
  *
@@ -23,27 +26,49 @@ export class RegistrosociaPage {
 	 private todo : FormGroup;
 
 	 categoria: Categoria[];
+   distrito:Distrito[]
+
+   zone:any;
+   employees:any;
+
+   subcate:any;
+   email:any;
 
 
 
-  constructor(private http: Http,private _categoria: CategoriasProvider,private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public appCtrl: App,public storage: Storage,public spinner: SpinnerProvider,public alertCtrl: AlertController,private http: Http,private _categoria: CategoriasProvider,private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
 
   	 this.todo = this.formBuilder.group({
       email: ['', Validators.required],
       nombre: [''],
+      apellido: [''],
       password: [''],
       telefono: [''],
-      direccion: ['']
+      direccion: [''],
+      referencia:[''],
+      cuenta:[''],
+      distrito:[''],
+      horario:[''],
+      experiencia:[''],
+      comentario:['']
 
     });
+
+     this.subcate = this.navParams.get("subcategoria");
 
   	 this._categoria.getcategorias()
       .subscribe(data => this.categoria = data);
 
 
 
+         this._categoria.getdistrito()
+      .subscribe(data => this.distrito = data);
+  
 
   }
+
+
+    
 
 
       user = {}
@@ -56,6 +81,64 @@ export class RegistrosociaPage {
   }
 
   pedido = new Array();
+
+
+
+
+
+
+  public authenticate(username, password) {
+
+
+   console.log('ingresando...')
+
+  let creds = JSON.stringify({ username: username, password: password });
+
+
+  let options: RequestOptions = new RequestOptions({
+      headers: new Headers({ 'Content-Type': 'application/json' })
+    });
+
+  // sleep time expects milliseconds
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+  this.http.post('http://104.236.247.3:8000/api-token-auth/', creds, options)
+    .subscribe(
+      data => {
+
+          console.log('token.....',data["_body"].token)
+
+         this.storage.set('token', JSON.parse(data["_body"]).token)
+
+
+  
+
+      },
+      error=>{
+
+        this.nologin()
+      }
+ 
+    );
+
+}
+
+
+
+     nologin() {
+
+
+
+    let alert = this.alertCtrl.create({
+      title: 'My Look Xpress',
+      subTitle: 'Usuario o contraseña incorrecta',
+      buttons: ['Cerrar']
+    });
+    alert.present();
+  }
+
 
     agregacarrito(data){
 
@@ -85,8 +168,12 @@ export class RegistrosociaPage {
 
   enviasocia(data){
 
+    this.spinner.load();
+
+
+
   	
-  let creds = JSON.stringify({ categoria: this.pedido, socia: data });
+  let creds = JSON.stringify({ categoria: this.subcate, socia: data ,detalle:null});
 
 
 
@@ -99,6 +186,64 @@ export class RegistrosociaPage {
   this.http.post('http://104.236.247.3:8000/nuevasocia/', creds, options)
     .subscribe(
       data => {
+
+
+
+
+        console.log('gsgsgsggs',data['_body'].replace('"','').replace('"',''))
+
+
+        this.email= data['_body'].replace('"','').replace('"','')
+
+
+
+
+        if(this.email==0){
+
+
+    let alert = this.alertCtrl.create({
+      title: 'My Look Xpress',
+      subTitle: 'Este correo ya existe, porfavor escoja otro',
+      buttons: ['OK']
+    });
+    alert.present();
+
+     this.spinner.dismiss();
+
+
+        }
+
+        else{
+
+
+
+
+              this.authenticate(this.email,this.email)
+
+
+              let alert = this.alertCtrl.create({
+              title: 'My Look Xpress',
+              subTitle: 'Recibimos su solicitud de inscripcion en breve nos contactaremos con usted via email o wasap para una evaluacion',
+              buttons: ['OK']
+              });
+              alert.present();
+
+              this.storage.set('registrosocia', true)
+
+              this.spinner.dismiss();
+
+              this.appCtrl.getRootNav().push(IntroPage);
+
+
+
+            
+
+
+
+
+        }
+
+
 
       })
 

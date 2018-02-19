@@ -11,7 +11,7 @@
    <button ion-button icon-only menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title> Formulario</ion-title>
+    <ion-title> Formulario para {{cate.nombre}}</ion-title>
 
 
 
@@ -19,32 +19,72 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content >
+
+
+  <a style="display:block;" >
+        <img src="{{host}}/{{cate.photo}}"  style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+     
+         <div class='cat'>{{cate.nombre}}</div>
+
+
+
+      </a>
 
 
 
 
- <form (ngSubmit)="logForm(user)" [formGroup]="todo">
+
+   <ion-item padding *ngFor="let item of subcategoria" style='padding: 1px;
+    padding-left: 19px;'>
+    <ion-label>{{item.nombre}}</ion-label>
+    <ion-toggle color='dark' [(ngModel)]="item.check"></ion-toggle>
+  </ion-item>
+
+
+  
+
+
+
+<!-- 
+ <form (ngSubmit)="guardacategoria(user)" [formGroup]="todo">
      
 
       <ion-item>
-            <ion-input placeholder="Caracteristica"  formControlName="email"  name='email' id="loginField" type="text" required [(ngModel)] = "user.caracteristica"></ion-input>
-      </ion-item>
 
-
-      <ion-item>
-            <ion-input placeholder="Entidad" formControlName="nombre"  name='entidad' id="loginField" type="text" required [(ngModel)] = "user.entidad"></ion-input>
+            <ion-label>Tiempo de experiencia</ion-label>
+            <ion-input  formControlName="experiencia"  name='email' id="loginField" type="text" required [(ngModel)] = "user.experiencia"></ion-input>
       </ion-item>
 
       <ion-item>
-            <ion-input placeholder="Duracion" formControlName="password" name="duracion" id="loginField" type="text" required [(ngModel)] = "user.duracion"></ion-input>
+
+            <ion-label>Referencia</ion-label>
+            <ion-input  formControlName="referencia"  name='referencia' id="loginField" type="text" required [(ngModel)] = "user.referencia"></ion-input>
       </ion-item>
 
 
 
+      <ion-item>
+      
+      <ion-textarea placeholder='Comentanos sobre tu experiencia laboral' name='comentario' formControlName="comentario"   id="loginField" type="text"  [(ngModel)] = "user.comentario"></ion-textarea>
+      </ion-item>
 
-      <button round ion-button type="submit" color='dark' block [disabled]="!todo.valid">Guardar</button>
+
+
+      <ion-list padding>
+      <button round ion-button type="submit" color='dark' block [disabled]="!todo.valid">Guardar </button>
+
+      </ion-list>
     </form>
+ -->
+
+
+<ion-list padding>
+<button round ion-button type="submit" color='dark' (click)='enviasocia(4)' block>Guardar </button>
+
+</ion-list>
+
+
 
 
 

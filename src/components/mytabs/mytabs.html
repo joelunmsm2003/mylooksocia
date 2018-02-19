@@ -1,30 +1,5 @@
-Logeado...<h1>{{logeado}}</h1>
 
-<div  class="fixed44" *ngIf="logeado">
-
- <div class="tab_container">
-      <input id="tab1" type="radio" name="tabs" (click)='home()' >
-
-
-      <label [navPush]="introPage"  for="tab1"><ion-icon name="home"></ion-icon>
-      <span>Home</span></label>
-
- 
-
-      <input id="tab2" type="radio" name="tabs" (click)='perfil()'>
-      <label [navPush]="perfilPage" for="tab2" ><ion-icon name="person"></ion-icon><span>Perfil</span></label>
-
-      <input id="tab3" type="radio" name="tabs" (click)='historial()'>
-      <label [navPush]="historialPage" for="tab3"><ion-icon name="keypad"></ion-icon><span>Servicios</span></label>
-
-       <input (click)='salircliente()' id="tab4" type="radio" name="tabs" >
-      <label   for="tab4"><ion-icon name="log-out"></ion-icon><span>Salir</span></label>
-
-
-
-</div>
-
-</div>
+<!-- 
 
 <div  class="fixed44" *ngIf="nologeado">
 
@@ -45,6 +20,38 @@ Logeado...<h1>{{logeado}}</h1>
 
        <input id="tab4" type="radio" name="tabs" >
       <label  (click)="loginprincipal()" for="tab4"><ion-icon name="log-in"></ion-icon><span>Inscripcion</span></label>
+
+
+
+</div>
+
+</div>
+ -->
+
+
+
+<div  class="fixed44"  >
+
+ <div class="tab_container">
+      <input id="tab1" type="radio" name="tabs" (click)='home()' >
+
+
+
+ 
+
+      <input id="tab2" type="radio" name="tabs" (click)='perfil()'>
+      <label [navPush]="perfilPage" for="tab2" ><ion-icon name="person"></ion-icon><span>Perfil</span></label>
+
+      <input id="tab3" type="radio" name="tabs" >
+      <label [navPush]="historialsociaPage" for="tab3"><ion-icon name="keypad"></ion-icon><span>Servicios</span></label>
+
+
+      <input id="tab3" type="radio" name="tabs" >
+      <label [navPush]="introPage" for="tab3"><ion-icon name="settings"></ion-icon><span>Configuracion</span></label>
+
+
+       <input (click)='salir()' id="tab4" type="radio" name="tabs" >
+      <label for="tab4"><ion-icon name="log-out"></ion-icon><span>Salir</span></label>
 
 
 
