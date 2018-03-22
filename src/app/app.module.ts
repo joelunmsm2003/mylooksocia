@@ -27,6 +27,7 @@ import { HistorialPage } from '../pages/historial/historial';
 import { HistorialsociaPage } from '../pages/historialsocia/historialsocia';
 import { RegistroprincipalPage } from '../pages/registroprincipal/registroprincipal';
 import { LoginprincipalPage } from '../pages/loginprincipal/loginprincipal';
+import { SplashPage } from '../pages/splash/splash';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -86,7 +87,7 @@ export function getAuthHttp(http) {
     BalancePage,
     TabsPage,
     AyudaPage,
-
+    SplashPage,
     HistorialsociaPage,
     UbicacionPage,
     RegistroPage,
@@ -119,7 +120,7 @@ export function getAuthHttp(http) {
     RegistroprincipalPage,
     CalificacionPage,
     BalancePage,
-
+    SplashPage,
     RegistroPage,
     TabsPage,
     PerfilPage,

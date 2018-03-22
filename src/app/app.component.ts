@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Http,RequestOptions, Headers } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { PerfilPage } from '../pages/perfil/perfil';
 
 import { IntroPage } from '../pages/intro/intro';
 import { LoginprincipalPage } from '../pages/loginprincipal/loginprincipal';
@@ -79,7 +79,7 @@ export class MyApp {
              
       
 
-                        this.appCtrl.getRootNav().push(HistorialsociaPage);
+                        this.appCtrl.getRootNav().push(PerfilPage);
 
 
 

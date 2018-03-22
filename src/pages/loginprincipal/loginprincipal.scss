@@ -1,8 +1,8 @@
 page-loginprincipal {
   .content-md {
     color: #000;
-    background-color: #fff;
-    background: url(http://estokealo.com:8000/static/login.jpg) no-repeat center center fixed;
+    background-color: #222;
+    //background: url(http://estokealo.com:8000/static/login.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,6 +12,16 @@ page-loginprincipal {
 ion-item{
   opacity: 0.8;
 }
+
+
+ion-label{
+
+  color: #fff;
+font-family: "Varela Round";
+
+}
+
+
 
       #custom-overlay {
   position: fixed;

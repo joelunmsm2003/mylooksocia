@@ -150,7 +150,7 @@ this.registrosociaPage = RegistrosociaPage;
      
 
 
- salircliente(){
+ salir(){
 
     console.log('saliendo..')
 

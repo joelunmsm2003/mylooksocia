@@ -19,14 +19,24 @@
 <div padding>
     <div style="padding-top:10%"  center>
 
-      <ion-list inset>
+
+
+
+      <ion-list >
+
+        <p style='color: #fff;
+    font-family: "Varela Round";text-align: center;'>Ingrese usuario y contraseña para iniciar sesion</p>
   <form #loginForm="ngForm" (ngSubmit)="authenticate(model.username,model.password)" autocomplete="off">
     <ion-row>
       <ion-col>
-        <ion-list inset>
+        <ion-list >
+            <ion-label color='light'>Email</ion-label>
           <ion-item>
+
             <ion-input placeholder="Email" name="username" id="loginField" type="text" required [(ngModel)] = "model.username" #email></ion-input>
           </ion-item>
+
+          <ion-label color='light'>Password</ion-label>
           <ion-item>
             <ion-input placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)] = "model.password"></ion-input>
           </ion-item>
@@ -42,11 +52,11 @@
       </ion-col>
     </ion-row>
   </form>
- <button  round ion-button  color='dark' full [navPush]="registroprincipalPage">Registrate
-        </button>
+<!--  <button  round ion-button  color='dark' full [navPush]="registroprincipalPage">Registrate
+        </button> -->
 
-     <button round ion-button  color='dark' block  [navPush]="registrosociaPage" >Conviertete en socia</button>
-<p style='color:#fff;'>Version 0.1.9</p>
+<!--      <button round ion-button  color='dark' block  [navPush]="registrosociaPage" >Conviertete en socia</button>
+<p style='color:#fff;'>Version 0.1.9</p> -->
 
          
       </ion-list>
@@ -62,5 +72,3 @@
 </div>
 </ion-content>
 
-
-<mytabs></mytabs>

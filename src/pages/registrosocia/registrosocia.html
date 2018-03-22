@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color='dark'>
     <ion-title>Inscripcion</ion-title>
   </ion-navbar>
 
@@ -21,15 +21,15 @@
       
       <ion-item>
               <ion-label>Nombre</ion-label>
-            <ion-input formControlName="nombre"  name='nombre' id="loginField" type="text" required [(ngModel)] = "user.nombre"></ion-input>
+            <ion-input  formControlName="nombre"  name='nombre' id="loginField" type="text" required [(ngModel)] = "user.nombre"></ion-input>
       </ion-item>
-
+<!-- 
 
        <ion-item>
             <ion-label>Apellido</ion-label>
             <ion-input formControlName="apellido"  name='apellido' id="loginField" type="text" required [(ngModel)] = "user.apellido"></ion-input>
       </ion-item>
-
+ -->
 
  
       <ion-item>
@@ -44,21 +44,21 @@
       </ion-item>
 
 
-       <ion-item>
+<!--        <ion-item>
             <ion-label>Direccion</ion-label>
             <ion-input  formControlName="direccion"  name='direccion' id="loginField" type="text" required [(ngModel)] = "user.direccion"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
 
-       <ion-item>
+<!--        <ion-item>
             <ion-label>Referencia</ion-label>
             <ion-input  formControlName="referencia" name='referencia'  id="loginField" type="text" required [(ngModel)] = "user.referencia"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
-      <ion-item>
+  <!--     <ion-item>
             <ion-label>No Cuenta</ion-label>
             <ion-input   formControlName="cuenta"  name='cuenta'   id="loginField" type="text" required [(ngModel)] = "user.cuenta"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
 <!-- 
       <ion-item>
@@ -75,16 +75,16 @@
       </ion-item>
 
 
-      <ion-item>
+  <!--     <ion-item>
 
             <ion-label>Horario</ion-label>
             <ion-input   formControlName="horario"   id="loginField" type="text" requiredname='horario'   [(ngModel)] = "user.horario"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
-      <ion-item>
+     <!--  <ion-item>
             <ion-label>Experiencia</ion-label>
             <ion-input  formControlName="experiencia" name='experiencia'  id="loginField" type="text" required [(ngModel)] = "user.experiencia"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
  
 <!-- 
@@ -96,7 +96,7 @@
       
 
       <ion-item>
-      <ion-label>Comentario</ion-label>
+      <ion-label>Deja tu mensaje</ion-label>
       <ion-textarea  name='comentario' formControlName="comentario"   id="loginField" type="text" required [(ngModel)] = "user.comentario"></ion-textarea>
       </ion-item>
 

@@ -10,6 +10,7 @@ import { CuandoPage } from '../cuando/cuando';
 import { VentaPage } from '../venta/venta';
 
 import { IntroPage } from '../../pages/intro/intro';
+import { LoginprincipalPage } from '../../pages/loginprincipal/loginprincipal';
 import { RegistrosociaPage } from '../../pages/registrosocia/registrosocia';
 
 
@@ -56,6 +57,14 @@ console.log('entre mierdaaaaaaaaaaaaaaaaa')
 
     this.navCtrl.push(RegistrosociaPage, {
       servicio: data.id,
+    })
+
+  }
+
+   irlogin(){
+
+    this.navCtrl.push(LoginprincipalPage, {
+      servicio: '9',
     })
 
   }

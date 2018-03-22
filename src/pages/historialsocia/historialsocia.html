@@ -5,6 +5,14 @@
   Ionic pages and navigation.
 -->
 
+<ion-header>
+
+  <ion-navbar color='white'>
+    <ion-title>Tus servicios</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
 
 <ion-content >
 
@@ -13,7 +21,7 @@
   <ion-item-sliding>
     
     <ion-item *ngFor="let item of servicios" >
-      <ion-avatar item-start>
+      <ion-avatar *ngIf ="item.socia__photo" item-start>
         <img src="{{host}}/{{item.socia__photo}}">
       </ion-avatar>
 
@@ -38,4 +46,4 @@
 
 </ion-content>
 
-<mytabssocia></mytabssocia>
+<mytabs></mytabs>

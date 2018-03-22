@@ -24,7 +24,7 @@ export class CategoriasProvider {
   }
 
   getcategorias(): Observable<Categoria[]> {
-      return this._http.get('http://104.236.247.3:8000/categoria')
+      return this._http.get('http://104.236.247.3:8000/categoria/1')
       .map((response: Response) => <Categoria[]> response.json())
 
    }

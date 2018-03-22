@@ -47,6 +47,8 @@ export class AlertaPage {
   nombre_cliente:any;
   pedidos:any;
   serv:any;
+  fecha:any;
+  fecha_inicio:any;
 
   constructor(private authHttp: AuthHttp,public _servicio:ServiciosProvider,public storage: Storage,public navCtrl: NavController,
     public geolocation: Geolocation,
@@ -101,24 +103,25 @@ export class AlertaPage {
 
 
       		 this._servicio.detalleservicio(this.navParams.get("servicio"))
-      		.subscribe(data => 
+      		.subscribe(data => {
 
-      		this.ped=data[0]['pedidos']
+
+                this.ped=data[0]['pedidos']
 
      
-      		);
 
-      		this._servicio.detalleservicio(this.navParams.get("servicio"))
-      		.subscribe(data => 
+          this.photo_cliente=data[0]['cliente__photo']
 
-      		this.photo_cliente=data[0]['cliente__photo']
+          
 
-      		);
+          this.nombre_cliente=data[0]['cliente__nombre']
+          this.fecha =data[0]['fecha']
+          this.fecha_inicio = data[0]['fecha_inicio']
 
-      		this._servicio.detalleservicio(this.navParams.get("servicio"))
-      		.subscribe(data => 
 
-      		this.nombre_cliente=data[0]['cliente__nombre']
+          }
+
+      	
       		
       		);
 

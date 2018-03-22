@@ -38,7 +38,16 @@
 
 
     <ion-col col-4><img src='{{host}}/{{photo_cliente}}'></ion-col>
-    <ion-col col-8 padding>{{nombre_cliente}}</ion-col>
+    <ion-col col-8 padding>
+
+
+    <ion-row>{{nombre_cliente}}</ion-row>
+      <ion-row>{{fecha}}</ion-row>
+    <ion-row>{{fecha_inicio}}</ion-row>
+
+
+    </ion-col>
+
   
    </ion-row> 
  
@@ -46,11 +55,11 @@
   <ion-item *ngFor="let item of ped">
 
 
-   <ion-row>
-    <ion-col col-2><img src='{{host}}/{{item.subcategoria__categoria__icono}}'></ion-col>
-    <ion-col col-10><h2>{{item.subcategoria__nombre}}</h2>
-    <p>S/. {{item.subcategoria__precio}}</p></ion-col>
-   </ion-row>
+
+    <ion-col>{{item.subcategoria__nombre}}</ion-col>
+    <ion-col>S/. {{item.subcategoria__precio}}</ion-col>
+
+  
 
 
 
