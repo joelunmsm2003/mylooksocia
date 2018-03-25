@@ -138,7 +138,7 @@ export class MyApp {
 
        
 
-      this.appCtrl.getRootNav().push(DetalleservicioPage, { servicio: jsonData.notification.payload.additionalData.aceptaservicio })
+      this.appCtrl.getRootNav().push(AlertaPage, { servicio: jsonData.notification.payload.additionalData.aceptaservicio })
       
     }
 

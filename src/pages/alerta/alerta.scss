@@ -18,15 +18,15 @@ page-alerta {
 
   #map {
     width: 100%;
-    height: 70%;
+    height: 50%;
   }
   .centerMarker{
   	position:absolute;
     /*url of the marker*/
     background:url(../assets/icon/marker.png) no-repeat;
     /*center the marker*/
-    top:36%;
-    left:50%;
+    top: 23%;
+    left: 52%;
     z-index:1;
     /*fix offset when needed*/
     margin-left:-17px;

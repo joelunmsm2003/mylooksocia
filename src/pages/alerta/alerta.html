@@ -1,8 +1,8 @@
 
 <ion-header>
 
-  <ion-navbar color='white'>
-    <ion-title>Detalle de servicio</ion-title>
+  <ion-navbar color='dark'>
+    <ion-title>Detalle de servicioo</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,9 +17,9 @@
   </ion-buttons>
 
   <ion-searchbar autocorrect="off" autocapitalize="off" spellcheck="off" #searchbar placeholder="Search..." class="search-box"></ion-searchbar>
-
+ 
   <div #map id="map" class="map"></div>
-  <div class="centerMarker"></div>
+   <div class="centerMarker"></div> 
   <div class="address-view">
     <ion-list>
       <ion-item no-lines class="help-text">
@@ -32,18 +32,26 @@
   </div>
 
 
-  <ion-card>
+<!--   <ion-card>
+
+  <ion-card-content> -->
 
   <ion-row>
 
 
-    <ion-col col-4><img src='{{host}}/{{photo_cliente}}'></ion-col>
-    <ion-col col-8 padding>
+    <ion-col *ngIf='photo_cliente' col-3 ><img src='{{host}}/{{photo_cliente}}'></ion-col>
 
 
+    <ion-col *ngIf='cliente__photo_facebook' col-3 style='background: #fff !important;'><img src='{{cliente__photo_facebook}}'></ion-col>
+
+    <ion-col col-9 padding style='background: #fff;'>
+
+    <ion-row>{{codigo}}</ion-row>
     <ion-row>{{nombre_cliente}}</ion-row>
-      <ion-row>{{fecha}}</ion-row>
-    <ion-row>{{fecha_inicio}}</ion-row>
+      <ion-row>{{fecha}} {{fecha_inicio}}</ion-row>
+      <ion-row>Servicio {{estado_nombre}}</ion-row>
+
+  
 
 
     </ion-col>
@@ -51,30 +59,29 @@
   
    </ion-row> 
  
+  
+  <ion-row padding>{{reference}}</ion-row>
 
   <ion-item *ngFor="let item of ped">
 
-
-
-    <ion-col>{{item.subcategoria__nombre}}</ion-col>
-    <ion-col>S/. {{item.subcategoria__precio}}</ion-col>
-
-  
-
-
-
     
-    
+   <ion-row>
+    <!-- <ion-col col-2><img src='{{host}}/{{item.subcategoria__categoria__icono}}'></ion-col> -->
+    <ion-col col-10><h2>{{item.subcategoria__nombre}}</h2>
+    <p>S/. {{item.subcategoria__precio}}</p></ion-col>
+   </ion-row>
+
   </ion-item>
 
-
-  <button block ion-button color="dark" round (click)='aceptar()'>Aceptar</button>
-
-
-
+  <ion-row padding>
+  {{codigo_user}} {{socia_id}}
+  <button  block ion-button color="dark" round (click)='aceptar()'>Aceptar</button>
+  </ion-row>
+<!-- </ion-card-content>
 
 
 </ion-card>
+ -->
 
 
 

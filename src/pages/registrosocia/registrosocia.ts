@@ -8,6 +8,10 @@ import { Distrito } from '../../providers/categorias/distrito';
 import { SpinnerProvider } from '../../providers/spinner/spinner'
 import { Storage } from '@ionic/storage';
 import { IntroPage } from '../../pages/intro/intro';
+import { Device } from '@ionic-native/device';
+
+import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
+
 /**
  * Generated class for the RegistrosociaPage page.
  *
@@ -36,7 +40,7 @@ export class RegistrosociaPage {
 
 
 
-  constructor(public appCtrl: App,public storage: Storage,public spinner: SpinnerProvider,public alertCtrl: AlertController,private http: Http,private _categoria: CategoriasProvider,private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private authHttp: AuthHttp,public device:Device,public appCtrl: App,public storage: Storage,public spinner: SpinnerProvider,public alertCtrl: AlertController,private http: Http,private _categoria: CategoriasProvider,private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
 
   	 this.todo = this.formBuilder.group({
       email: ['', Validators.required],
@@ -95,6 +99,9 @@ export class RegistrosociaPage {
   let creds = JSON.stringify({ username: username, password: password });
 
 
+  console.log('Ingresando....',creds)
+
+
   let options: RequestOptions = new RequestOptions({
       headers: new Headers({ 'Content-Type': 'application/json' })
     });
@@ -108,9 +115,33 @@ function sleep (time) {
     .subscribe(
       data => {
 
-          console.log('token.....',data["_body"].token)
+          console.log('token.....',JSON.parse(data["_body"]).token)
 
          this.storage.set('token', JSON.parse(data["_body"]).token)
+
+
+
+          let creds = JSON.stringify({ model: this.device.model ,tipo:this.device.version });
+
+
+          let options: RequestOptions = new RequestOptions({
+          headers: new Headers({ 'Content-Type': 'application/json' })
+          });
+
+
+          this.authHttp.post('http://104.236.247.3:8000/guardadatosmovil/', creds, options)
+          .subscribe(
+          data => {
+
+
+
+          console.log(data)
+
+
+          }
+
+          );
+
 
 
   

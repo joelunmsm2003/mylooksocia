@@ -18,6 +18,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { AyudaPage } from '../ayuda/ayuda';
 import { LoginprincipalPage } from '../loginprincipal/loginprincipal';
 
+import { Http,RequestOptions, Headers } from '@angular/http';
+import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
+
 
 @IonicPage()
 @Component({
@@ -61,7 +64,7 @@ user_grupo:any;
 loginprincipalPage:any;
 
 
-  constructor(public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
 
 
 this._categoria.getcategorias()
@@ -84,6 +87,12 @@ this._categoria.getcategorias()
     this.ventaPage=VentaPage;
 
     this.ayudaPage=AyudaPage;
+
+
+   
+
+
+  
 
  
 

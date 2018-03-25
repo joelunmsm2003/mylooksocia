@@ -21,6 +21,9 @@ export class DetalleservicioPage {
 	fecha:any;
 	fecha_inicio:any;
 	serv:any;
+	reference:any;
+	cliente__photo_facebook:any;
+	cliente__photo:any;
 
 	host='http://104.236.247.3:8000'
 
@@ -36,39 +39,37 @@ export class DetalleservicioPage {
 
   ionViewDidLoad() {
 
+
+
+
+
     console.log('ionViewDidLoad DetalleservicioPage');
 
     console.log('llslslsl',this.navParams.get("servicio"))
 
 	this._servicio.detalleservicio(this.navParams.get("servicio"))
-		.subscribe(data => 
+		.subscribe(data => {
 
-		this.ped=data[0]['pedidos']
-
-		);
+			console.log('detalle servicio...',data)
 
 
-	this._servicio.detalleservicio(this.navParams.get("servicio"))
-		.subscribe(data => 
+			this.ped=data[0]['pedidos']
 
-		this.socia__photo=data[0]['socia__photo']
+			this.socia__photo=data[0]['socia__photo']
 
-		);
+			this.fecha=data[0]['fecha']
+
+			this.fecha_inicio=data[0]['fecha_inicio']
+
+			this.reference=data[0]['referencia']
+
+			this.cliente__photo_facebook=data[0]['cliente__photo_facebook']
+
+			this.cliente__photo=data[0]['cliente__photo']
 
 
-	this._servicio.detalleservicio(this.navParams.get("servicio"))
-		.subscribe(data => 
 
-		this.fecha=data[0]['fecha']
-
-		);
-
-	this._servicio.detalleservicio(this.navParams.get("servicio"))
-		.subscribe(data => 
-
-		this.fecha_inicio=data[0]['fecha_inicio']
-
-		);
+		});
     
   }
 

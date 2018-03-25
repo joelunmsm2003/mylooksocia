@@ -53,6 +53,7 @@ import { PerfilProvider } from '../providers/perfil/perfil';
 import { OneSignal } from '@ionic-native/onesignal';
 import { ServicioProvider } from '../providers/servicio/servicio';
 import { NotificacionProvider } from '../providers/notificacion/notificacion';
+import { Device } from '@ionic-native/device';
 
 
 let storage = new Storage({});
@@ -138,6 +139,7 @@ export function getAuthHttp(http) {
     Geolocation,
     SocialSharing,
     OneSignal,
+    Device,
     {
       provide: AuthHttp,
       useFactory: getAuthHttp,

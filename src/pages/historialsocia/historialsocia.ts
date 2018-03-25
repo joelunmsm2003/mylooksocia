@@ -36,7 +36,13 @@ export class HistorialsociaPage {
     
 
     this._servicio.serviciosdesocias()
-      .subscribe(data => this.servicios=data);
+      .subscribe(data => {
+
+        console.log('serv socias',data)
+
+        this.servicios=data
+
+      });
 
   }
 

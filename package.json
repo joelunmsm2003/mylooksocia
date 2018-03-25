@@ -21,6 +21,7 @@
     "@angular/platform-browser": "5.0.0",
     "@angular/platform-browser-dynamic": "5.0.0",
     "@ionic-native/core": "4.3.2",
+    "@ionic-native/device": "^4.6.0",
     "@ionic-native/geolocation": "^4.5.2",
     "@ionic-native/google-maps": "^4.5.2",
     "@ionic-native/in-app-purchase": "^4.5.2",

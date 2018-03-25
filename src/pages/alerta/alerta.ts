@@ -9,6 +9,8 @@ import { MapProvider } from '../../providers/map/map';
 import { ReservaPage } from '../reserva/reserva';
 import { ServiciosProvider } from '../../providers/servicios/servicios';
 import { Http,RequestOptions, Headers } from '@angular/http';
+import { PerfilProvider } from '../../providers/perfil/perfil';
+import { HistorialsociaPage } from '../../pages/historialsocia/historialsocia';
 
 /**
  * Generated class for the MapPage page.
@@ -49,6 +51,12 @@ export class AlertaPage {
   serv:any;
   fecha:any;
   fecha_inicio:any;
+  cliente__photo_facebook:any;
+  reference:any;
+  codigo:any;
+  socia_id:any;
+  codigo_user:any;
+  estado_nombre:any;
 
   constructor(private authHttp: AuthHttp,public _servicio:ServiciosProvider,public storage: Storage,public navCtrl: NavController,
     public geolocation: Geolocation,
@@ -58,7 +66,8 @@ export class AlertaPage {
     public mapService: MapProvider,
     public spinner: SpinnerProvider,
     public viewCtrl: ViewController,
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    private _perfil: PerfilProvider) {
 
       this.reservaPage = ReservaPage;
 
@@ -77,12 +86,69 @@ export class AlertaPage {
     console.log('ionViewDidLoad MapPage');
 
     this.ubicacion='jsjsjsj'
+
+
+
+     this._perfil.miperfil()
+      .subscribe(data => {
+
+
+          this.codigo_user=data[0]['id']
+
+
+      })
+
+
+    this._servicio.detalleservicio(this.navParams.get("servicio"))
+          .subscribe(data => {
+
+
+            console.log('detalllllle',data)
+
+
+                this.ped=data[0]['pedidos']
+                this.codigo=data[0]['id']
+     
+
+          this.photo_cliente=data[0]['cliente__photo']
+
+           this.socia_id=data[0]['socia_id']
+
+          this.nombre_cliente=data[0]['cliente__nombre']
+          this.fecha =data[0]['fecha']
+          this.fecha_inicio = data[0]['fecha_inicio']
+          this.cliente__photo_facebook =data[0]['cliente__photo_facebook']
+          this.reference =data[0]['referencia']
+          this.estado_nombre =data[0]['estado__nombre']
+
+
+          if(this.codigo_user!=this.socia_id){
+
+            this.navCtrl.push(HistorialsociaPage, {
+              servicio: '9',
+            })
+          }
+
+
+          });
+
+
+
   }
 
   loadMaps() {
     if (!!google) {
       this.initializeMap();
+
       this.initAutocomplete();
+
+
+
+
+
+
+
+
     } else {
       this.errorAlert('Error', 'Something went wrong with the Internet Connection. Please check your Internet.')
     }
@@ -102,29 +168,7 @@ export class AlertaPage {
 
 
 
-      		 this._servicio.detalleservicio(this.navParams.get("servicio"))
-      		.subscribe(data => {
-
-
-                this.ped=data[0]['pedidos']
-
-     
-
-          this.photo_cliente=data[0]['cliente__photo']
-
-          
-
-          this.nombre_cliente=data[0]['cliente__nombre']
-          this.fecha =data[0]['fecha']
-          this.fecha_inicio = data[0]['fecha_inicio']
-
-
-          }
-
-      	
-      		
-      		);
-
+      		 
 
  
 
@@ -152,6 +196,9 @@ export class AlertaPage {
       });
 
 
+
+
+
         // Map drag started
         this.map.addListener('dragstart', function() {
           console.log('Drag start');
@@ -168,6 +215,9 @@ export class AlertaPage {
       
 
           that.ubicacion=latLngObj
+
+
+
 
      
           
