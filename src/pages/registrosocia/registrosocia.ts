@@ -8,6 +8,7 @@ import { Distrito } from '../../providers/categorias/distrito';
 import { SpinnerProvider } from '../../providers/spinner/spinner'
 import { Storage } from '@ionic/storage';
 import { IntroPage } from '../../pages/intro/intro';
+import { PerfilPage } from '../../pages/perfil/perfil';
 import { Device } from '@ionic-native/device';
 
 import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
@@ -201,10 +202,12 @@ function sleep (time) {
 
     this.spinner.load();
 
+    console.log('pedido..',this.pedido)
+
 
 
   	
-  let creds = JSON.stringify({ categoria: this.subcate, socia: data ,detalle:null});
+  let creds = JSON.stringify({ categoria: this.subcate, socia: data ,detalle:null,pedido:this.pedido});
 
 
 
@@ -263,7 +266,7 @@ function sleep (time) {
 
               this.spinner.dismiss();
 
-              this.appCtrl.getRootNav().push(IntroPage);
+              this.appCtrl.getRootNav().push(PerfilPage);
 
 
 

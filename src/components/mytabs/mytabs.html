@@ -40,15 +40,15 @@
  
 
       <input id="tab2" type="radio" name="tabs" (click)='perfil()'>
-      <label [navPush]="perfilPage" for="tab2" ><ion-icon name="person"></ion-icon><span>Perfil</span></label>
+      <label  for="tab2" ><ion-icon name="person"></ion-icon><span>Perfil</span></label>
 
       <input id="tab3" type="radio" name="tabs" >
-      <label [navPush]="historialsociaPage" for="tab3"><ion-icon name="keypad"></ion-icon><span>Historial</span></label>
+      <label [navPush]="historialsociaPage" for="tab3"><ion-icon name="keypad"></ion-icon><span>Servicios</span></label>
 
-
+<!-- 
       <input id="tab3" type="radio" name="tabs" >
       <label [navPush]="introPage" for="tab3"><ion-icon name="settings"></ion-icon><span>Servicios</span></label>
-
+ -->
 
        <input (click)='salir()' id="tab4" type="radio" name="tabs" >
       <label for="tab4"><ion-icon name="log-out"></ion-icon><span>Salir</span></label>

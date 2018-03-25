@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar color='dark'>
-    <ion-title>Detalle de servicioo</ion-title>
+    <ion-title>Detalle de servicio</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,27 +10,7 @@
 <ion-content>
 
 
-  <ion-buttons float-end class="current-location">
-    <button ion-button icon-only (click)="currentLocation()">
-      <img src="./assets/icon/current-location.png" alt="">
-    </button>
-  </ion-buttons>
-
-  <ion-searchbar autocorrect="off" autocapitalize="off" spellcheck="off" #searchbar placeholder="Search..." class="search-box"></ion-searchbar>
- 
-  <div #map id="map" class="map"></div>
-   <div class="centerMarker"></div> 
-  <div class="address-view">
-    <ion-list>
-      <ion-item no-lines class="help-text">
-        
-      </ion-item>
-       
-
-     
-    </ion-list>
-  </div>
-
+<div id="map"></div>
 
 <!--   <ion-card>
 
@@ -73,9 +53,14 @@
 
   </ion-item>
 
-  <ion-row padding>
-  {{codigo_user}} {{socia_id}}
+  <ion-row padding *ngIf='estado_nombre=="Pendiente"'>
+
   <button  block ion-button color="dark" round (click)='aceptar()'>Aceptar</button>
+  </ion-row>
+
+   <ion-row padding *ngIf='estado_nombre=="Aceptado"'>
+
+  <button  block ion-button color="dark" round (click)='cancelar()'>Cancelar</button>
   </ion-row>
 <!-- </ion-card-content>
 

@@ -4,39 +4,40 @@
 <ion-content>
 
 
-<ion-navbar>
+<ion-navbar color="dark">
   
   <ion-title> </ion-title>
 
   <ion-buttons>
       
-      <button ion-button (click)='closeModal()'>Cerrar</button>
+      <button ion-button>MY LOOK XPRESS </button>
 
   </ion-buttons>
 
 </ion-navbar>
 
 <div padding>
-    <div style="padding-top:10%"  center>
+    <div   center>
 
 
 
 
       <ion-list >
 
-        <p style='color: #fff;
+
+        <p style='color: #000;
     font-family: "Varela Round";text-align: center;'>Ingrese usuario y contraseña para iniciar sesion</p>
   <form #loginForm="ngForm" (ngSubmit)="authenticate(model.username,model.password)" autocomplete="off">
     <ion-row>
       <ion-col>
         <ion-list >
-            <ion-label color='light'>Email</ion-label>
+            <ion-label padding color='dark'>Usuario</ion-label>
           <ion-item>
 
             <ion-input placeholder="Email" name="username" id="loginField" type="text" required [(ngModel)] = "model.username" #email></ion-input>
           </ion-item>
 
-          <ion-label color='light'>Password</ion-label>
+          <ion-label padding color='dark'>Password</ion-label>
           <ion-item>
             <ion-input placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)] = "model.password"></ion-input>
           </ion-item>
@@ -47,7 +48,7 @@
       <ion-col>
 
 
-        <button  round ion-button class="submit-btn" color='white' full type="submit" [disabled]="!loginForm.form.valid">Ingresar
+        <button  round ion-button class="submit-btn" color='dark' full type="submit" [disabled]="!loginForm.form.valid">Ingresar
         </button>
       </ion-col>
     </ion-row>

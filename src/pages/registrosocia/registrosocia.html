@@ -18,9 +18,9 @@
  <form (ngSubmit)="enviasocia(user)" [formGroup]="todo">
 
  
-      
+       <ion-label padding>Nombre</ion-label>
       <ion-item>
-              <ion-label>Nombre</ion-label>
+             
             <ion-input  formControlName="nombre"  name='nombre' id="loginField" type="text" required [(ngModel)] = "user.nombre"></ion-input>
       </ion-item>
 <!-- 
@@ -31,15 +31,18 @@
       </ion-item>
  -->
 
- 
+       <ion-label padding>Email</ion-label>
       <ion-item>
-            <ion-label>Email</ion-label>
+
             <ion-input  formControlName="email"  name='email' id="loginField" type="email"  [(ngModel)] = "user.email"></ion-input>
       </ion-item>
 
+
+
+       <ion-label padding>Telefono</ion-label>
       <ion-item>
 
-            <ion-label>Telefono</ion-label>
+           
             <ion-input  formControlName="telefono"  name='telefono' id="loginField" type="number"  [(ngModel)] = "user.telefono"></ion-input>
       </ion-item>
 
@@ -65,9 +68,9 @@
             <ion-input placeholder="Distrito"  formControlName="distrito"   id="loginField" type="text" required name='distrito'  [(ngModel)] = "user.distrito"></ion-input>
       </ion-item> -->
 
-
+       <ion-label padding>Distrito</ion-label>
       <ion-item>
-      <ion-label>Distrito</ion-label>
+     
       <ion-select  formControlName="distrito"   id="loginField" type="text" required name='distrito'  [(ngModel)] = "user.distrito">
       <ion-option *ngFor="let d of distrito" [value]="d">{{d.nombre}}</ion-option>
 
@@ -94,16 +97,19 @@
 
 
       
-
+      <ion-label padding>Deja tu mensaje</ion-label>
       <ion-item>
-      <ion-label>Deja tu mensaje</ion-label>
+      
       <ion-textarea  name='comentario' formControlName="comentario"   id="loginField" type="text" required [(ngModel)] = "user.comentario"></ion-textarea>
       </ion-item>
 
 
-           <!--  <ion-item>
-            <ion-input placeholder="Terminos y Condiciones"  formControlName="direccion"   id="loginField" type="text" required [(ngModel)] = "user.terminos"></ion-input>
-      </ion-item> -->
+
+
+  
+
+
+    
 
 
 
@@ -111,24 +117,24 @@
 
      
 
+        <ion-label padding>Escoje tu categoria</ion-label>
 
-
-    <!--    <ion-item ion-item *ngFor="let item of categoria">
+       <ion-item ion-item *ngFor="let item of categoria">
 
 
 
        {{item.nombre}} 
 
 
-     <ion-icon style='float:right;font-size: 27px;' *ngIf="!item.check" name="ios-checkmark-circle-outline"  (click)='agregacarrito(item);item.check=true'></ion-icon>
-     <ion-icon  style='float:right;font-size: 27px;' *ngIf="item.check" name="ios-checkmark-circle"  (click)='quitacarrito(item);item.check=false'></ion-icon> 
+     <ion-icon style='float:right;font-size: 27px;' *ngIf="!item.check" name="ios-checkmark-circle"  (click)='quitacarrito(item);item.check=true'></ion-icon>
+     <ion-icon  style='float:right;font-size: 27px;' *ngIf="item.check" name="ios-checkmark-circle-outline"  (click)='agregacarrito(item);item.check=false'></ion-icon> 
 
       <p [hidden]="!item.muestradescripcion"  class='detallesubcategoria'> {{item.descripcion}}</p>
 
 
 
   </ion-item>
- -->
+ 
      
     
 

@@ -120,7 +120,12 @@ this.registrosociaPage = RegistrosociaPage;
 
 
   
-  
+  perfil(){
+
+     this.navCtrl.push(PerfilPage);
+
+
+  }
 
 
 

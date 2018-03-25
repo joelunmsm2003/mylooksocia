@@ -2,7 +2,7 @@
 
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color='dark'>
     <ion-title>Perfil</ion-title>
   </ion-navbar>
 
@@ -34,32 +34,39 @@
 
 <ion-list padding>
 
-  <ion-item>
-    <ion-label fixed>Nombre</ion-label>
-    <ion-input type="text" value="" [(ngModel)]="nombre"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label fixed>Email</ion-label>
-    <ion-input type="text" [(ngModel)]="email"></ion-input>
-  </ion-item>
-
-   <ion-item>
-    <ion-label fixed>Especialidad</ion-label>
-    <ion-input type="text" [(ngModel)]="especialidad"></ion-input>
-  </ion-item>
-
-
-  <ion-item>
-    <ion-label fixed>Telefono</ion-label>
-    <ion-input type="text" [(ngModel)]="telefono"></ion-input>
-  </ion-item>
-
-
   <ion-item >
     <ion-label>En Linea</ion-label>
     <ion-toggle color='dark'></ion-toggle>
   </ion-item>
+
+  <ion-label padding >Nombre</ion-label>
+  <ion-item>
+    
+    <ion-input type="text" value="" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+
+     <ion-label padding >Email</ion-label>
+  <ion-item>
+ 
+    <ion-input type="text" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+
+    <ion-label padding >Especialidad</ion-label>
+   <ion-item>
+  
+    <ion-input type="text" [(ngModel)]="especialidad"></ion-input>
+  </ion-item>
+
+    <ion-label padding >Telefono</ion-label>
+  <ion-item>
+  
+    <ion-input type="text" [(ngModel)]="telefono"></ion-input>
+  </ion-item>
+
+
+
 
  
 
@@ -68,7 +75,7 @@
   <button ion-button full round color='dark'>Guardar</button>
 
  -->
-   <ion-item  (click)='calificacion()'>
+<!--    <ion-item  (click)='calificacion()'>
     <ion-label fixed >Calificacion</ion-label>
     <ion-icon>arrow</ion-icon>
     
@@ -83,7 +90,7 @@
     <ion-label fixed>Notificaciones</ion-label>
     
   </ion-item>
-
+ -->
 
   
 

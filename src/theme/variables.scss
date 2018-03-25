@@ -43,9 +43,7 @@ $colors: (
 );
 
 
-.text-input-md {
-    text-align: right;
-}
+
 
 // App iOS Variables
 // --------------------------------------------------
@@ -93,7 +91,11 @@ $colors: (
 @import "noto-sans";
 
 
+ion-input{
 
+        border: 1px solid #5f5d5d;
+    border-radius: 4px;
+}
 // Slider Menu Cateforias
 .categorias-slider{
 
@@ -116,8 +118,8 @@ $colors: (
 }
 
 ion-app.md [padding] {
-    padding: 16px;
-    //background: #fff !important;
+   padding-bottom: 0px !important;
+    padding-top: 0px !important;
 }
 
 .categorias-slider li {
@@ -136,6 +138,13 @@ flex: 1;
     justify-content: flex-start;
     font-family: 'Varela Round';
         background: #f7f7f7;
+}
+
+ion-label{
+
+
+font-family: "Varela Round";
+
 }
 
 .picker-md .picker-wrapper {
