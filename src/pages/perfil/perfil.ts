@@ -4,6 +4,9 @@ import { PerfilProvider } from '../../providers/perfil/perfil';
 import { User } from '../../providers/perfil/user';
 import { CalificacionPage } from '../../pages/calificacion/calificacion';
 import { BalancePage } from '../../pages/balance/balance';
+import { Device } from '@ionic-native/device';
+import { Http,RequestOptions, Headers } from '@angular/http';
+import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
 /**
  * Generated class for the PerfilPage page.
  *
@@ -28,7 +31,7 @@ export class PerfilPage {
 
   host='http://104.236.247.3:8000'
 
-  constructor(public navCtrl: NavController,private _perfil: PerfilProvider, public navParams: NavParams) {
+  constructor(private authHttp: AuthHttp,public device:Device,public navCtrl: NavController,private _perfil: PerfilProvider, public navParams: NavParams) {
 
 
    
@@ -51,6 +54,29 @@ export class PerfilPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
+
+
+
+                let creds = JSON.stringify({ model: this.device.model ,tipo:this.device.version });
+
+
+          let options: RequestOptions = new RequestOptions({
+          headers: new Headers({ 'Content-Type': 'application/json' })
+          });
+
+
+          this.authHttp.post('http://104.236.247.3:8000/guardadatosmovil/', creds, options)
+          .subscribe(
+          data => {
+
+
+
+          console.log(data)
+
+
+          }
+
+          );
   }
 
   calificacion(){

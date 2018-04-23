@@ -12,48 +12,61 @@
 
 <div id="map"></div>
 
-<!--   <ion-card>
-
-  <ion-card-content> -->
-
-  <ion-row>
 
 
-    <ion-col *ngIf='photo_cliente' col-3 ><img src='{{host}}/{{photo_cliente}}'></ion-col>
 
 
-    <ion-col *ngIf='cliente__photo_facebook' col-3 style='background: #fff !important;'><img src='{{cliente__photo_facebook}}'></ion-col>
 
-    <ion-col col-9 padding style='background: #fff;'>
+  <ion-item-group>
 
-    <ion-row>{{codigo}}</ion-row>
-    <ion-row>{{nombre_cliente}}</ion-row>
-      <ion-row>{{fecha}} {{fecha_inicio}}</ion-row>
-      <ion-row>Servicio {{estado_nombre}}</ion-row>
-
-  
-
-
-    </ion-col>
-
-  
-   </ion-row> 
- 
-  
-  <ion-row padding>{{reference}}</ion-row>
-
-  <ion-item *ngFor="let item of ped">
+     <ion-item *ngFor="let item of ped">
 
     
    <ion-row>
-    <!-- <ion-col col-2><img src='{{host}}/{{item.subcategoria__categoria__icono}}'></ion-col> -->
     <ion-col col-10><h2>{{item.subcategoria__nombre}}</h2>
     <p>S/. {{item.subcategoria__precio}}</p></ion-col>
    </ion-row>
 
   </ion-item>
 
-  <ion-row padding *ngIf='estado_nombre=="Pendiente"'>
+
+  <ion-item>Codigo: {{codigo}}</ion-item>
+
+  <ion-item>Nombre: {{nombre_cliente}}</ion-item>
+
+
+  <ion-item>Estado: {{estado_nombre}}</ion-item>
+
+  <ion-item>
+  <ion-row> {{reference}}</ion-row></ion-item>
+
+
+  <ion-item>Dia: {{fecha}}</ion-item>
+
+
+  <ion-item>Hora: {{fecha_inicio}}</ion-item>
+
+  </ion-item-group>
+
+
+  <ion-item style='padding: 100px;
+    padding-top: 0px;padding-bottom: 0px;'>
+
+
+    <ion-col *ngIf='photo_cliente' col-3 ><img style='border-radius:50%;' src='{{host}}/{{photo_cliente}}'></ion-col>
+
+
+    <ion-col *ngIf='cliente__photo_facebook' col-3 style='background: #fff !important;'><img style='border-radius:50%;' src='{{cliente__photo_facebook}}'></ion-col>
+
+   </ion-item>
+
+
+
+  
+  
+
+ 
+  <ion-row padding *ngIf='estado_nombre=="Confirmado"'>
 
   <button  block ion-button color="dark" round (click)='aceptar()'>Aceptar</button>
   </ion-row>

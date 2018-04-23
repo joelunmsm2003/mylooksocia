@@ -13,7 +13,7 @@ ionic build android --release
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore /home/joel/lima/platforms/android/build/outputs/apk/android-release-unsigned.apk alias_name
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore /home/joel/socia/platforms/android/build/outputs/apk/android-release-unsigned.apk alias_name
 
 zip -d /home/joel/myApp/platforms/android/build/outputs/apk/android-debug.apk  META-INF/\*
 

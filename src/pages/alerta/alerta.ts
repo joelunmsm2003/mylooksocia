@@ -262,6 +262,10 @@ export class AlertaPage {
 
             console.log(data)
 
+
+          this.navCtrl.popToRoot();
+
+
        }
 
       );
@@ -283,16 +287,22 @@ export class AlertaPage {
 
       data => {
 
-                        
-                this._servicio.detalleservicio(this.navParams.get("servicio"))
-                      .subscribe(data => {
+                 this.navCtrl.popToRoot();
+   
+                // this._servicio.detalleservicio(this.navParams.get("servicio"))
+                //       .subscribe(data => {
 
       
-                      this.estado_nombre =data[0]['estado__nombre']
+                //       this.estado_nombre =data[0]['estado__nombre']
 
 
 
-                      });
+                      
+
+
+
+
+                //       });
 
                    }
 
@@ -304,10 +314,13 @@ export class AlertaPage {
   aceptar(){
 
 
+
+
       		this._servicio.detalleservicio(this.navParams.get("servicio"))
       		.subscribe(data => 
 
       		this.enviaracliente(data)
+
 
      
       		);

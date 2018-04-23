@@ -50,7 +50,18 @@ console.log('entre mierdaaaaaaaaaaaaaaaaa')
   
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MapPage');
+    console.log('ionViewDidLoad HomePge');
+  }
+
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter HomePage');
+  }
+
+  ionViewWillEnter(){
+
+    console.log('ionViewWillEnter HomePage');
+
   }
 
      iradetalle(data){

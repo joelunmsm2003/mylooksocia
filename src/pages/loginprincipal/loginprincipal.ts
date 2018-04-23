@@ -56,7 +56,11 @@ export class LoginprincipalPage {
 
   grupo:any;
 
-  @ViewChild(Nav) nav: Nav;
+  rootPage:any=HistorialsociaPage
+
+  logeado:any=false;
+
+  //@ViewChild(Nav) nav: Nav;
 
 
    model = new User(null,null);
@@ -64,7 +68,7 @@ export class LoginprincipalPage {
    
 
 
-  constructor(public navCtrl: NavController,public alertCtrl: AlertController,private view:ViewController,private _perfil: PerfilProvider,public appCtrl: App,private http: Http, private authHttp: AuthHttp,public storage: Storage) {
+  constructor(private nav: NavController,public alertCtrl: AlertController,private view:ViewController,private _perfil: PerfilProvider,public appCtrl: App,private http: Http, private authHttp: AuthHttp,public storage: Storage) {
 
     
     this.registroprincipalPage=RegistroprincipalPage
@@ -140,46 +144,30 @@ function sleep (time) {
 
                 // Do something after the sleep!
 
-                          this._perfil.miperfil()
-
-                          .subscribe(reference => {
+                          this.storage.get('token').then((val) => {
 
 
+                             if(val){
 
-                              this.storage.set('grupo', reference[0]['user__groups__name'])
+                                              
+                                     this.logeado=true
+                                     
 
+                                     //this.nav.setRoot(HistorialsociaPage);
 
+                                     //this.appCtrl.getRootNav().push(HistorialsociaPage);
 
-                            if(reference[0]['user__groups__name']=='Socia'){
+                                     this.nav.popToRoot();
 
-                              this.appCtrl.getRootNav().push(HistorialsociaPage);
+                                     //this.nav.setRoot(HistorialsociaPage);
 
-
-                            }
-                            else{
-
-                                this.appCtrl.getRootNav().push(IntroPage);
-
-                            }
-
-                          
+                                     //this.nav.popToRoot()
 
 
+                                   }
 
-                          }
-
-                          
-                          
-
-
-
-
-
-                          );
-
-
-                         
-
+                              });
+     
 
 
                   });
@@ -189,7 +177,6 @@ function sleep (time) {
 
  
        
-         console.log('jwtHelper',JSON.stringify(jwtHelper.decodeToken(JSON.parse(data["_body"]).token)))
 
       },
       error=>{
@@ -210,6 +197,10 @@ closeModal(){
 }
 
 
+tetas(){
 
+
+  
+}
 
 }

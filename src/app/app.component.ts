@@ -25,7 +25,7 @@ import { PerfilProvider } from '../providers/perfil/perfil';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = IntroPage;
 
   data:any;
 
@@ -76,13 +76,14 @@ export class MyApp {
 
            if(val){
 
-             
-      
+                      
 
-                        this.appCtrl.getRootNav().push(PerfilPage);
-
+                        //this.appCtrl.getRootNav().push(HomePage);
 
 
+
+
+                          //this.nav.setRoot(HistorialsociaPage);
 
    
              

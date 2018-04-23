@@ -257,7 +257,7 @@ function sleep (time) {
 
               let alert = this.alertCtrl.create({
               title: 'My Look Xpress',
-              subTitle: 'Recibimos su solicitud de inscripcion en breve nos contactaremos con usted via email o wasap para una evaluacion',
+              subTitle: 'Recibimos su solicitud de inscripcion en breve nos contactaremos con usted via email o whatsapp para una evaluacion',
               buttons: ['OK']
               });
               alert.present();
@@ -266,7 +266,7 @@ function sleep (time) {
 
               this.spinner.dismiss();
 
-              this.appCtrl.getRootNav().push(PerfilPage);
+              this.navCtrl.popToRoot();
 
 
 

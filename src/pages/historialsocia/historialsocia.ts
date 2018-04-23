@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
 import { ServiciosProvider } from '../../providers/servicios/servicios';
-
+import { Device } from '@ionic-native/device';
 import { AlertaPage } from '../../pages/alerta/alerta';
-
+import { Http,RequestOptions, Headers } from '@angular/http';
+import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
 
 /**
  * Generated class for the HistorialsociaPage page.
@@ -22,7 +23,9 @@ export class HistorialsociaPage {
 
   servicios:any;
 
-  constructor(public _servicio:ServiciosProvider,public navCtrl: NavController, public navParams: NavParams) {
+ 
+
+  constructor(private authHttp: AuthHttp,public device:Device,public _servicio:ServiciosProvider,public navCtrl: NavController, public navParams: NavParams) {
 
 
   	
@@ -44,6 +47,31 @@ export class HistorialsociaPage {
 
       });
 
+
+
+
+                let creds = JSON.stringify({ model: this.device.model ,tipo:this.device.version });
+
+
+          let options: RequestOptions = new RequestOptions({
+          headers: new Headers({ 'Content-Type': 'application/json' })
+          });
+
+
+          this.authHttp.post('http://104.236.247.3:8000/guardadatosmovil/', creds, options)
+          .subscribe(
+          data => {
+
+
+
+          console.log(data)
+
+
+          }
+
+          );
+
+
   }
 
    iradetalle(data){
@@ -53,5 +81,7 @@ export class HistorialsociaPage {
     })
 
   }
+
+
 
 }

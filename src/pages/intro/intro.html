@@ -1,49 +1,51 @@
-<ion-header>
-
-  <ion-navbar color='white'>
-    <ion-title>Elige tu especialidad</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content>
-
-	
-	
-
+ <ion-menu [content]="content"  >
  
-
-<div style='margin-top:-2px;'>
-<div  *ngFor = 'let c of categoria' (click)='iraventas(c)' >
+  
 
 
-
-      <a style="display:block;" >
-        <img src="{{host}}{{c.photo}}"  style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
-     
-         <div class='cat'>{{c.nombre}}</div>
-
-
-
-      </a>
-
-     
-
-<div style="height:2px;"></div>
-
- </div>
-
- </div>
-
-<div style='height: 50px'></div>
-
-</ion-content>
-
-
-<mytabs></mytabs>
+  <ion-toolbar color='dark'>
+    <ion-title>Menu</ion-title>
 
 
 
 
+    
 
+  </ion-toolbar>
+ 
+  <ion-content  color='dark' >
+
+  <ion-list>
+
+      <div  style='margin-top: 58px;'></div>
+      <button  ion-item (click)="openPage(homePage)">
+        Inicio
+      </button>
+      <button  ion-item (click)="openPage(perfilPage)">
+        Perfil
+      </button>
+      <button   ion-item (click)="openPage(historialsociaPage)">
+        Servicios
+      </button>
+
+       <button   ion-item (click)="salir()">
+        Salir
+      </button>
+      <!-- <button  ion-item (click)="openPage(loginprincipalPage)">
+        Ingresar
+      </button> -->
+      <!-- <button ion-item (click)="openPage(eventsPage)">
+        Events
+      </button>
+      <button ion-item (click)="closeMenu()">
+        Close Menu
+      </button> -->
+    </ion-list>
+
+
+
+  </ion-content>
+ 
+</ion-menu>
+
+<ion-nav  id="nav" [root]="xxxPage" #content swipe-back-enabled="false"></ion-nav>
