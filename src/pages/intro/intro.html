@@ -19,7 +19,11 @@
 
       <div  style='margin-top: 58px;'></div>
       <button  ion-item (click)="openPage(homePage)">
-        Inicio
+        Home
+      </button>
+
+      <button  ion-item (click)="openPage(loginprincipalPage)">
+        Ingresar
       </button>
       <button  ion-item (click)="openPage(perfilPage)">
         Perfil
@@ -28,9 +32,40 @@
         Servicios
       </button>
 
+
+
+      <button   ion-item >
+        <ion-label>En Linea</ion-label>
+
+        <ion-toggle color='dark'></ion-toggle>
+      </button>
+
+      <button ion-item (click)="openPage(calificacionPage)">
+   
+      Calificación
+      </button>
+
+      <button ion-item (click)="openPage(balancePage)" >
+   
+      Balance Actualizado
+      </button>
+
+      <button ion-item >
+   
+      Notificaciones
+      </button>
+
+
+
+
        <button   ion-item (click)="salir()">
         Salir
       </button>
+
+
+    
+    
+
       <!-- <button  ion-item (click)="openPage(loginprincipalPage)">
         Ingresar
       </button> -->
@@ -40,7 +75,7 @@
       <button ion-item (click)="closeMenu()">
         Close Menu
       </button> -->
-    </ion-list>
+  </ion-list>
 
 
 

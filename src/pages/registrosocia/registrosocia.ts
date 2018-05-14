@@ -252,7 +252,7 @@ function sleep (time) {
 
 
 
-              this.authenticate(this.email,this.email)
+              this.authenticate(this.email,'rosa0000')
 
 
               let alert = this.alertCtrl.create({

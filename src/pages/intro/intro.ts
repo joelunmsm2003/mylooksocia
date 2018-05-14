@@ -18,8 +18,10 @@ import { HistorialsociaPage } from '../historialsocia/historialsocia';
 import { RegistroPage } from '../../pages/registro/registro';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { AyudaPage } from '../ayuda/ayuda';
+import { InicioPage } from '../inicio/inicio';
 import { LoginprincipalPage } from '../loginprincipal/loginprincipal';
-
+import { BalancePage } from '../balance/balance';
+import { CalificacionPage } from '../calificacion/calificacion';
 import { Http,RequestOptions, Headers } from '@angular/http';
 import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
 
@@ -54,6 +56,8 @@ host='http://104.236.247.3:8000/'
 
   ventaPage:any;
 
+  calificacionPage:any;
+
 
   historialPage:any;
   ayudaPage:any;
@@ -61,12 +65,16 @@ host='http://104.236.247.3:8000/'
 
   loginPage:any;
 
+  balancePage:any;
+
   registroPage:any;
 
   logeado:any=false;
 
 nologeado:any;
 user_grupo:any;
+
+inicioPage:any;
 
 loginprincipalPage:any;
 
@@ -84,7 +92,11 @@ this._categoria.getcategorias()
 
     this.introPage = IntroPage;
 
+    this.inicioPage=InicioPage;
+
     this.servicioPage = ServicioPage;
+
+    this.calificacionPage = CalificacionPage;
 
 
     this.historialPage = HistorialPage;
@@ -100,6 +112,9 @@ this._categoria.getcategorias()
     this.ayudaPage=AyudaPage;
 
     this.xxxPage=HomePage;
+
+    this.balancePage=BalancePage;
+
 
 
      this.storage.get('token').then((val) => {
@@ -124,6 +139,9 @@ this._categoria.getcategorias()
  
 
   }
+
+
+
 
 
  loginModal() {
@@ -201,7 +219,7 @@ tetas(){
 
     console.log('saliendo..')
 
-    this.storage.remove('token')
+   // this.storage.remove('token')
 
 
     

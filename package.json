@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "5.0.0",
     "@ionic-native/core": "4.3.2",
     "@ionic-native/device": "^4.6.0",
+    "@ionic-native/facebook": "^4.7.0",
     "@ionic-native/geolocation": "^4.5.2",
     "@ionic-native/google-maps": "^4.5.2",
     "@ionic-native/in-app-purchase": "^4.5.2",
@@ -33,6 +34,7 @@
     "angular2-jwt": "^0.2.3",
     "cordova-android": "6.3.0",
     "cordova-plugin-device": "^1.1.4",
+    "cordova-plugin-facebook4": "^2.1.0",
     "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-googlemaps": "^2.1.1",
     "cordova-plugin-ionic-webview": "^1.1.16",
@@ -66,7 +68,12 @@
       "cordova-plugin-ionic-webview": {},
       "onesignal-cordova-plugin": {},
       "cordova-plugin-geolocation": {},
-      "cordova-plugin-x-socialsharing": {}
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "2095454767354495",
+        "APP_NAME": "My Look Xpress",
+        "ANDROID_SDK_VERSION": "4.+"
+      }
     },
     "platforms": [
       "android"

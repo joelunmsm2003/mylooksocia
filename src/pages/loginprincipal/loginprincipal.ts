@@ -157,9 +157,9 @@ function sleep (time) {
 
                                      //this.appCtrl.getRootNav().push(HistorialsociaPage);
 
-                                     this.nav.popToRoot();
+                                     //this.nav.popToRoot();
 
-                                     //this.nav.setRoot(HistorialsociaPage);
+                                     this.nav.setRoot(HistorialsociaPage);
 
                                      //this.nav.popToRoot()
 

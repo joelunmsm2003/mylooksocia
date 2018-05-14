@@ -6,7 +6,7 @@ import { Http,RequestOptions, Headers } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PerfilPage } from '../pages/perfil/perfil';
-
+import { InicioPage } from '../pages/inicio/inicio';
 import { IntroPage } from '../pages/intro/intro';
 import { LoginprincipalPage } from '../pages/loginprincipal/loginprincipal';
 import { LoginPage } from '../pages/login/login';
@@ -25,7 +25,7 @@ import { PerfilProvider } from '../providers/perfil/perfil';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = IntroPage;
+  rootPage: any = InicioPage;
 
   data:any;
 

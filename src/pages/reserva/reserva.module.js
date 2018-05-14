@@ -12,9 +12,7 @@ var ReservaPageModule = /** @class */ (function () {
     }
     ReservaPageModule = __decorate([
         NgModule({
-            declarations: [
-                ReservaPage,
-            ],
+            declarations: [],
             imports: [
                 IonicPageModule.forChild(ReservaPage),
             ],

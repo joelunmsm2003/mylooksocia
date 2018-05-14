@@ -5,35 +5,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './login/login';
-import { SidebarComponent } from './sidebar/sidebar';
 import { HttpModule } from '@angular/http';
-import { SliderComponent } from './slider/slider';
-import { CategoriasComponent } from './categorias/categorias';
-import { ReservaComponent } from './reserva/reserva';
-import { SociaComponent } from './socia/socia';
 var ComponentsModule = /** @class */ (function () {
     function ComponentsModule() {
     }
     ComponentsModule = __decorate([
         NgModule({
-            declarations: [
-                LoginComponent,
-                SidebarComponent,
-                SliderComponent,
-                CategoriasComponent,
-                ReservaComponent,
-                SociaComponent,
-            ],
+            declarations: [],
             imports: [HttpModule],
-            exports: [,
-                LoginComponent,
-                SidebarComponent,
-                SliderComponent,
-                CategoriasComponent,
-                ReservaComponent,
-                SociaComponent,
-            ]
+            exports: []
         })
     ], ComponentsModule);
     return ComponentsModule;

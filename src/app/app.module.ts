@@ -19,6 +19,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { RegistroPage } from '../pages/registro/registro';
 import { DetalleservicioPage } from '../pages/detalleservicio/detalleservicio';
 import { AyudaPage } from '../pages/ayuda/ayuda';
+import { InicioPage } from '../pages/inicio/inicio';
 import { RegistrosociaPage } from '../pages/registrosocia/registrosocia';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
@@ -91,6 +92,7 @@ export function getAuthHttp(http) {
     SplashPage,
     HistorialsociaPage,
     UbicacionPage,
+    InicioPage,
     RegistroPage,
     CategoriasComponent,
     MytabsComponent,
@@ -124,6 +126,7 @@ export function getAuthHttp(http) {
     SplashPage,
     RegistroPage,
     TabsPage,
+    InicioPage,
     PerfilPage,
     RegistrosociaPage,
 

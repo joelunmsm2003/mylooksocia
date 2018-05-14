@@ -23,14 +23,16 @@ var CategoriasProvider = /** @class */ (function () {
         console.log('Hello CategoriasProvider Provider');
     }
     CategoriasProvider.prototype.getcategorias = function () {
-        return this._http.get('http://codigito.com:8000/categoria')
-            .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log(JSON.stringify(data)); });
+        return this._http.get('http://104.236.247.3:8000/categoria/1')
+            .map(function (response) { return response.json(); });
     };
     CategoriasProvider.prototype.getsubcategorias = function (categoria) {
-        return this._http.get('http://codigito.com:8000/subcategoria/' + categoria)
-            .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log(JSON.stringify(data)); });
+        return this._http.get('http://104.236.247.3:8000/subcategoria/' + categoria)
+            .map(function (response) { return response.json(); });
+    };
+    CategoriasProvider.prototype.getdistrito = function () {
+        return this._http.get('http://104.236.247.3:8000/distritos/')
+            .map(function (response) { return response.json(); });
     };
     CategoriasProvider = __decorate([
         Injectable(),

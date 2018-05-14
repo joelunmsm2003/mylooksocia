@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.mylookexpresssocia" version="0.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.mylookexpresssocia" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>My Look Xpress Socia</name>
     <description>La app de la Socia </description>
     <author email="joel@gmail.com" href="http://ionicframework.com/">Codigito Team</author>
@@ -92,4 +92,9 @@
     <plugin name="onesignal-cordova-plugin" spec="^2.2.5" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
+    <plugin name="cordova-plugin-facebook4" spec="^2.1.0">
+        <variable name="APP_ID" value="2095454767354495" />
+        <variable name="APP_NAME" value="My Look Xpress" />
+        <variable name="ANDROID_SDK_VERSION" value="4.+" />
+    </plugin>
 </widget>

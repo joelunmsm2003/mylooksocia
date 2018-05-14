@@ -7,92 +7,57 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/timeout';
-import { AuthHttp } from 'angular2-jwt';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { VentaPage } from '../venta/venta';
-import { GoogleMaps, GoogleMapsEvent } from '@ionic-native/google-maps';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+import { LoginprincipalPage } from '../../pages/loginprincipal/loginprincipal';
+import { RegistrosociaPage } from '../../pages/registrosocia/registrosocia';
+/**
+ * Generated class for the MapPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, http, authHttp, googleMaps) {
+    function HomePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.http = http;
-        this.authHttp = authHttp;
-        this.googleMaps = googleMaps;
-        this.API_URL = 'http://xiencias.com:3000';
+        this.navParams = navParams;
+        this.addressElement = null;
+        this.address = '';
+        console.log('entre mierdaaaaaaaaaaaaaaaaa');
     }
     HomePage.prototype.ionViewDidLoad = function () {
-        this.loadMap();
-        //this.nav.push(ListPage);
+        console.log('ionViewDidLoad HomePge');
     };
-    HomePage.prototype.loadMap = function () {
-        var _this = this;
-        var mapOptions = {
-            camera: {
-                target: {
-                    lat: 43.0741904,
-                    lng: -89.3809802 // default location
-                },
-                zoom: 18,
-                tilt: 30
-            }
-        };
-        this.map = this.googleMaps.create('map_canvas', mapOptions);
-        this.http.get('http://codigito.com:8000/categoria')
-            .subscribe(function (data) { });
-        // Wait the MAP_READY before using any methods.
-        this.map.one(GoogleMapsEvent.MAP_READY)
-            .then(function () {
-            // Now you can use all methods safely.
-            _this.getPosition();
-        })
-            .catch(function (error) {
-            console.log(error);
+    HomePage.prototype.ionViewDidEnter = function () {
+        console.log('ionViewDidEnter HomePage');
+    };
+    HomePage.prototype.ionViewWillEnter = function () {
+        console.log('ionViewWillEnter HomePage');
+    };
+    HomePage.prototype.iradetalle = function (data) {
+        this.navCtrl.push(RegistrosociaPage, {
+            servicio: data.id,
         });
     };
-    HomePage.prototype.getPosition = function () {
-        var _this = this;
-        this.map.getMyLocation()
-            .then(function (response) {
-            _this.map.moveCamera({
-                target: response.latLng
-            });
-            _this.map.addMarker({
-                title: 'My Position',
-                icon: 'blue',
-                animation: 'DROP',
-                position: response.latLng
-            });
-        })
-            .catch(function (error) {
-            console.log(error);
-        });
-    };
-    HomePage.prototype.teta = function (data) {
-        console.log('000', data);
-        this.nav.push(VentaPage);
-    };
-    HomePage.prototype.securedPing = function (data) {
-        var myHeader = new Headers();
-        myHeader.append('Content-Type', 'application/json');
-        this.authHttp.get(this.API_URL + "/agente/")
-            .subscribe(function (data) {
-            console.log('user', data);
+    HomePage.prototype.irlogin = function () {
+        this.navCtrl.push(LoginprincipalPage, {
+            servicio: '9',
         });
     };
     __decorate([
-        ViewChild('myNav'),
-        __metadata("design:type", NavController)
-    ], HomePage.prototype, "nav", void 0);
+        ViewChild('map'),
+        __metadata("design:type", ElementRef)
+    ], HomePage.prototype, "mapElement", void 0);
+    __decorate([
+        ViewChild('searchbar', { read: ElementRef }),
+        __metadata("design:type", ElementRef)
+    ], HomePage.prototype, "searchbar", void 0);
     HomePage = __decorate([
         Component({
             selector: 'page-home',
-            templateUrl: 'home.html'
+            templateUrl: 'home.html',
         }),
-        __metadata("design:paramtypes", [NavController, Http, AuthHttp, GoogleMaps])
+        __metadata("design:paramtypes", [NavController, NavParams])
     ], HomePage);
     return HomePage;
 }());

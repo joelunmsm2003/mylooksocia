@@ -12,9 +12,7 @@ var VentaPageModule = /** @class */ (function () {
     }
     VentaPageModule = __decorate([
         NgModule({
-            declarations: [
-                VentaPage,
-            ],
+            declarations: [],
             imports: [
                 IonicPageModule.forChild(VentaPage),
             ],

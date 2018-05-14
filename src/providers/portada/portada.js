@@ -17,9 +17,8 @@ var PortadaProvider = /** @class */ (function () {
         console.log('Hello PortadaProvider Provider');
     }
     PortadaProvider.prototype.getfotosdeportada = function () {
-        return this._http.get('http://codigito.com:8000/portadaphoto')
-            .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log('uuuuu', JSON.stringify(data)); });
+        return this._http.get('http://104.236.247.3:8000/portadaphoto')
+            .map(function (response) { return response.json(); });
     };
     PortadaProvider = __decorate([
         Injectable(),

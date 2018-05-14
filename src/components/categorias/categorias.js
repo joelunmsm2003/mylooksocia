@@ -21,12 +21,20 @@ var CategoriasComponent = /** @class */ (function () {
     function CategoriasComponent(_photo) {
         var _this = this;
         this._photo = _photo;
-        this.host = 'http://codigito.com:8000/';
+        this.host = 'http://104.236.247.3:8000/';
         this._photo.getfotosdeportada()
-            .subscribe(function (data) { return _this.photo = data; });
+            .subscribe(function (data) {
+            _this.photo1 = data[0].photo;
+            _this.photo2 = data[1].photo;
+            _this.photo3 = data[2].photo;
+            _this.photo4 = data[3].photo;
+        });
     }
-    CategoriasComponent.prototype.ngAfterViewInit = function () {
-        this.slides.autoplay = true;
+    // ngAfterViewInit() {
+    //   this.slides.autoplay = true;
+    // }
+    CategoriasComponent.prototype.ionViewDidLoad = function () {
+        //setTimeout(()=>this.slides.startAutoplay())
     };
     __decorate([
         ViewChild(Slides),
