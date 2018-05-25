@@ -6,7 +6,7 @@ import { RegistroPage } from '../registro/registro';
 import { Storage } from '@ionic/storage';
 import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
 import { ServicioPage } from '../servicio/servicio';
-
+import { PerfilProvider } from '../../providers/perfil/perfil';
 import {
   GoogleMaps,
   GoogleMap,
@@ -45,10 +45,16 @@ export class ReservaPage {
   data:any;
   referencia:any;
 
+  nombre: any;
+  email: any;
+  telefono:any;
+  photo:any;
+  i:any;
+
   API_URL='http://104.236.247.3:8000'
 
 
-  constructor(public modalCtrl: ModalController,public appCtrl: App,private authHttp: AuthHttp,private storage: Storage,public http: Http,public navCtrl: NavController, public navParams: NavParams,private googleMaps: GoogleMaps) {}
+  constructor(private _perfil: PerfilProvider,public modalCtrl: ModalController,public appCtrl: App,private authHttp: AuthHttp,private storage: Storage,public http: Http,public navCtrl: NavController, public navParams: NavParams,private googleMaps: GoogleMaps) {}
 
 
 
@@ -57,14 +63,6 @@ export class ReservaPage {
 
 
   ionViewDidLoad() {
-
-      this.storage.get('pedido').then((val) => {
-
-      this.pedidos=val
-
-  });
-
-
 
 
 

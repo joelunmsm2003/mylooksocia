@@ -17,7 +17,7 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.
 
 zip -d /home/joel/myApp/platforms/android/build/outputs/apk/android-debug.apk  META-INF/\*
 
-./zipalign -v 4 /home/joel/lima/platforms/android/build/outputs/apk/android-release-unsigned.apk mylook.apk
+./zipalign -v 4 /home/joel/socia/platforms/android/build/outputs/apk/android-release-unsigned.apk ms.apk
 
 /home/joel/Escritorio/gradle-4.2/
 
