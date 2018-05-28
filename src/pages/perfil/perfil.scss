@@ -27,8 +27,8 @@ page-perfil {
 
 
    //background: url(http://stealherstyle.net/wp-content/uploads/2017/12/bella-hadid-makeup-24-500x500.jpg);
-    height: 40%;
-    background:#444;
+    //height: 20px;
+   
 
     // filter: blur(7px);
     //   filter: grayscale(100%);
@@ -37,9 +37,13 @@ page-perfil {
 }
 
   .perfil{
-    top: -90px;
-    position: absolute;
-    padding: 116px;
+    top: -70px;
+    
+    text-align: center;
+    padding: 8em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: #222;
 		}
 	
 .side-menu {

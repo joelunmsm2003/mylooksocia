@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { Categoria } from './categoria';
 import { Distrito } from './distrito';
 import { Subcategoria } from './subcategoria';
-
+import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
 /*
   Generated class for the CategoriasProvider provider.
 
@@ -19,7 +19,7 @@ import { Subcategoria } from './subcategoria';
 @Injectable()
 export class CategoriasProvider {
 
-  constructor(public _http: Http) {
+  constructor(private authHttp: AuthHttp,public _http: Http) {
     console.log('Hello CategoriasProvider Provider');
   }
 
@@ -43,6 +43,13 @@ export class CategoriasProvider {
    }
 
 
+    panico(){
+
+       this.authHttp.get('http://104.236.247.3:8000/panico/')
+    .map((response: Response) => response.json())
+
+ 
+    }
 
 
 

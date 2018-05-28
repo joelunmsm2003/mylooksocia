@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController, Platform, Nav,Menu
 import { ModalController } from 'ionic-angular';
 import { CategoriasProvider } from '../../providers/categorias/categorias';
 import { Categoria } from '../../providers/categorias/categoria';
-
+import { CallNumber } from '@ionic-native/call-number';
 import { Storage } from '@ionic/storage';
 
 import { VentaPage } from '../venta/venta';
@@ -60,6 +60,7 @@ host='http://104.236.247.3:8000/'
   historialPage:any;
   ayudaPage:any;
   inicioPage:any;
+  homePage:any;
 
   calificacionPage:any;
 
@@ -78,7 +79,7 @@ loginprincipalPage:any;
 historialsociaPage:any;
 
 
-  constructor(public menuCtrl: MenuController,private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private callNumber: CallNumber,public menuCtrl: MenuController,private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
 
 
 this._categoria.getcategorias()
@@ -98,6 +99,7 @@ this._categoria.getcategorias()
 
     this.calificacionPage = CalificacionPage
 
+    this.homePage = HomePage
 
     this.historialPage = HistorialPage;
 
@@ -137,7 +139,20 @@ this._categoria.getcategorias()
 
   }
 
+  panico() {
 
+
+ this.authHttp.get('http://104.236.247.3:8000/panico/')
+
+      .subscribe(
+        data => console.log(data)
+      );
+
+    this.callNumber.callNumber("910759370", true)
+  .then(res => console.log('Launched dialer!', res))
+  .catch(err => console.log('Error launching dialer', err));
+
+ }
   
 
 
