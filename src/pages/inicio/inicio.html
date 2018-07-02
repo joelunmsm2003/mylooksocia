@@ -18,16 +18,35 @@
   <ion-list>
 
       <div  style='margin-top: 58px;'></div>
-      <button  ion-item (click)="openPage(homePage)">
-        Home
+
+
+
+
+      <button ion-item (click)="panico()" style='background: #161616;
+    color: #fff;'>
+   
+      Emergencia
+
+      <ion-icon name="disc" style ='float: right;
+
+    padding-top: -10px;
+    color: #f16b6b;
+}'></ion-icon>
       </button>
+     
 
       <button  ion-item (click)="openPage(loginprincipalPage)">
         Ingresar
       </button>
+
+      <button  ion-item (click)="openPage(homePage)">
+        Inscripcion
+      </button>
+
       <button  ion-item (click)="openPage(perfilPage)">
         Perfil
       </button>
+
       <button   ion-item (click)="openPage(historialsociaPage)">
         Servicios
       </button>
@@ -43,6 +62,8 @@
       Calificación
       </button>
 
+
+
       <button ion-item (click)="openPage(balancePage)" >
    
       Balance Actualizado
@@ -52,6 +73,14 @@
    
       Notificaciones
       </button>
+
+         <a ion-item style='
+    text-decoration: none;' href="https://api.whatsapp.com/send?phone=51910759370&text=Hola"> Contáctenos <ion-icon name="logo-whatsapp" style='color: #25d366;float:right;'></ion-icon></a>
+
+    <a ion-item style='text-decoration: none;' href="tel:+910759370"> Llamanos <ion-icon name="call" style='color: #000;float:right;'></ion-icon></a>
+
+
+         
 
 
        <button   ion-item (click)="salir()">

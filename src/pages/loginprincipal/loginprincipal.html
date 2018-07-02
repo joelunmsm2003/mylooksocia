@@ -5,7 +5,7 @@
     </button>
 
 
-      <ion-title>Inicio</ion-title>
+      <ion-title>Ingresar</ion-title>
 
     
 
@@ -18,30 +18,38 @@
 
 
 
-<div padding>
+<div >
     <div   center>
 
 
+    <div style='padding: 127px;
+    padding-top: 21px;
+    padding-bottom: 21px;' >
+      
+    <img src='http://xiencias.com/html/logo.png' style='border: 2px solid #fff;
+    border-radius: 10px;box-shadow: 0 6px 75px 9px #f7ecec;
+    background-color: white;'>
+
+    </div>
+
+      <ion-list>
 
 
-      <ion-list >
-
-
-        <p style='color: #000;
-    font-family: "Varela Round";text-align: center;'>Ingrese usuario y contraseña para iniciar sesion</p>
+ <!--        <p style='color: #000;
+    font-family: "Varela Round";text-align: center;'>Ingrese usuario y contraseña para iniciar sesion</p> -->
   <form #loginForm="ngForm" (ngSubmit)="authenticate(model.username,model.password)" autocomplete="off">
     <ion-row>
       <ion-col>
         <ion-list >
-            <ion-label padding color='dark'>Usuario</ion-label>
-          <ion-item>
+            <ion-label padding color='light'>USUARIO</ion-label>
+          <ion-item style='background: none;'>
 
-            <ion-input placeholder="Email" name="username" id="loginField" type="text" required [(ngModel)] = "model.username" #email></ion-input>
+            <ion-input  style='color: #fff !important;' placeholder="Email" name="username" id="loginField" type="text" required [(ngModel)] = "model.username" #email></ion-input>
           </ion-item>
 
-          <ion-label padding color='dark'>Password</ion-label>
-          <ion-item>
-            <ion-input placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)] = "model.password"></ion-input>
+          <ion-label padding color='light'>CLAVE</ion-label>
+          <ion-item style='background: none;'>
+            <ion-input  style='color: #fff !important;' placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)] = "model.password"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>

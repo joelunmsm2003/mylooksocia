@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 
 import { ReservaPage } from '../pages/reserva/reserva';
 import { VentaPage } from '../pages/venta/venta';
-
+import { CallNumber } from '@ionic-native/call-number';
 import { IntroPage } from '../pages/intro/intro';
 import { AlertaPage } from '../pages/alerta/alerta';
 import { CalificacionPage } from '../pages/calificacion/calificacion';
@@ -142,6 +142,7 @@ export function getAuthHttp(http) {
     Geolocation,
     SocialSharing,
     OneSignal,
+    CallNumber,
     Device,
     {
       provide: AuthHttp,
