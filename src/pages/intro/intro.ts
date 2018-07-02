@@ -19,6 +19,7 @@ import { RegistroPage } from '../../pages/registro/registro';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { AyudaPage } from '../ayuda/ayuda';
 import { InicioPage } from '../inicio/inicio';
+import { CompartirPage } from '../compartir/compartir';
 import { LoginprincipalPage } from '../loginprincipal/loginprincipal';
 import { BalancePage } from '../balance/balance';
 import { CalificacionPage } from '../calificacion/calificacion';
@@ -79,6 +80,7 @@ inicioPage:any;
 loginprincipalPage:any;
 
 historialsociaPage:any;
+compartirPage:any;
 
 
   constructor(public menuCtrl: MenuController,private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
@@ -102,6 +104,8 @@ this._categoria.getcategorias()
     this.historialPage = HistorialPage;
 
     this.historialsociaPage = HistorialsociaPage;
+
+    this.compartirPage = CompartirPage;
 
     this.loginPage = LoginPage;
 
