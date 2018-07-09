@@ -43,33 +43,33 @@
         Inscripcion
       </button>
 
-      <button  *ngIf='logeado' ion-item (click)="openPage(perfilPage)">
+      <button   ion-item (click)="openPage(perfilPage)">
         Perfil
       </button>
 
-      <button  *ngIf='logeado'  ion-item (click)="openPage(historialsociaPage)">
+      <button    ion-item (click)="openPage(historialsociaPage)">
         Servicios
       </button>
 
-      <button  *ngIf='logeado' ion-item >
+      <button   ion-item >
         <ion-label>En Linea</ion-label>
 
         <ion-toggle color='dark' [(ngModel)] = "linea" (click)='cambia(linea)'></ion-toggle>
       </button>
 
-      <button *ngIf='logeado' ion-item (click)="openPage(calificacionPage)">
+      <button  ion-item (click)="openPage(calificacionPage)">
    
       Calificación
       </button>
 
 
 
-      <button *ngIf='logeado' ion-item (click)="openPage(balancePage)" >
+      <button  ion-item (click)="openPage(balancePage)" >
    
       Balance Actualizado
       </button>
 
-      <button *ngIf='logeado' ion-item >
+      <button  ion-item >
    
       Notificaciones
       </button>
