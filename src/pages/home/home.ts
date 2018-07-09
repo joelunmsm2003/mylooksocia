@@ -8,10 +8,12 @@ import { Storage } from '@ionic/storage';
 
 import { CuandoPage } from '../cuando/cuando';
 import { VentaPage } from '../venta/venta';
+import { PerfilPage } from '../perfil/perfil';
 
 import { IntroPage } from '../../pages/intro/intro';
 import { LoginprincipalPage } from '../../pages/loginprincipal/loginprincipal';
 import { RegistrosociaPage } from '../../pages/registrosocia/registrosocia';
+import { HistorialsociaPage } from '../../pages/historialsocia/historialsocia';
 
 
 
@@ -38,10 +40,11 @@ export class HomePage {
   cuandoPage: any;
 
   ventaPage:any;
+  logeado:any=false;
 
  
 
-  constructor(public navCtrl: NavController,public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public navParams: NavParams,public storage: Storage,) {
 console.log('entre mierdaaaaaaaaaaaaaaaaa')
   }
 
@@ -50,7 +53,21 @@ console.log('entre mierdaaaaaaaaaaaaaaaaa')
   
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePge');
+    
+ this.storage.get('token').then((val) => {
+
+                              if(val){
+
+                                this.logeado=true
+
+                                  
+                              }
+                              
+                            });
+
+
+    console.log('ionViewDidLoad HomePage');
+   
   }
 
 
@@ -61,6 +78,22 @@ console.log('entre mierdaaaaaaaaaaaaaaaaa')
   ionViewWillEnter(){
 
     console.log('ionViewWillEnter HomePage');
+
+    this.storage.get('registrosocia').then((val) => {
+
+         console.log('registrosocia',val)
+
+         if(val==true){
+
+             //this.rootPage = PerfilPage;
+
+             this.navCtrl.push(HistorialsociaPage);
+
+             this.storage.set('registrosocia', false)
+
+         }
+
+      });
 
   }
 

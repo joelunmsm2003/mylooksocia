@@ -49,14 +49,7 @@
   <ion-item-sliding>
     
     <ion-item *ngFor="let item of servicios" >
-      <ion-avatar *ngIf ="item.cliente__photo_facebook" item-start>
-       <img src="{{item.cliente__photo_facebook}}" alt="">
-      </ion-avatar>
-
-
-      <ion-avatar *ngIf ="item.cliente__photo" item-start>
-          <img src="http://estokealo.com:8000/{{item.cliente__photo}}" alt="">
-      </ion-avatar>
+     
 
 
 
@@ -65,16 +58,18 @@
 
       <ion-row (click)='iradetalle(item)'>
 
+<!-- 
+      <ion-col col-2>{{item.id}}</ion-col> -->
 
-      <ion-col col-2>{{item.id}}</ion-col>
+      
 
-      <ion-col col-6>
+      <ion-col col-8> {{item.pedidos[0].subcategoria__nombre}} </ion-col>
+
+      <ion-col col-4>
         
       {{item.fecha}} {{item.fecha_inicio}}
 
       </ion-col>
-
-      <ion-col col-4> <h2> {{item.cliente__nombre}} </h2></ion-col>
 
       
       </ion-row>

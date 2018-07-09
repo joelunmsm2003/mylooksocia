@@ -7,6 +7,7 @@ import { BalancePage } from '../../pages/balance/balance';
 import { Device } from '@ionic-native/device';
 import { Http,RequestOptions, Headers } from '@angular/http';
 import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the PerfilPage page.
  *
@@ -28,13 +29,23 @@ export class PerfilPage {
   perfil:User[];
   user_grupo:any;
   correo:any;
+  logeado:any=false;
 
   host='http://104.236.247.3:8000'
 
-  constructor(private authHttp: AuthHttp,public device:Device,public navCtrl: NavController,private _perfil: PerfilProvider, public navParams: NavParams) {
+  constructor(private storage: Storage,private authHttp: AuthHttp,public device:Device,public navCtrl: NavController,private _perfil: PerfilProvider, public navParams: NavParams) {
 
 
-   
+     this.storage.get('logeado').then((val) => {
+
+                              if(val){
+
+                                this.logeado=true
+
+                                  
+                              }
+                              
+                            });
 
       this._perfil.miperfil()
       .subscribe(data => {
@@ -77,6 +88,11 @@ export class PerfilPage {
           }
 
           );
+
+
+
+
+
   }
 
   calificacion(){
