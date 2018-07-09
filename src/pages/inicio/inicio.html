@@ -35,41 +35,41 @@
       </button>
      
 
-      <button  ion-item (click)="openPage(loginprincipalPage)">
+      <button  *ngIf='!logeado' ion-item (click)="openPage(loginprincipalPage)">
         Ingresar
       </button>
 
-      <button  ion-item (click)="openPage(homePage)">
+      <button  ion-item (click)="abrimodal()">
         Inscripcion
       </button>
 
-      <button  ion-item (click)="openPage(perfilPage)">
+      <button  *ngIf='logeado' ion-item (click)="openPage(perfilPage)">
         Perfil
       </button>
 
-      <button   ion-item (click)="openPage(historialsociaPage)">
+      <button  *ngIf='logeado'  ion-item (click)="openPage(historialsociaPage)">
         Servicios
       </button>
 
-            <button   ion-item >
+      <button  *ngIf='logeado' ion-item >
         <ion-label>En Linea</ion-label>
 
-        <ion-toggle color='dark'></ion-toggle>
+        <ion-toggle color='dark' [(ngModel)] = "linea" (click)='cambia(linea)'></ion-toggle>
       </button>
 
-      <button ion-item (click)="openPage(calificacionPage)">
+      <button *ngIf='logeado' ion-item (click)="openPage(calificacionPage)">
    
       Calificación
       </button>
 
 
 
-      <button ion-item (click)="openPage(balancePage)" >
+      <button *ngIf='logeado' ion-item (click)="openPage(balancePage)" >
    
       Balance Actualizado
       </button>
 
-      <button ion-item >
+      <button *ngIf='logeado' ion-item >
    
       Notificaciones
       </button>

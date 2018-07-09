@@ -156,7 +156,7 @@ this._categoria.getcategorias()
 
   ionViewDidLoad() {
 
-    console.log('intro page-intro....','ionViewDidLoad')
+    console.log('page-intro....','ionViewDidLoad')
 
   
   }
@@ -164,14 +164,14 @@ this._categoria.getcategorias()
 
   ionViewDidEnter() {
 
-    console.log('intro page-intro....','ionViewDidEnter')
+    console.log('page-intro....','ionViewDidEnter')
 
   
   }
 
   ionViewWillEnter(){
 
-    console.log('Intro ionViewWillEnter')
+    console.log('page-intro....ionViewWillEnter')
 
 
 

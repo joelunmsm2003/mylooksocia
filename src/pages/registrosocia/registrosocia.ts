@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http,RequestOptions, Headers } from '@angular/http';
-import { App,IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { App,IonicPage, NavController, NavParams,AlertController,ViewController, Platform } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { CategoriasProvider } from '../../providers/categorias/categorias';
 import { Categoria } from '../../providers/categorias/categoria';
@@ -8,6 +8,8 @@ import { Distrito } from '../../providers/categorias/distrito';
 import { SpinnerProvider } from '../../providers/spinner/spinner'
 import { Storage } from '@ionic/storage';
 import { IntroPage } from '../../pages/intro/intro';
+import { LoginprincipalPage } from '../../pages/loginprincipal/loginprincipal';
+import { HistorialsociaPage } from '../../pages/historialsocia/historialsocia';
 import { PerfilPage } from '../../pages/perfil/perfil';
 import { Device } from '@ionic-native/device';
 
@@ -41,7 +43,7 @@ export class RegistrosociaPage {
 
 
 
-  constructor(private authHttp: AuthHttp,public device:Device,public appCtrl: App,public storage: Storage,public spinner: SpinnerProvider,public alertCtrl: AlertController,private http: Http,private _categoria: CategoriasProvider,private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public platform: Platform,private view:ViewController,private authHttp: AuthHttp,public device:Device,public appCtrl: App,public storage: Storage,public spinner: SpinnerProvider,public alertCtrl: AlertController,private http: Http,private _categoria: CategoriasProvider,private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
 
   	 this.todo = this.formBuilder.group({
       email: ['', Validators.required],
@@ -86,6 +88,15 @@ export class RegistrosociaPage {
   }
 
   pedido = new Array();
+
+
+
+
+
+closeModal(){
+
+  this.view.dismiss()
+}
 
 
 
@@ -229,7 +240,7 @@ function sleep (time) {
 
         this.email= data['_body'].replace('"','').replace('"','')
 
-
+this.navCtrl.popToRoot();
 
 
         if(this.email==0){
@@ -264,9 +275,20 @@ function sleep (time) {
 
               this.storage.set('registrosocia', true)
 
+              this.platform.exitApp();
+
               this.spinner.dismiss();
 
+              this.storage.set('logeado', true)
+
+
+              this.view.dismiss()
+
               this.navCtrl.popToRoot();
+
+              //this.navCtrl.push(LoginprincipalPage);
+
+              //this.appCtrl.getRootNav().push(InicioPage);
 
 
 

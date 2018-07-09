@@ -11,6 +11,7 @@ import { PerfilProvider } from '../../providers/perfil/perfil';
 import { UbicacionPage } from '../../pages/ubicacion/ubicacion';
 import { PerfilPage } from '../perfil/perfil';
 import { HomePage } from '../home/home';
+import { RegistrosociaPage } from '../registrosocia/registrosocia';
 import { LoginPage } from '../login/login';
 import { ServicioPage } from '../../pages/servicio/servicio';
 import { HistorialPage } from '../historial/historial';
@@ -78,8 +79,10 @@ loginprincipalPage:any;
 
 historialsociaPage:any;
 
+linea:any;
 
-  constructor(private callNumber: CallNumber,public menuCtrl: MenuController,private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(private view:ViewController,private callNumber: CallNumber,public menuCtrl: MenuController,private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
 
 
 this._categoria.getcategorias()
@@ -113,7 +116,8 @@ this._categoria.getcategorias()
 
     this.ayudaPage=AyudaPage;
 
-    this.xxxPage=HomePage;
+    this.xxxPage=LoginprincipalPage;
+
 
 
      this.storage.get('token').then((val) => {
@@ -130,12 +134,35 @@ this._categoria.getcategorias()
       });
 
 
+       this.storage.get('logeado').then((val) => {
+
+                              if(val){
+
+                                this.logeado=true
+
+                                  
+                              }
+                              
+                            });
+
+
+
+      this._perfil.miperfil()
+      .subscribe(data => {
+
+          this.linea=data[0]['linea']
+
+          console.log('linea.....',this.linea)
+
+      })
+
+
+
+
    
 
 
-  
 
- 
 
   }
 
@@ -153,8 +180,22 @@ this._categoria.getcategorias()
   .catch(err => console.log('Error launching dialer', err));
 
  }
-  
 
+ cambia(data){
+
+   console.log(data)
+
+
+      this._perfil.enlinea(data)
+      .subscribe(data => {
+
+         
+          console.log('linea.....',data)
+
+      })
+
+ 
+ }
 
  loginModal() {
    let profileModal = this.modalCtrl.create(LoginprincipalPage, { userId: 8675309 });
@@ -164,38 +205,39 @@ this._categoria.getcategorias()
 
   ionViewDidLoad() {
 
-    console.log('intro page-intro....','ionViewDidLoad')
+    console.log(' page-inicio....','ionViewDidLoad')
 
   
+  }
+  abrimodal(){
+
+
+     let profileModal = this.modalCtrl.create(RegistrosociaPage);
+   profileModal.present();
+
+
   }
 
 
   ionViewDidEnter() {
 
-    console.log('intro page-intro....','ionViewDidEnter')
+    console.log(' page-inicio....','ionViewDidEnter')
 
   
   }
 
+  closeModal(){
+
+  this.view.dismiss()
+}
+
+
   ionViewWillEnter(){
 
-    console.log('Intro ionViewWillEnter')
+    console.log('page-inicio. ionViewWillEnter')
 
 
 
-       // this.storage.get('grupo').then((val) => {
-
-
-       //                        console.log('Historiamskksls',val)
-
-       //                        if(val=='Socia'){
-
-       //                          this.navCtrl.push(HistorialsociaPage);
-
-                                  
-       //                        }
-                              
-       //                      });
 
 
 
@@ -233,7 +275,9 @@ tetas(){
 
     this.storage.remove('token')
 
+        this.storage.remove('logeado')
 
+  this.storage.remove('registrosocia')
     
     //this.navCtrl.push(IntroPage);
 

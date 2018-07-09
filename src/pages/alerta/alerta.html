@@ -10,7 +10,6 @@
 <ion-content>
 
 
-<div id="map"></div>
 
 
 
@@ -22,29 +21,49 @@
      <ion-item *ngFor="let item of ped">
 
     
-   <ion-row>
-    <ion-col col-10><h2>{{item.subcategoria__nombre}}</h2>
-    <p>S/. {{item.subcategoria__precio}}</p></ion-col>
-   </ion-row>
-
+   
+  {{item.subcategoria__nombre}}
+    <span style='float: right;
+    margin-right: -30px;
+    position: absolute;
+    right: 48px;'> S/. {{item.subcategoria__precio}}</span>
+   
   </ion-item>
 
 
-  <ion-item>Codigo: {{codigo}}</ion-item>
+  <ion-item>Codigo: <span style='float: right;
+    margin-right: -30px;
+    position: absolute;
+    right: 48px;'> {{codigo}}</span></ion-item>
 
-  <ion-item>Nombre: {{nombre_cliente}}</ion-item>
+  <ion-item>Nombre: <span style='float: right;
+    margin-right: -30px;
+    position: absolute;
+    right: 48px;'> {{nombre_cliente}}</span></ion-item>
 
 
-  <ion-item>Estado: {{estado_nombre}}</ion-item>
+  <ion-item>Estado: <span style='float: right;
+    margin-right: -30px;
+    position: absolute;
+    right: 48px;'> {{estado_nombre}}</span></ion-item>
 
   <ion-item>
-  <ion-row> {{reference}}</ion-row></ion-item>
+  <span style='float: right;
+    margin-right: -30px;
+    position: absolute;
+    right: 48px;'>{{reference}}</span></ion-item>
 
 
-  <ion-item>Dia: {{fecha}}</ion-item>
+  <ion-item>Dia: <span style='float: right;
+    margin-right: -30px;
+    position: absolute;
+    right: 48px;'> {{fecha}}</span></ion-item>
 
 
-  <ion-item>Hora: {{fecha_inicio}}</ion-item>
+  <ion-item>Hora: <span style='float: right;
+    margin-right: -30px;
+    position: absolute;
+    right: 48px;'> {{fecha_inicio}}</span></ion-item>
 
   </ion-item-group>
 
@@ -53,11 +72,11 @@
     padding-top: 0px;padding-bottom: 0px;'>
 
 
-    <ion-col *ngIf='photo_cliente' col-3 ><img style='border-radius:50%;' src='{{host}}/{{photo_cliente}}'></ion-col>
+    <!-- <ion-col *ngIf='photo_cliente' col-3 ><img style='border-radius:50%;' src='{{host}}/{{photo_cliente}}'></ion-col>
+ -->
 
-
-    <ion-col *ngIf='cliente__photo_facebook' col-3 style='background: #fff !important;'><img style='border-radius:50%;' src='{{cliente__photo_facebook}}'></ion-col>
-
+    <!-- <ion-col *ngIf='cliente__photo_facebook' col-3 style='background: #fff !important;'><img style='border-radius:50%;' src='{{cliente__photo_facebook}}'></ion-col>
+ -->
    </ion-item>
 
 
@@ -75,6 +94,9 @@
 
   <button  block ion-button color="dark" round (click)='cancelar()'>Cancelar</button>
   </ion-row>
+
+  <div id="map"></div>
+
 <!-- </ion-card-content>
 
 

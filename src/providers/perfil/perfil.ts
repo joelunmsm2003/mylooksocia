@@ -35,4 +35,18 @@ export class PerfilProvider {
     } );
   }
 
+
+  enlinea(data) {
+
+
+        return this.authHttp.post('http://104.236.247.3:8000/linea/', JSON.stringify({ linea: data }))
+            .map((response: Response) => {
+                
+                return response.json();
+                
+            });
+   
+
+        }
+
 }

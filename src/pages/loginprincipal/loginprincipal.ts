@@ -10,11 +10,9 @@ import { IntroPage } from '../../pages/intro/intro';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { HistorialsociaPage } from '../../pages/historialsocia/historialsocia';
 import { PerfilProvider } from '../../providers/perfil/perfil';
-
+import { Storage } from '@ionic/storage';
 import { App,IonicPage, NavController,Nav,ViewController,AlertController } from 'ionic-angular';
 
-
-import { Storage } from '@ionic/storage';
 import { RegistroprincipalPage } from '../registroprincipal/registroprincipal';
 import { RegistrosociaPage } from '../registrosocia/registrosocia';
 /**

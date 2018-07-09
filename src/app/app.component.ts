@@ -29,6 +29,8 @@ export class MyApp {
 
   data:any;
 
+  logeado:any=false;
+
   public grupo:any;
 
   url = 'http://104.236.247.3:8000'
@@ -71,26 +73,30 @@ export class MyApp {
  
     ];
 
-      this.storage.get('token').then((val) => {
+     this.storage.get('registrosocia').then((val) => {
 
+         console.log('registrosocia',val)
 
-           if(val){
+         if(val==true){
 
-                      
+             //this.rootPage = PerfilPage;
 
-                        //this.appCtrl.getRootNav().push(HomePage);
+             this.navCtrl.push(PerfilPage);
 
-
-
-
-                          //this.nav.setRoot(HistorialsociaPage);
-
-   
-             
-
-           }
+         }
 
       });
+
+        this.storage.get('token').then((val) => {
+
+                              if(val){
+
+                                this.logeado=true
+
+                                  
+                              }
+                              
+                            });
 
   }
 
@@ -101,6 +107,15 @@ export class MyApp {
     console.log('App components.','ionViewWillEnter')
 
   }
+
+
+   ionViewDidLoad(){
+
+
+    console.log('App components.','ionViewDidLoad')
+
+  }
+
 
 
 
