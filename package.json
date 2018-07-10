@@ -20,7 +20,7 @@
     "@angular/http": "5.0.0",
     "@angular/platform-browser": "5.0.0",
     "@angular/platform-browser-dynamic": "5.0.0",
-    "@ionic-native/call-number": "^4.7.0",
+    "@ionic-native/call-number": "^4.9.0",
     "@ionic-native/core": "4.3.2",
     "@ionic-native/device": "^4.6.0",
     "@ionic-native/facebook": "^4.7.0",
