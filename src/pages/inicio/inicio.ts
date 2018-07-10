@@ -125,7 +125,18 @@ this._categoria.getcategorias()
 
            if(val){
 
-                  this.xxxPage=HistorialsociaPage;    
+                  this.xxxPage=HistorialsociaPage;  
+
+                        this._perfil.miperfil()
+      .subscribe(data => {
+
+          this.linea=data[0]['linea']
+
+          console.log('linea.....',this.linea)
+
+      })
+
+  
              
              
 
@@ -147,14 +158,7 @@ this._categoria.getcategorias()
 
 
 
-      this._perfil.miperfil()
-      .subscribe(data => {
 
-          this.linea=data[0]['linea']
-
-          console.log('linea.....',this.linea)
-
-      })
 
 
 

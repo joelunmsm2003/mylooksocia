@@ -2,6 +2,7 @@
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:/home/andy/Escritorio/android-studio-ide-173.4819257-linux/android-studio/gradle/gradle-4.4/bin
 
 ionic build android --release
 
