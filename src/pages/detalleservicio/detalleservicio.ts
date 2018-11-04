@@ -25,7 +25,7 @@ export class DetalleservicioPage {
 	cliente__photo_facebook:any;
 	cliente__photo:any;
 
-	host='http://104.236.247.3:8000'
+	host='http://138.68.230.137:8000'
 
   constructor(public _servicio:ServiciosProvider,public navCtrl: NavController, public navParams: NavParams) {
 

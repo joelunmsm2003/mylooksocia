@@ -44,7 +44,7 @@ categoria: Categoria[];
 
   xxxPage:any
 
-host='http://104.236.247.3:8000/'
+host='http://138.68.230.137:8000/'
 
   reservaPage: any;
 
@@ -173,7 +173,7 @@ this._categoria.getcategorias()
   panico() {
 
 
- this.authHttp.get('http://104.236.247.3:8000/panico/')
+ this.authHttp.get('http://138.68.230.137:8000/panico/')
 
       .subscribe(
         data => console.log(data)

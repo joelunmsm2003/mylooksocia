@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage,Nav,App, NavController, NavParams,Tabs, Platform } from 'ionic-angular';
 import { ReservaPage } from '../../pages/reserva/reserva';
 import { UbicacionPage } from '../../pages/ubicacion/ubicacion';
@@ -26,6 +26,9 @@ import { AyudaPage } from '../../pages/ayuda/ayuda';
   templateUrl: 'mytabs.html'
 })
 export class MytabsComponent {
+
+
+  @ViewChild(Nav) nav: Nav;
 
   	text: string;
 
@@ -122,10 +125,22 @@ this.registrosociaPage = RegistrosociaPage;
   
   perfil(){
 
-     this.navCtrl.push(PerfilPage);
+     //this.navCtrl.push(PerfilPage);
+
+       this.nav.setRoot(PerfilPage);
 
 
   }
+
+    servicios(){
+
+     //this.navCtrl.push(PerfilPage);
+
+       this.nav.setRoot(HistorialsociaPage);
+
+
+  }
+
 
 
 

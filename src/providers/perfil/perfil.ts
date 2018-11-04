@@ -23,14 +23,14 @@ export class PerfilProvider {
 
 
    miperfil(): Observable<User[]> {
-      return this.authHttp.get('http://104.236.247.3:8000/miperfil/')
+      return this.authHttp.get('http://138.68.230.137:8000/miperfil/')
       .map((response: Response) => <User[]> response.json())
 
    }
 
 
     getperfil() {
-    return this.authHttp.get('http://104.236.247.3:8000/miperfil/').map((res) => {
+    return this.authHttp.get('http://138.68.230.137:8000/miperfil/').map((res) => {
       return res.json();
     } );
   }
@@ -39,7 +39,7 @@ export class PerfilProvider {
   enlinea(data) {
 
 
-        return this.authHttp.post('http://104.236.247.3:8000/linea/', JSON.stringify({ linea: data }))
+        return this.authHttp.post('http://138.68.230.137:8000/linea/', JSON.stringify({ linea: data }))
             .map((response: Response) => {
                 
                 return response.json();

@@ -24,20 +24,20 @@ export class CategoriasProvider {
   }
 
   getcategorias(): Observable<Categoria[]> {
-      return this._http.get('http://104.236.247.3:8000/categoria/1')
+      return this._http.get('http://138.68.230.137:8000/categoria/1')
       .map((response: Response) => <Categoria[]> response.json())
 
    }
 
   getsubcategorias(categoria): Observable<Subcategoria[]> {
-      return this._http.get('http://104.236.247.3:8000/subcategoria/'+categoria)
+      return this._http.get('http://138.68.230.137:8000/subcategoria/'+categoria)
       .map((response: Response) => <Subcategoria[]> response.json())
   
    }
 
 
   getdistrito(): Observable<Distrito[]> {
-      return this._http.get('http://104.236.247.3:8000/distritos/')
+      return this._http.get('http://138.68.230.137:8000/distritos/')
       .map((response: Response) => <Distrito[]> response.json())
   
    }
@@ -45,7 +45,7 @@ export class CategoriasProvider {
 
     panico(){
 
-       this.authHttp.get('http://104.236.247.3:8000/panico/')
+       this.authHttp.get('http://138.68.230.137:8000/panico/')
     .map((response: Response) => response.json())
 
  

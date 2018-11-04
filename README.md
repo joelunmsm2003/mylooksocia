@@ -2,7 +2,9 @@
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH=$PATH:/home/andy/Escritorio/android-studio-ide-173.4819257-linux/android-studio/gradle/gradle-4.4/bin
+export GRADLE_HOME=/home/andy/Escritorio/android-studio-ide-173.4819257-linux/android-studio/gradle/gradle-4.4
+export PATH=$PATH:$GRADLE_HOME/bin
+
 
 ionic build android --release
 
@@ -27,3 +29,14 @@ sudo ln -sf /home/joel/Escritorio/gradle-4.2/ /usr/bin/gradle
 curl --include \
      --header "Authorization: Basic OGQyNTllMmUtMmY2Ny00ZGQxLWEzNWMtMjM5NTdlNjM0ZTc3" \
      "https://onesignal.com/api/v1/players?app_id=6d06ccb5-60c3-4a76-83d5-9363fbf6b40a&limit=300&offset=0">/home/dd.txt
+
+
+
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore /home/andy/mylooksocia/platforms/android/build/outputs/apk/android-release-unsigned.apk alias_name
+
+
+./zipalign -v 4 /home/andy/mylooksocia/platforms/android/build/outputs/apk/android-release-unsigned.apk mylook55.apk
+
+

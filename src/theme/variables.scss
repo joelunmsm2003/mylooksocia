@@ -36,9 +36,9 @@ $app-direction: ltr;
 $colors: (
   primary:    #488aff,
   secondary:  #32db64,
-  danger:     #f53d3d,
+  danger:     #222,
   light:      #f4f4f4,
-  dark:       #222,
+  dark:       #4e2f6f,
   white:      #fff
 );
 
@@ -93,7 +93,6 @@ $colors: (
 
 ion-input{
 
-        border: 1px solid #5f5d5d;
     border-radius: 4px;
 }
 // Slider Menu Cateforias

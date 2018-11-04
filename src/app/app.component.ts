@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { App,Nav,NavController,Platform, AlertController } from 'ionic-angular';
+import { App,Nav,NavController,Platform, AlertController,ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Http,RequestOptions, Headers } from '@angular/http';
@@ -33,14 +33,14 @@ export class MyApp {
 
   public grupo:any;
 
-  url = 'http://104.236.247.3:8000'
+  url = 'http://138.68.230.137:8000'
 
   pages: Array<{title: string, component: any}>;
 
   
   navCtrl:NavController
 
-  constructor(private _perfil: PerfilProvider,private storage:Storage,private alertCtrl: AlertController,private authHttp: AuthHttp,public appCtrl: App,public platform: Platform,private oneSignal: OneSignal, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public modalCtrl: ModalController,private _perfil: PerfilProvider,private storage:Storage,private alertCtrl: AlertController,private authHttp: AuthHttp,public appCtrl: App,public platform: Platform,private oneSignal: OneSignal, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     
      this.platform.ready().then(() => {
 
@@ -127,7 +127,9 @@ export class MyApp {
   private handlerNotifications(){
 
 
-  this.oneSignal.startInit('6d06ccb5-60c3-4a76-83d5-9363fbf6b40a', '466431784640')
+
+
+  this.oneSignal.startInit('5a719e86-0589-4c3a-b1aa-9b698607f747', '349848950718')
   this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
   this.oneSignal.handleNotificationOpened()
   .subscribe(jsonData => {
@@ -152,9 +154,24 @@ export class MyApp {
 
      if(jsonData.notification.payload.additionalData.aceptaservicio){
 
-       
+       //alert(jsonData.notification.payload.additionalData.aceptaservicio)
 
-      this.appCtrl.getRootNav().push(AlertaPage, { servicio: jsonData.notification.payload.additionalData.aceptaservicio })
+        // let profileModal = this.modalCtrl.create(AlertaPage, {servicio: jsonData.notification.payload.additionalData.aceptaservicio});
+        // profileModal.onDidDismiss(data => {
+
+
+
+
+        // });
+        // profileModal.present();
+
+
+        //this.nav.setRoot(HistorialsociaPage);
+
+
+     this.appCtrl.getRootNav().push(AlertaPage, { servicio: jsonData.notification.payload.additionalData.aceptaservicio })
+
+      //this.navCtrl.push(AlertaPage, { servicio: jsonData.notification.payload.additionalData.aceptaservicio });
       
     }
 
@@ -180,7 +197,7 @@ export class MyApp {
       });
 
 
-      this.authHttp.post('http://104.236.247.3:8000/guardanotificacion/',creds,options)
+      this.authHttp.post('http://138.68.230.137:8000/guardanotificacion/',creds,options)
       .subscribe(
 
       data => {

@@ -36,7 +36,7 @@ var VentaPage = /** @class */ (function () {
         this.http = http;
         this.navParams = navParams;
         this.myVar = true;
-        this.host = 'http://104.236.247.3:8000/';
+        this.host = 'http://138.68.230.137:8000/';
         this.book = 0;
         this.precio = 0;
         this.pedido = new Array();
@@ -180,7 +180,7 @@ var VentaPage = /** @class */ (function () {
         var options = new RequestOptions({
             headers: new Headers({ 'Content-Type': 'application/json' })
         });
-        this.authHttp.post('http://104.236.247.3:8000/asignasocia/', creds, options)
+        this.authHttp.post('http://138.68.230.137:8000/asignasocia/', creds, options)
             .subscribe(function (data) {
         });
     };

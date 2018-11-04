@@ -1,27 +1,29 @@
 
-<ion-header>
+  <ion-header>
+    <ion-navbar color='dark'>
 
-  <ion-navbar color='dark'>
-    <ion-title>Detalle de servicio</ion-title>
-  </ion-navbar>
 
-</ion-header>
+
+      <ion-title> Detalle Servicio</ion-title>
+
+     
+
+    </ion-navbar>
+  </ion-header> 
 
 <ion-content>
 
 
-
-
-
-
-
-
   <ion-item-group>
 
+
+  
      <ion-item *ngFor="let item of ped">
 
     
+     <button full  ion-button color="dark" round (click)='finalizarservicio()' style='height:36px;'>Finalizar servicio</button>
    
+    <div style='height: 20px'></div>
   {{item.subcategoria__nombre}}
     <span style='float: right;
     margin-right: -30px;
@@ -47,12 +49,7 @@
     position: absolute;
     right: 48px;'> {{estado_nombre}}</span></ion-item>
 
-  <ion-item>
-  <span style='float: right;
-    margin-right: -30px;
-    position: absolute;
-    right: 48px;'>{{reference}}</span></ion-item>
-
+  
 
   <ion-item>Dia: <span style='float: right;
     margin-right: -30px;
@@ -65,6 +62,13 @@
     position: absolute;
     right: 48px;'> {{fecha_inicio}}</span></ion-item>
 
+
+    <div >
+
+  <ion-item>
+  <h6>{{reference}}</h6>
+</ion-item>
+</div>
   </ion-item-group>
 
 

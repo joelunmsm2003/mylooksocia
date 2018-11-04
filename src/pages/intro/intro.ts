@@ -45,7 +45,7 @@ categoria: Categoria[];
 
   xxxPage:any
 
-host='http://104.236.247.3:8000/'
+host='http://138.68.230.137:8000/'
 
   reservaPage: any;
 

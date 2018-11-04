@@ -124,7 +124,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-  this.http.post('http://104.236.247.3:8000/api-token-auth/', creds, options)
+  this.http.post('http://138.68.230.137:8000/api-token-auth/', creds, options)
     .subscribe(
       data => {
 

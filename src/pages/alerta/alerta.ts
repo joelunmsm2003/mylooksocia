@@ -38,7 +38,7 @@ export class AlertaPage {
   reservaPage: any;
   ubicacion:any;
 
-  host='http://104.236.247.3:8000'
+  host='http://138.68.230.137:8000'
 
 
   ped:any;
@@ -71,26 +71,11 @@ export class AlertaPage {
 
       this.reservaPage = ReservaPage;
 
-      //this.platform.ready().then(() => this.loadMap());
+      this.codigo=this.navParams.get("servicio")
 
-     
-      
+    
 
-
-  }
-
-
-  
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MapPage');
-
-    this.ubicacion='jsjsjsj'
-
-  
-
-
-     this._perfil.miperfil()
+       this._perfil.miperfil()
       .subscribe(data => {
 
 
@@ -100,15 +85,16 @@ export class AlertaPage {
       })
 
 
+
     this._servicio.detalleservicio(this.navParams.get("servicio"))
           .subscribe(data => {
 
 
-            console.log('detalllllle',data)
-
+             
 
                 this.ped=data[0]['pedidos']
-                this.codigo=data[0]['id']
+                
+
      
 
           this.photo_cliente=data[0]['cliente__photo']
@@ -116,6 +102,8 @@ export class AlertaPage {
            this.socia_id=data[0]['socia_id']
 
           this.nombre_cliente=data[0]['cliente__nombre']
+
+       
           this.fecha =data[0]['fecha']
           this.fecha_inicio = data[0]['fecha_inicio']
           this.cliente__photo_facebook =data[0]['cliente__photo_facebook']
@@ -163,6 +151,24 @@ export class AlertaPage {
 
 
           });
+
+
+     
+
+
+  }
+
+
+  
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MapPage');
+
+    this.ubicacion='jsjsjsj'
+
+  
+
+
 
           
 
@@ -244,6 +250,19 @@ export class AlertaPage {
   }
 
 
+  finalizarservicio(){
+
+
+     this._servicio.finalizaservicio(this.codigo)
+        .subscribe(data => {
+
+          console.log(data)
+
+        })
+
+  }
+
+
    enviaracliente(data){
 
   	let creds = JSON.stringify(data);
@@ -255,7 +274,7 @@ export class AlertaPage {
 
 
 
-          this.authHttp.post('http://104.236.247.3:8000/aceptarservicio/',creds,options)
+          this.authHttp.post('http://138.68.230.137:8000/aceptarservicio/',creds,options)
       .subscribe(
 
       data => {
@@ -282,7 +301,7 @@ export class AlertaPage {
 
 
 
-          this.authHttp.post('http://104.236.247.3:8000/cancelaserviciosocia',creds,options)
+          this.authHttp.post('http://138.68.230.137:8000/cancelaserviciosocia',creds,options)
       .subscribe(
 
       data => {

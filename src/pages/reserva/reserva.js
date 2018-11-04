@@ -33,7 +33,7 @@ var ReservaPage = /** @class */ (function () {
         this.navParams = navParams;
         this.googleMaps = googleMaps;
         this.rootPage = HomePage;
-        this.API_URL = 'http://104.236.247.3:8000';
+        this.API_URL = 'http://138.68.230.137:8000';
     }
     ReservaPage.prototype.ionViewDidLoad = function () {
         var _this = this;

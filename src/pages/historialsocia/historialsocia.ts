@@ -58,7 +58,7 @@ export class HistorialsociaPage {
           });
 
 
-          this.authHttp.post('http://104.236.247.3:8000/guardadatosmovil/', creds, options)
+          this.authHttp.post('http://138.68.230.137:8000/guardadatosmovil/', creds, options)
           .subscribe(
           data => {
 
@@ -77,7 +77,7 @@ export class HistorialsociaPage {
    iradetalle(data){
 
     this.navCtrl.push(AlertaPage, {
-      servicio: data.id,
+      servicio: data.id
     })
 
   }

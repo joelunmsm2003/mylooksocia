@@ -51,7 +51,7 @@ export class ReservaPage {
   photo:any;
   i:any;
 
-  API_URL='http://104.236.247.3:8000'
+  API_URL='http://138.68.230.137:8000'
 
 
   constructor(private _perfil: PerfilProvider,public modalCtrl: ModalController,public appCtrl: App,private authHttp: AuthHttp,private storage: Storage,public http: Http,public navCtrl: NavController, public navParams: NavParams,private googleMaps: GoogleMaps) {}

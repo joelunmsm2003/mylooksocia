@@ -31,7 +31,7 @@ export class PerfilPage {
   correo:any;
   logeado:any=false;
 
-  host='http://104.236.247.3:8000'
+  host='http://138.68.230.137:8000'
 
   constructor(private storage: Storage,private authHttp: AuthHttp,public device:Device,public navCtrl: NavController,private _perfil: PerfilProvider, public navParams: NavParams) {
 
@@ -76,7 +76,7 @@ export class PerfilPage {
           });
 
 
-          this.authHttp.post('http://104.236.247.3:8000/guardadatosmovil/', creds, options)
+          this.authHttp.post('http://138.68.230.137:8000/guardadatosmovil/', creds, options)
           .subscribe(
           data => {
 
