@@ -1,4 +1,10 @@
 page-perfil {
+	font-family: 'Varela Round';
+
+		.estrella{
+
+		font-size: 30px;
+	}
 
 	.fondito{
 
@@ -36,6 +42,11 @@ page-perfil {
   
 }
 
+h2{
+	  font-family: 'Varela Round';
+	  color:#fff;
+}
+
   .perfil{
     top: -70px;
     
@@ -43,6 +54,7 @@ page-perfil {
     padding: 10em;
     padding-top: 1em;
     padding-bottom: 1em;
+        background: #4e2f6f;
 
 		}
 	

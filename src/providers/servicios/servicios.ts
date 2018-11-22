@@ -49,5 +49,11 @@ export class ServiciosProvider {
       .map((response: Response) => <Servicio[]> response.json())
    }
 
+      yallege(servicio): Observable<Servicio[]> {
+      return this.authHttp.get('http://138.68.230.137:8000/yallege/'+servicio)
+      .map((response: Response) => <Servicio[]> response.json())
+   }
+
+
    
 }

@@ -22,11 +22,13 @@
 
   <div class='perfil'>
 
-  <img  *ngIf='photo'  src="http://138.68.230.137:8000/{{photo}}" style='clear: left;border: 2px solid #fff; border-radius: 50%'>
+  <img  *ngIf='photo'  src="http://138.68.230.137:8000/{{photo}}" style='clear: left; border-radius: 50%'>
 
   <img  *ngIf='!photo'  src="http://www.gravatar.com/avatar/f792ce8da677f74a86b1edb6304d6d0b?s=400&r=g&d=http%3A%2F%2Farqa.com%2Fwp-content%2Fuploads%2F2015%2F06%2Fnew-mistery.png" style='border-radius: 50%; clear: left;'>
 
   {{grupo}}
+
+  <h2>{{nombre}}</h2>
   </div>
 
       <!-- <div class="profile-menu">
@@ -34,24 +36,82 @@
       </div> -->
     
 
+   <ion-grid style='text-align: center;'>
 
 
-<ion-list padding>
+    <h6>DNI: {{dni}}</h6>
+
+
+    <ion-row padding >
+
+  <ion-col  *ngIf='uno'>
+  <ion-icon   class='estrella' name="star"></ion-icon>
+  </ion-col>
+
+  <ion-col *ngIf='!uno' >
+  <ion-icon   class='estrella' name="star-outline"></ion-icon>
+  </ion-col>
+
+
+  <ion-col col-2  *ngIf='dos'>
+  <ion-icon   class='estrella' name="star"></ion-icon>
+  </ion-col>
+
+  <ion-col col-2 *ngIf='!dos'>
+  <ion-icon   class='estrella' name="star-outline"></ion-icon>
+  </ion-col>
+
+    <ion-col col-2  *ngIf='tres'>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    </ion-col>
+
+    <ion-col col-2 *ngIf='!tres'>
+    <ion-icon     class='estrella' name="star-outline"></ion-icon>
+    </ion-col>
+    
+    <ion-col col-2   *ngIf='cuatro'>
+    <ion-icon  class='estrella' name="star"></ion-icon>
+    </ion-col>
+
+    <ion-col col-2 *ngIf='!cuatro'>
+    <ion-icon    class='estrella' name="star-outline"></ion-icon>
+    </ion-col>
+
+    <ion-col col-2 *ngIf='cinco'>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    </ion-col>
+
+    <ion-col col-2 *ngIf='!cinco'>
+    <ion-icon    class='estrella' name="star-outline"></ion-icon>
+    </ion-col>
+
+    <ion-col style='padding-top: 13px;'>{{puntaje}}</ion-col>
+
+   </ion-row>
+
+
+
+
+   <h6>{{atendidos}} Stilos realizados</h6>
+
+
+
+
+   </ion-grid>
+
+
+   <div style='text-align: center;' padding>
+
+    <img src='{{qr}}'>
+  </div>
+
+
+
+
+
 
   
 
-  <ion-label padding >Nombre</ion-label>
-  <ion-item>
-    
-    <ion-input type="text" value="" [(ngModel)]="nombre"></ion-input>
-  </ion-item>
-
-
-     <ion-label padding >Email</ion-label>
-  <ion-item>
- 
-    <ion-input type="text" [(ngModel)]="email"></ion-input>
-  </ion-item>
 
 
    <!--  <ion-label padding >Especialidad</ion-label>
@@ -60,11 +120,6 @@
     <ion-input type="text" [(ngModel)]="especialidad"></ion-input>
   </ion-item>
  -->
-    <ion-label padding >Telefono</ion-label>
-  <ion-item>
-  
-    <ion-input type="text" [(ngModel)]="telefono"></ion-input>
-  </ion-item>
 
 
 
@@ -97,8 +152,6 @@
 
 
 
-
-</ion-list>
 
 
 

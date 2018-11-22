@@ -30,6 +30,16 @@ export class PerfilPage {
   user_grupo:any;
   correo:any;
   logeado:any=false;
+    uno:any=false;
+  dos:any=false;
+  tres:any=false;
+  cuatro:any=false;
+  cinco:any=false;
+  dni:any;
+  atendidos:any;
+  qr:any;
+  puntaje:any;
+  estrella:any;
 
   host='http://138.68.230.137:8000'
 
@@ -57,6 +67,43 @@ export class PerfilPage {
           this.nombre=data[0]['nombre']
           this.correo=data[0]['email']
           this.telefono=data[0]['telefono']
+          this.dni=data[0]['dni']
+          this.atendidos=data[0]['atendidos']
+          this.qr=data[0]['qr']
+          this.puntaje=data[0]['puntaje']
+          this.estrella=data[0]['estrella']
+
+
+            if(this.estrella==1){
+              this.uno=true
+            }
+
+            if(this.estrella==2){
+              this.uno=true
+              this.dos=true
+            }
+
+            if(this.estrella==3){
+              this.uno=true
+              this.dos=true
+              this.tres=true
+            }
+
+             if(this.estrella==4){
+              this.uno=true
+              this.dos=true
+              this.tres=true
+              this.cuatro=true
+            }
+
+            if(this.estrella==5){
+              this.uno=true
+              this.dos=true
+              this.tres=true
+              this.cuatro=true
+              this.cinco=true
+            }
+
 
       })
 

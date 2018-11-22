@@ -20,9 +20,20 @@
   
      <ion-item *ngFor="let item of ped">
 
-    
-     <button full  ion-button color="dark" round (click)='finalizarservicio()' style='height:36px;'>Finalizar servicio</button>
-   
+      <ion-row>
+    <ion-col>
+
+     <button full  ion-button color="dark" round (click)='yallege()' >Ya Llege</button>
+
+   </ion-col>
+
+   <ion-col>
+
+         <button full  ion-button color="dark" round (click)='finalizarservicio()'>Finalizar</button>
+
+   </ion-col>
+ </ion-row>
+
     <div style='height: 20px'></div>
   {{item.subcategoria__nombre}}
     <span style='float: right;

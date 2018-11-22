@@ -262,6 +262,17 @@ export class AlertaPage {
 
   }
 
+  yallege(){
+
+
+        this._servicio.yallege(this.codigo)
+        .subscribe(data => {
+
+          console.log(data)
+
+        })
+  }
+
 
    enviaracliente(data){
 
