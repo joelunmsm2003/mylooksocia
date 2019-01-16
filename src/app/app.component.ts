@@ -33,7 +33,7 @@ export class MyApp {
 
   public grupo:any;
 
-  url = 'http://138.68.230.137:8000'
+  url = 'http://mylookxpressapp.com:8000'
 
   pages: Array<{title: string, component: any}>;
 
@@ -197,7 +197,7 @@ export class MyApp {
       });
 
 
-      this.authHttp.post('http://138.68.230.137:8000/guardanotificacion/',creds,options)
+      this.authHttp.post('http://mylookxpressapp.com:8000/guardanotificacion/',creds,options)
       .subscribe(
 
       data => {

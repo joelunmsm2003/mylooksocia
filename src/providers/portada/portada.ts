@@ -14,7 +14,7 @@ export class PortadaProvider {
   }
 
     getfotosdeportada(): Observable<Foto[]> {
-      return this._http.get('http://138.68.230.137:8000/portadaphoto')
+      return this._http.get('http://mylookxpressapp.com:8000/portadaphoto')
       .map((response: Response) => <Foto[]> response.json())
 
    }

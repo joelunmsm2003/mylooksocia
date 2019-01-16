@@ -123,7 +123,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-  this.http.post('http://138.68.230.137:8000/api-token-auth/', creds, options)
+  this.http.post('http://mylookxpressapp.com:8000/api-token-auth/', creds, options)
     .subscribe(
       data => {
 
@@ -141,7 +141,7 @@ function sleep (time) {
           });
 
 
-          this.authHttp.post('http://138.68.230.137:8000/guardadatosmovil/', creds, options)
+          this.authHttp.post('http://mylookxpressapp.com:8000/guardadatosmovil/', creds, options)
           .subscribe(
           data => {
 
@@ -228,7 +228,7 @@ function sleep (time) {
 
 
 
-  this.http.post('http://138.68.230.137:8000/nuevasocia/', creds, options)
+  this.http.post('http://mylookxpressapp.com:8000/nuevasocia/', creds, options)
     .subscribe(
       data => {
 

@@ -44,7 +44,7 @@ categoria: Categoria[];
 
   xxxPage:any
 
-host='http://138.68.230.137:8000/'
+host='http://mylookxpressapp.com:8000/'
 
   reservaPage: any;
 
@@ -80,6 +80,7 @@ loginprincipalPage:any;
 historialsociaPage:any;
 
 linea:any;
+estado:any;
 
 
   constructor(private view:ViewController,private callNumber: CallNumber,public menuCtrl: MenuController,private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
@@ -145,13 +146,21 @@ this._categoria.getcategorias()
       });
 
 
-       this.storage.get('logeado').then((val) => {
+       this.storage.get('token').then((val) => {
+
+
+                           console.log('valiuiuiui...',val)
 
                               if(val){
 
                                 this.logeado=true
+                                this.estado=true
 
                                   
+                              }
+                              else{
+
+                                this.estado=false
                               }
                               
                             });
@@ -173,7 +182,7 @@ this._categoria.getcategorias()
   panico() {
 
 
- this.authHttp.get('http://138.68.230.137:8000/panico/')
+ this.authHttp.get('http://mylookxpressapp.com:8000/panico/')
 
       .subscribe(
         data => console.log(data)

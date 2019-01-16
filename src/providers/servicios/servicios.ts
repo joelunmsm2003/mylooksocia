@@ -22,35 +22,35 @@ export class ServiciosProvider {
   }
 
    getservicios(): Observable<Servicio[]> {
-      return this.authHttp.get('http://138.68.230.137:8000/miservicios/')
+      return this.authHttp.get('http://mylookxpressapp.com:8000/miservicios/')
       .map((response: Response) => <Servicio[]> response.json())
 
    }
 
     detalleservicio(id_servicio): Observable<Servicio[]> {
-      return this.authHttp.get('http://138.68.230.137:8000/detalleservicio/'+id_servicio)
+      return this.authHttp.get('http://mylookxpressapp.com:8000/detalleservicio/'+id_servicio)
       .map((response: Response) => <Servicio[]> response.json())
 
    }
 
    ultimoservicio(): Observable<Servicio[]> {
-      return this.authHttp.get('http://138.68.230.137:8000/ultimoservicio/')
+      return this.authHttp.get('http://mylookxpressapp.com:8000/ultimoservicio/')
       .map((response: Response) => <Servicio[]> response.json())
 
    }
 
    serviciosdesocias(): Observable<Servicio[]> {
-      return this.authHttp.get('http://138.68.230.137:8000/miserviciossocias/2')
+      return this.authHttp.get('http://mylookxpressapp.com:8000/miserviciossocias/2')
       .map((response: Response) => <Servicio[]> response.json())
    }
 
    finalizaservicio(servicio): Observable<Servicio[]> {
-      return this.authHttp.get('http://138.68.230.137:8000/finalizaservicio/'+servicio)
+      return this.authHttp.get('http://mylookxpressapp.com:8000/finalizaservicio/'+servicio)
       .map((response: Response) => <Servicio[]> response.json())
    }
 
       yallege(servicio): Observable<Servicio[]> {
-      return this.authHttp.get('http://138.68.230.137:8000/yallege/'+servicio)
+      return this.authHttp.get('http://mylookxpressapp.com:8000/yallege/'+servicio)
       .map((response: Response) => <Servicio[]> response.json())
    }
 

@@ -66,7 +66,7 @@ export class LoginprincipalPage {
    
 
 
-  constructor(private nav: NavController,public alertCtrl: AlertController,private view:ViewController,private _perfil: PerfilProvider,public appCtrl: App,private http: Http, private authHttp: AuthHttp,public storage: Storage) {
+  constructor(public navCtrl1: NavController,private nav: NavController,public alertCtrl: AlertController,private view:ViewController,private _perfil: PerfilProvider,public appCtrl: App,private http: Http, private authHttp: AuthHttp,public storage: Storage) {
 
     
     this.registroprincipalPage=RegistroprincipalPage
@@ -77,7 +77,39 @@ export class LoginprincipalPage {
 
     ionViewWillEnter() {
 
-    	console.log('loginprincipal,ionViewWillEnter')
+    	console.log('ENTRE a LOGIN PRINCIOAPL')
+
+
+          this.storage.get('token').then((val) => {
+
+
+            console.log('TOKENNNNN.....',val)
+
+
+
+        
+      });
+
+
+     this._perfil.miperfil()
+      .subscribe(data => {
+
+
+
+
+      },
+
+      error=>{
+
+        console.log('loginprincipail...',error)
+
+         //this.nav.setRoot(LoginPage);
+
+          this.navCtrl1.push('LoginPage');
+
+      })
+
+
 
       
 
@@ -124,7 +156,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-  this.http.post('http://138.68.230.137:8000/api-token-auth/', creds, options)
+  this.http.post('http://mylookxpressapp.com:8000/api-token-auth/', creds, options)
     .subscribe(
       data => {
 
@@ -146,6 +178,10 @@ function sleep (time) {
 
 
                              if(val){
+
+
+
+                                     console.log('TOKEN...',val)
 
                                               
                                      this.logeado=true
@@ -178,6 +214,9 @@ function sleep (time) {
 
       },
       error=>{
+
+
+        console.log('No esta logeado......')
 
         this.nologin()
       }

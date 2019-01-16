@@ -19,7 +19,7 @@ export class HistorialPage {
 
 	servicios:any;
 
-	host='http://138.68.230.137:8000'
+	host='http://mylookxpressapp.com:8000'
 
   constructor(public _servicio:ServiciosProvider,public navCtrl: NavController, public navParams: NavParams) {
 

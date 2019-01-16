@@ -4,7 +4,7 @@
 
 
   <ion-toolbar color='dark'>
-    <ion-title>Menu</ion-title>
+    <ion-title>Menu 55{{estado}}</ion-title>
 
 
 
@@ -28,10 +28,10 @@
         Compartir
       </button>
 
-      <button  ion-item (click)="openPage(perfilPage)">
+      <button  *ngIf='estado' ion-item (click)="openPage(perfilPage)">
         Perfil
       </button>
-      <button   ion-item (click)="openPage(historialsociaPage)">
+      <button   *ngIf='estado' ion-item (click)="openPage(historialsociaPage)">
         Servicios
       </button>
 

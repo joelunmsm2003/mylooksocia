@@ -6,6 +6,8 @@ import 'rxjs/add/operator/do';
 import { Observable } from 'rxjs/Observable';
 import { User } from './user';
 import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
+
+
 /*
   Generated class for the PerfilProvider provider.
 
@@ -23,14 +25,15 @@ export class PerfilProvider {
 
 
    miperfil(): Observable<User[]> {
-      return this.authHttp.get('http://138.68.230.137:8000/miperfil/')
+      return this.authHttp.get('http://mylookxpressapp.com:8000/miperfil/')
       .map((response: Response) => <User[]> response.json())
+
 
    }
 
 
     getperfil() {
-    return this.authHttp.get('http://138.68.230.137:8000/miperfil/').map((res) => {
+    return this.authHttp.get('http://mylookxpressapp.com:8000/miperfil/').map((res) => {
       return res.json();
     } );
   }
@@ -39,7 +42,7 @@ export class PerfilProvider {
   enlinea(data) {
 
 
-        return this.authHttp.post('http://138.68.230.137:8000/linea/', JSON.stringify({ linea: data }))
+        return this.authHttp.post('http://mylookxpressapp.com:8000/linea/', JSON.stringify({ linea: data }))
             .map((response: Response) => {
                 
                 return response.json();

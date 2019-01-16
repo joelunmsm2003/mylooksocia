@@ -45,7 +45,7 @@ categoria: Categoria[];
 
   xxxPage:any
 
-host='http://138.68.230.137:8000/'
+host='http://mylookxpressapp.com:8000/'
 
   reservaPage: any;
 
@@ -81,7 +81,7 @@ loginprincipalPage:any;
 
 historialsociaPage:any;
 compartirPage:any;
-
+estado:any;
 
   constructor(public menuCtrl: MenuController,private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
 
@@ -124,23 +124,26 @@ this._categoria.getcategorias()
      this.storage.get('token').then((val) => {
 
 
+            console.log('TOKENNNNN.....',val)
+
+
            if(val){
 
                   this.xxxPage=HistorialsociaPage;    
              
-             
+                   this.estado=true
 
+           }
+           else{
+
+                 this.estado=false
+
+                 this.xxxPage=LoginPage; 
            }
 
       });
 
 
-   
-
-
-  
-
- 
 
   }
 
@@ -149,8 +152,10 @@ this._categoria.getcategorias()
 
 
  loginModal() {
+
    let profileModal = this.modalCtrl.create(LoginprincipalPage, { userId: 8675309 });
    profileModal.present();
+
  }
 
 

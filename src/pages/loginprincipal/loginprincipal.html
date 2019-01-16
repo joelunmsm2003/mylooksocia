@@ -14,21 +14,22 @@
 
 
 
-<ion-content class='fondo' padding>
+<ion-content  padding class='fondo'>
 
 
 
-<div >
+<div>
     <div   center>
 
 
-    <div style='padding: 127px;
-    padding-top: 21px;
-    padding-bottom: 21px;' >
+    <div style='text-align:center;'>
       
-    <img src='assets/imgs/logo.png' style='border: 2px solid #fff;
-    border-radius: 10px;box-shadow: 0 6px 75px 9px #f7ecec;
-    background-color: white;'>
+    <img src='assets/imgs/fondo.png' style='text-align: center;
+    padding: 100px;
+    padding-top: 12px;
+    padding-bottom: 6px;'>
+
+    <h6>Ingresa tus datos</h6>
 
     </div>
 
@@ -41,25 +42,46 @@
     <ion-row>
       <ion-col>
         <ion-list >
-            <ion-label padding color='light'>USUARIO</ion-label>
+            
           <ion-item style='background: none;'>
 
-            <ion-input  style='color: #fff !important;'  name="username" id="loginField" type="text" required [(ngModel)] = "model.username" #email></ion-input>
+            <ion-input  style='color: #fff !important;'  placeholder='Ingresa tu email' name="username" id="loginField" type="text" required [(ngModel)] = "model.username" #email></ion-input>
           </ion-item>
+          <div style='height:10px;'></div>
 
-          <ion-label padding color='light'>CLAVE</ion-label>
+
+   
           <ion-item style='background: none;'>
-            <ion-input  style='color: #fff !important;'  name="password" id="passwordField" type="password" required [(ngModel)] = "model.password"></ion-input>
+            <ion-input  style='color: #fff !important;' placeholder='Ingresa tu contraseña' name="password" id="passwordField" type="password" required [(ngModel)] = "model.password"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col padding>
 
 
         <button  round ion-button class="submit-btn" color='dark' full type="submit" [disabled]="!loginForm.form.valid">Ingresar
         </button>
+        <div style='height:10px;'></div>
+
+
+        <button  round ion-button style='background-color: #9763ce;'  [navPush]="registrosociaPage" color='dark' full >Postulate
+        </button>
+
+        <div style='height:10px;'></div>
+
+        <div  style='padding: 9px;
+        border-radius: 4em;
+        text-align: center;
+        opacity: 0.8;
+        color: #514293;
+        border: 2px solid #4e2f6f'>
+           <a color='light' class='reportar' style='text-decoration: none;' href="https://api.whatsapp.com/send?phone=51910759370&text=Hola"> Reportar un problema  </a>
+         </div>
+
+
+
       </ion-col>
     </ion-row>
   </form>

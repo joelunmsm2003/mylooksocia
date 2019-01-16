@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { IonicPage, NavController,Nav, NavParams,Platform } from 'ionic-angular';
 import { ServiciosProvider } from '../../providers/servicios/servicios';
 import { Device } from '@ionic-native/device';
+
+import { LoginPage } from '../../pages/login/login';
 import { AlertaPage } from '../../pages/alerta/alerta';
 import { Http,RequestOptions, Headers } from '@angular/http';
 import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
@@ -22,6 +24,8 @@ import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
 export class HistorialsociaPage {
 
   servicios:any;
+
+  @ViewChild(Nav) nav: Nav;
 
  
 
@@ -58,7 +62,7 @@ export class HistorialsociaPage {
           });
 
 
-          this.authHttp.post('http://138.68.230.137:8000/guardadatosmovil/', creds, options)
+          this.authHttp.post('http://mylookxpressapp.com:8000/guardadatosmovil/', creds, options)
           .subscribe(
           data => {
 
@@ -67,6 +71,12 @@ export class HistorialsociaPage {
           console.log(data)
 
 
+          },
+          error => {  
+            console.log('data...')
+            //this.nav.setRoot('LoginPage'); 
+
+            this.navCtrl.push('LoginPrincipalPage');
           }
 
           );

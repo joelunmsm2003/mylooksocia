@@ -115,7 +115,7 @@ export class RegistroprincipalPage {
 
 
 
-  this.http.post('http://138.68.230.137:8000/registro/', env, options)
+  this.http.post('http://mylookxpressapp.com:8000/registro/', env, options)
     .subscribe(
       data => {
 
@@ -127,7 +127,7 @@ export class RegistroprincipalPage {
 
            ///Logeandose
 
-                   this.http.post('http://138.68.230.137:8000/api-token-auth/', creds, options)
+                   this.http.post('http://mylookxpressapp.com:8000/api-token-auth/', creds, options)
                   .subscribe(
                     data => {
 

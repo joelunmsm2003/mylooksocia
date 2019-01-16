@@ -41,7 +41,7 @@ export class PerfilPage {
   puntaje:any;
   estrella:any;
 
-  host='http://138.68.230.137:8000'
+  host='http://mylookxpressapp.com:8000'
 
   constructor(private storage: Storage,private authHttp: AuthHttp,public device:Device,public navCtrl: NavController,private _perfil: PerfilProvider, public navParams: NavParams) {
 
@@ -123,7 +123,7 @@ export class PerfilPage {
           });
 
 
-          this.authHttp.post('http://138.68.230.137:8000/guardadatosmovil/', creds, options)
+          this.authHttp.post('http://mylookxpressapp.com:8000/guardadatosmovil/', creds, options)
           .subscribe(
           data => {
 

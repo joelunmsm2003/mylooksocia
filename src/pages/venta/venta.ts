@@ -34,7 +34,7 @@ categoria: Categoria[];
 
 myVar=true
 
-host ='http://138.68.230.137:8000/'
+host ='http://mylookxpressapp.com:8000/'
 
 subcategoria: Subcategoria[];
 
@@ -102,7 +102,7 @@ private todo : FormGroup;
 
        this.togglecategoria=false
 
-       this.host='http://138.68.230.137:8000'
+       this.host='http://mylookxpressapp.com:8000'
 
 
   		this.reservaPage = ReservaPage;
@@ -366,7 +366,7 @@ console.log(data.id)
 
 
 
-        this.authHttp.post('http://138.68.230.137:8000/asignasocia/', creds, options)
+        this.authHttp.post('http://mylookxpressapp.com:8000/asignasocia/', creds, options)
         .subscribe(
           data => {
 

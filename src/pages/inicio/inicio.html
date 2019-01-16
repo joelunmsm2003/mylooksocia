@@ -4,7 +4,7 @@
 
 
   <ion-toolbar color='dark'>
-    <ion-title>Menu</ion-title>
+    <ion-title>Menu x {{estado}} </ion-title>
 
 
 
@@ -22,7 +22,7 @@
 
 
 
-      <button ion-item (click)="panico()" style='background: #161616;
+      <button *ngIf='estado' ion-item (click)="panico()" style='background: #161616;
     color: #fff;'>
    
       Emergencia
@@ -37,41 +37,41 @@
 
 
 
-      <button   ion-item (click)="openPage(perfilPage)">
+      <button  *ngIf='estado' ion-item (click)="openPage(perfilPage)">
         Perfil
       </button>
 
-      <button    ion-item (click)="openPage(historialsociaPage)">
+      <button   *ngIf='estado' ion-item (click)="openPage(historialsociaPage)">
         Servicios
       </button>
 
-            <button   ion-item (click)="openPage(loginprincipalPage)">
+            <button  *ngIf='!estado' ion-item (click)="openPage(loginprincipalPage)">
         Ingresar
       </button>
 
-      <button  ion-item (click)="abrimodal()">
+      <button  *ngIf='!estado' ion-item (click)="abrimodal()">
         Inscripcion
       </button>
 
-      <button   ion-item >
+      <button  *ngIf='estado' ion-item >
         <ion-label>En Linea</ion-label>
 
         <ion-toggle color='dark' [(ngModel)] = "linea" (click)='cambia(linea)'></ion-toggle>
       </button>
 
-      <button  ion-item (click)="openPage(calificacionPage)">
+      <button *ngIf='estado' ion-item (click)="openPage(calificacionPage)">
    
       Calificación
       </button>
 
 
 
-      <button  ion-item (click)="openPage(balancePage)" >
+      <button *ngIf='estado' ion-item (click)="openPage(balancePage)" >
    
       Balance Actualizado
       </button>
 
-      <button  ion-item >
+      <button *ngIf='estado' ion-item >
    
       Notificaciones
       </button>
@@ -85,7 +85,7 @@
          
 
 
-       <button   ion-item (click)="salir()">
+       <button *ngIf='estado'  ion-item (click)="salir()">
         Salir
       </button>
       <!-- <button  ion-item (click)="openPage(loginprincipalPage)">

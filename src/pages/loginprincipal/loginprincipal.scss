@@ -1,4 +1,23 @@
 page-loginprincipal {
+
+  font-family: 'Varela Round';
+  color:#47355a !important;
+
+  .text-input-md {
+    margin: 13px 8px;
+    padding: 0;
+    width: calc(100% - 8px - 8px);
+    color: #223;
+}
+  .reportar{
+  transition: none;
+  background: #fff;
+
+  color:#4e2f6f;
+}
+
+
+
   .content-md {
     // color: #000;
     // background-color: #222;
@@ -17,11 +36,16 @@ ion-item{
 
 .fondo{
 
-  background: #234;
+  background: #f4f3f3;
 }
 
 
+ion-input{
+  color: #fff !important;
+    border: 1px solid #c6cdd4;
+    background: #fff;
 
+}
 
 
 

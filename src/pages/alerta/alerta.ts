@@ -38,7 +38,7 @@ export class AlertaPage {
   reservaPage: any;
   ubicacion:any;
 
-  host='http://138.68.230.137:8000'
+  host='http://mylookxpressapp.com:8000'
 
 
   ped:any;
@@ -312,7 +312,7 @@ export class AlertaPage {
 
 
 
-          this.authHttp.post('http://138.68.230.137:8000/cancelaserviciosocia',creds,options)
+          this.authHttp.post('http://mylookxpressapp.com:8000/cancelaserviciosocia',creds,options)
       .subscribe(
 
       data => {
