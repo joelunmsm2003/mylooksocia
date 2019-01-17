@@ -10,9 +10,10 @@ import { Storage } from '@ionic/storage';
 import { IntroPage } from '../../pages/intro/intro';
 import { LoginprincipalPage } from '../../pages/loginprincipal/loginprincipal';
 import { HistorialsociaPage } from '../../pages/historialsocia/historialsocia';
+import { FelicidadesPage } from '../../pages/felicidades/felicidades';
 import { PerfilPage } from '../../pages/perfil/perfil';
 import { Device } from '@ionic-native/device';
-
+import { ModalController } from 'ionic-angular';
 import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
 
 /**
@@ -43,7 +44,7 @@ export class RegistrosociaPage {
 
 
 
-  constructor(public platform: Platform,private view:ViewController,private authHttp: AuthHttp,public device:Device,public appCtrl: App,public storage: Storage,public spinner: SpinnerProvider,public alertCtrl: AlertController,private http: Http,private _categoria: CategoriasProvider,private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController,public platform: Platform,private view:ViewController,private authHttp: AuthHttp,public device:Device,public appCtrl: App,public storage: Storage,public spinner: SpinnerProvider,public alertCtrl: AlertController,private http: Http,private _categoria: CategoriasProvider,private formBuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
 
   	 this.todo = this.formBuilder.group({
       email: ['', Validators.required],
@@ -57,7 +58,9 @@ export class RegistrosociaPage {
       distrito:[''],
       horario:[''],
       experiencia:[''],
-      comentario:['']
+      comentario:[''],
+      especialidad:['']
+
 
     });
 
@@ -209,6 +212,17 @@ function sleep (time) {
 
   }
 
+
+  abrimodal(){
+
+
+    let profileModal = this.modalCtrl.create(FelicidadesPage);
+  profileModal.present();
+
+
+ }
+
+
   enviasocia(data){
 
     this.spinner.load();
@@ -240,7 +254,7 @@ function sleep (time) {
 
         this.email= data['_body'].replace('"','').replace('"','')
 
-this.navCtrl.popToRoot();
+//this.navCtrl.popToRoot();
 
 
         if(this.email==0){
@@ -261,30 +275,33 @@ this.navCtrl.popToRoot();
         else{
 
 
+           
+    let profileModal = this.modalCtrl.create(Felicidades);
+    profileModal.present();
+  
+
+              //this.authenticate(this.email,'rosa0000')
 
 
-              this.authenticate(this.email,'rosa0000')
+              // let alert = this.alertCtrl.create({
+              // title: 'My Look Xpress',
+              // subTitle: 'Recibimos su solicitud de inscripcion en breve nos contactaremos con usted via email o whatsapp para una evaluacion',
+              // buttons: ['OK']
+              // });
+              // alert.present();
 
+              //this.storage.set('registrosocia', true)
 
-              let alert = this.alertCtrl.create({
-              title: 'My Look Xpress',
-              subTitle: 'Recibimos su solicitud de inscripcion en breve nos contactaremos con usted via email o whatsapp para una evaluacion',
-              buttons: ['OK']
-              });
-              alert.present();
-
-              this.storage.set('registrosocia', true)
-
-              this.platform.exitApp();
+              //this.platform.exitApp();
 
               this.spinner.dismiss();
 
-              this.storage.set('logeado', true)
+              //this.storage.set('logeado', true)
 
 
-              this.view.dismiss()
+              //this.view.dismiss()
 
-              this.navCtrl.popToRoot();
+              //this.navCtrl.popToRoot();
 
               //this.navCtrl.push(LoginprincipalPage);
 
