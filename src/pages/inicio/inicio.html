@@ -53,7 +53,18 @@
         Inscripcion
       </button> -->
 
-      <button   ion-item >
+
+
+            <!-- <button   ion-item (click)="openPage(loginprincipalPage)">
+        Ingresar
+      </button> -->
+
+      <!-- <button   ion-item (click)="abrimodal()">
+        Inscripcion
+      </button> -->
+
+      <button  ion-item >
+
         <ion-label>En Linea</ion-label>
 
         <ion-toggle color='dark' [(ngModel)] = "linea" (click)='cambia(linea)'></ion-toggle>
@@ -71,7 +82,11 @@
       Balance Actualizado
       </button>
 
+
       <!-- <button *ngIf='estado' ion-item >
+=======
+      <button  ion-item >
+>>>>>>> b06169194fc7a304418842e2fda231009e96a830
    
       Notificaciones
       </button> -->
@@ -85,7 +100,7 @@
          
 
 
-       <button *ngIf='estado'  ion-item (click)="salir()">
+       <button   ion-item (click)="salir()">
         Salir
       </button>
       <!-- <button  ion-item (click)="openPage(loginprincipalPage)">

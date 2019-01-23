@@ -138,7 +138,7 @@ this._categoria.getcategorias()
 
                  this.estado=false
 
-                 this.xxxPage=LoginPage; 
+                 //this.xxxPage=LoginPage; 
            }
 
       });

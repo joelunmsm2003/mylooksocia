@@ -20,6 +20,7 @@ import { RegistroPage } from '../pages/registro/registro';
 import { DetalleservicioPage } from '../pages/detalleservicio/detalleservicio';
 import { AyudaPage } from '../pages/ayuda/ayuda';
 import { InicioPage } from '../pages/inicio/inicio';
+import { FelicidadesPage } from '../pages/felicidades/felicidades';
 import { RegistrosociaPage } from '../pages/registrosocia/registrosocia';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
@@ -84,6 +85,7 @@ export function getAuthHttp(http) {
     LoginPage,
     ServicioPage,
     PerfilPage,
+    FelicidadesPage,
     RegistroprincipalPage,
     AlertaPage,
     BalancePage,
@@ -122,6 +124,7 @@ export function getAuthHttp(http) {
     LoginprincipalPage,
     RegistroprincipalPage,
     CalificacionPage,
+    FelicidadesPage,
     BalancePage,
     SplashPage,
     RegistroPage,

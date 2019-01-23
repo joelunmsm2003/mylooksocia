@@ -29,7 +29,7 @@
  <form (ngSubmit)="enviasocia(user)" [formGroup]="todo">
 
  
-       <ion-label padding>Nombre</ion-label>
+       <ion-label padding>Nombre y Apellidos</ion-label>
       <ion-item>
              
             <ion-input  formControlName="nombre"  name='nombre' id="loginField" type="text" required [(ngModel)] = "user.nombre"></ion-input>
@@ -115,9 +115,16 @@
       </ion-item>
 
 
+      <ion-label padding>Especialidad</ion-label>
+      <ion-item>
+
+           
+            <ion-input  formControlName="especialidad"  name='especialidad' id="loginField" type="number"  [(ngModel)] = "user.especialidad"></ion-input>
+      </ion-item>
 
 
-  
+     
+
 
 
     
@@ -128,7 +135,7 @@
 
      
 
-        <ion-label padding>Escoje tu categoria</ion-label>
+        <ion-label padding>Seleccione Categorias</ion-label>
 
        <ion-item ion-item *ngFor="let item of categoria">
 
@@ -158,8 +165,6 @@
       </ion-item>
 
  -->
-
-
 
 
 
