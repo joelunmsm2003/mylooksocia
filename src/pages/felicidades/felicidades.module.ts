@@ -4,10 +4,10 @@ import { FelicidadesPage } from './felicidades';
 
 @NgModule({
   declarations: [
-    FelicidadesPage,
+ 
   ],
   imports: [
-    IonicPageModule.forChild(FelicidadesPage),
+   
   ],
 })
 export class FelicidadesPageModule {}

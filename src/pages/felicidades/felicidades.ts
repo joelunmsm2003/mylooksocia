@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the FelicidadesPage page.
@@ -15,11 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FelicidadesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private view:ViewController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FelicidadesPage');
   }
+
+
+  closeModal(){
+
+  this.view.dismiss()
+}
+
 
 }

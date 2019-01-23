@@ -14,7 +14,8 @@ import { Storage } from '@ionic/storage';
 import { App,IonicPage, NavController,Nav,ViewController,AlertController } from 'ionic-angular';
 
 import { RegistroprincipalPage } from '../registroprincipal/registroprincipal';
-import { RegistrosociaPage } from '../registrosocia/registrosocia';
+import { RegistrosociaPage } from '../../pages/registrosocia/registrosocia';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -103,9 +104,9 @@ export class LoginprincipalPage {
 
         console.log('loginprincipail...',error)
 
-         //this.nav.setRoot(LoginPage);
+         //this.nav.setRoot(LoginprincipalPage);
 
-          this.navCtrl1.push('LoginPage');
+          //this.navCtrl1.push('RegistrosociaPage');
 
       })
 

@@ -4,7 +4,7 @@
 
 
   <ion-toolbar color='dark'>
-    <ion-title>Menu x {{estado}} </ion-title>
+    <ion-title>Menu  </ion-title>
 
 
 
@@ -37,13 +37,23 @@
 
 
 
-      <button  ion-item (click)="openPage(perfilPage)">
+      <button   ion-item (click)="openPage(perfilPage)">
         Perfil
       </button>
 
-      <button   ion-item (click)="openPage(historialsociaPage)">
+      <button    ion-item (click)="openPage(historialsociaPage)">
         Servicios
       </button>
+<!-- 
+            <button  *ngIf='!estado' ion-item (click)="openPage(loginprincipalPage)">
+        Ingresar
+      </button> -->
+
+      <!-- <button  *ngIf='!estado' ion-item (click)="abrimodal()">
+        Inscripcion
+      </button> -->
+
+
 
             <!-- <button   ion-item (click)="openPage(loginprincipalPage)">
         Ingresar
@@ -54,6 +64,7 @@
       </button> -->
 
       <button  ion-item >
+
         <ion-label>En Linea</ion-label>
 
         <ion-toggle color='dark' [(ngModel)] = "linea" (click)='cambia(linea)'></ion-toggle>
@@ -71,10 +82,14 @@
       Balance Actualizado
       </button>
 
+
+      <!-- <button *ngIf='estado' ion-item >
+=======
       <button  ion-item >
+>>>>>>> b06169194fc7a304418842e2fda231009e96a830
    
       Notificaciones
-      </button>
+      </button> -->
 
          <a ion-item style='
     text-decoration: none;' href="https://api.whatsapp.com/send?phone=51910759370&text=Hola"> Contáctenos <ion-icon name="logo-whatsapp" style='color: #25d366;float:right;'></ion-icon></a>

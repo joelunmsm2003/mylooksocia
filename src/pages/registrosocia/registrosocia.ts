@@ -225,6 +225,8 @@ function sleep (time) {
 
   enviasocia(data){
 
+
+
     this.spinner.load();
 
     console.log('pedido..',this.pedido)
@@ -254,7 +256,7 @@ function sleep (time) {
 
         this.email= data['_body'].replace('"','').replace('"','')
 
-//this.navCtrl.popToRoot();
+
 
 
         if(this.email==0){
@@ -270,18 +272,21 @@ function sleep (time) {
      this.spinner.dismiss();
 
 
+
+
         }
 
         else{
 
 
            
-    let profileModal = this.modalCtrl.create(Felicidades);
-    profileModal.present();
+   // let profileModal = this.modalCtrl.create(FelicidadesPage);
+   // profileModal.present();
   
 
               //this.authenticate(this.email,'rosa0000')
 
+                     this.abrimodal()
 
               // let alert = this.alertCtrl.create({
               // title: 'My Look Xpress',
@@ -295,6 +300,12 @@ function sleep (time) {
               //this.platform.exitApp();
 
               this.spinner.dismiss();
+
+
+       
+
+
+               this.navCtrl.popToRoot();
 
               //this.storage.set('logeado', true)
 
