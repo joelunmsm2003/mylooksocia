@@ -51,6 +51,13 @@ export class HistorialsociaPage {
 
         this.servicios=data
 
+         console.log(Object.keys(data).length)
+
+         if (Object.keys(data).length==0){
+
+           this.servicios=false
+         }
+
       });
 
 
