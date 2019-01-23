@@ -11,6 +11,8 @@ import { ServiciosProvider } from '../../providers/servicios/servicios';
 import { Http,RequestOptions, Headers } from '@angular/http';
 import { PerfilProvider } from '../../providers/perfil/perfil';
 import { HistorialsociaPage } from '../../pages/historialsocia/historialsocia';
+import { AlertController } from 'ionic-angular';
+
 
 /**
  * Generated class for the MapPage page.
@@ -57,6 +59,7 @@ export class AlertaPage {
   socia_id:any;
   codigo_user:any;
   estado_nombre:any;
+  estado_pedido:any;
 
   constructor(private authHttp: AuthHttp,public _servicio:ServiciosProvider,public storage: Storage,public navCtrl: NavController,
     public geolocation: Geolocation,
@@ -67,7 +70,8 @@ export class AlertaPage {
     public spinner: SpinnerProvider,
     public viewCtrl: ViewController,
     public navParams: NavParams,
-    private _perfil: PerfilProvider) {
+    private _perfil: PerfilProvider,
+    private alertCtrl: AlertController) {
 
       this.reservaPage = ReservaPage;
 
@@ -85,6 +89,31 @@ export class AlertaPage {
       })
 
 
+
+
+  }
+
+  presentAlert() {
+  
+}
+
+
+
+  
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MapPage');
+
+    this.ubicacion='jsjsjsj'
+
+    this.detalleservicio()
+
+
+  }
+
+
+
+detalleservicio(){
 
     this._servicio.detalleservicio(this.navParams.get("servicio"))
           .subscribe(data => {
@@ -109,6 +138,7 @@ export class AlertaPage {
           this.cliente__photo_facebook =data[0]['cliente__photo_facebook']
           this.reference =data[0]['referencia']
           this.estado_nombre =data[0]['estado__nombre']
+          this.estado_pedido =data[0]['estado_pedido']
 
 
               // create a new map by passing HTMLElement
@@ -153,34 +183,7 @@ export class AlertaPage {
           });
 
 
-     
-
-
-  }
-
-
-  
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MapPage');
-
-    this.ubicacion='jsjsjsj'
-
-  
-
-
-
-          
-
-
-
-
-
-
-
-  }
-
-
+     }
 
 
 
@@ -285,7 +288,7 @@ export class AlertaPage {
 
 
 
-          this.authHttp.post('http://138.68.230.137:8000/aceptarservicio/',creds,options)
+          this.authHttp.post('http://mylookxpressapp.com:8000/aceptarservicio/',creds,options)
       .subscribe(
 
       data => {
@@ -293,7 +296,14 @@ export class AlertaPage {
             console.log(data)
 
 
-          this.navCtrl.popToRoot();
+          this.detalleservicio()
+
+          let alert = this.alertCtrl.create({
+    title: 'Stilo',
+    subTitle: 'Aceptaste el el servicio',
+    buttons: ['Cerrar']
+  });
+  alert.present();
 
 
        }
@@ -326,7 +336,7 @@ export class AlertaPage {
                 //       this.estado_nombre =data[0]['estado__nombre']
 
 
-
+                
                       
 
 

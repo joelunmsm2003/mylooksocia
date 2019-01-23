@@ -7,6 +7,8 @@ import { LoginPage } from '../../pages/login/login';
 import { AlertaPage } from '../../pages/alerta/alerta';
 import { Http,RequestOptions, Headers } from '@angular/http';
 import { AuthHttp, tokenNotExpired,JwtHelper } from 'angular2-jwt';
+import { LoginprincipalPage } from '../../pages/loginprincipal/loginprincipal';
+
 
 /**
  * Generated class for the HistorialsociaPage page.
@@ -74,9 +76,10 @@ export class HistorialsociaPage {
           },
           error => {  
             console.log('data...')
-            //this.nav.setRoot('LoginPage'); 
 
-            this.navCtrl.push('LoginPrincipalPage');
+            this.navCtrl.setRoot(LoginprincipalPage); 
+
+            //this.navCtrl.push('LoginPrincipalPage');
           }
 
           );

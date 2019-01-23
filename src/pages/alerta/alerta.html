@@ -20,19 +20,6 @@
   
      <ion-item *ngFor="let item of ped">
 
-      <ion-row>
-    <ion-col>
-
-     <button full  ion-button color="dark" round (click)='yallege()' >Ya Llege</button>
-
-   </ion-col>
-
-   <ion-col>
-
-         <button full  ion-button color="dark" round (click)='finalizarservicio()'>Finalizar</button>
-
-   </ion-col>
- </ion-row>
 
     <div style='height: 20px'></div>
   {{item.subcategoria__nombre}}
@@ -58,7 +45,7 @@
   <ion-item>Estado: <span style='float: right;
     margin-right: -30px;
     position: absolute;
-    right: 48px;'> {{estado_nombre}}</span></ion-item>
+    right: 48px;'> {{estado_pedido}}</span></ion-item>
 
   
 
@@ -100,15 +87,7 @@
   
 
  
-  <ion-row padding *ngIf='estado_nombre=="Confirmado"'>
 
-  <button  block ion-button color="dark" round (click)='aceptar()'>Aceptar</button>
-  </ion-row>
-
-   <ion-row padding *ngIf='estado_nombre=="Aceptado"'>
-
-  <button  block ion-button color="dark" round (click)='cancelar()'>Cancelar</button>
-  </ion-row>
 
   <div id="map"></div>
 
@@ -125,3 +104,28 @@
   
 
 </ion-content>
+
+
+<ion-footer  >
+  <ion-toolbar padding>
+    
+
+		<ion-row *ngIf='estado_pedido=="Aceptado" '>
+			<ion-col>
+
+				<button full  ion-button color="dark" round (click)='yallege()' >Ya Llege</button>
+
+				</ion-col>
+
+				<ion-col>
+
+				<button full  ion-button color="dark" round (click)='finalizarservicio()'>Finalizar</button>
+
+			</ion-col>
+		</ion-row>
+
+		<button  *ngIf='estado_pedido=="Pendiente" ' block ion-button color="dark" round (click)='aceptar()'>Aceptar Servicio</button>
+
+
+  </ion-toolbar>
+</ion-footer>

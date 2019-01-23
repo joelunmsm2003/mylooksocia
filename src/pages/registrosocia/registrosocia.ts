@@ -240,7 +240,7 @@ function sleep (time) {
 
         this.email= data['_body'].replace('"','').replace('"','')
 
-this.navCtrl.popToRoot();
+        //this.navCtrl.popToRoot();
 
 
         if(this.email==0){
