@@ -277,6 +277,20 @@ detalleservicio(){
   }
 
 
+   encamino(){
+
+
+        this._servicio.encamino(this.codigo)
+        .subscribe(data => {
+
+          console.log(data)
+
+        })
+  }
+
+
+
+
    enviaracliente(data){
 
   	let creds = JSON.stringify(data);

@@ -111,6 +111,13 @@
     
 
 		<ion-row *ngIf='estado_pedido=="Aceptado" '>
+
+      <ion-col>
+
+        <button full  ion-button color="dark" round (click)='encamino()' >En Camino</button>
+
+        </ion-col>
+
 			<ion-col>
 
 				<button full  ion-button color="dark" round (click)='yallege()' >Ya Llege</button>

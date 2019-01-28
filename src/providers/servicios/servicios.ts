@@ -54,6 +54,10 @@ export class ServiciosProvider {
       .map((response: Response) => <Servicio[]> response.json())
    }
 
+     encamino(servicio): Observable<Servicio[]> {
+      return this.authHttp.get('http://mylookxpressapp.com:8000/encamino/'+servicio)
+      .map((response: Response) => <Servicio[]> response.json())
+   }
 
    
 }
