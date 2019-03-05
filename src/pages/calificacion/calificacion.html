@@ -16,64 +16,79 @@
 <ion-content padding>
 
 
-<ion-item>
-  Calificacion ultimo servicio
-</ion-item>
 
 <ion-item>
-<ion-icon name="star"></ion-icon>
-<ion-icon name="star-outline"></ion-icon>
-<ion-icon name="star-outline"></ion-icon>
-<ion-icon name="star-outline"></ion-icon>
-<ion-icon name="star-outline"></ion-icon>
-</ion-item>
-
-<ion-item>
-  Total de evaluaciones del fin de mes
+  Historial de las ultimas calificaciones 
 
 </ion-item>
 
-<ion-item>  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
 
-  <button ion-button item-end color='dark'>0</button>
-  </ion-item>
-
-  <ion-item>  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
-
-
-  <button ion-button item-end color='dark'>0</button>
-  </ion-item>
-
-    <ion-item>  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
+<ion-item *ngFor="let item of historial_estrellas" >
+     
+  
+  <ion-col  class='animated zoomIn'*ngIf='item==1'>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+  </ion-col>
 
 
 
-  <button ion-button item-end color='dark'>0</button>
-  </ion-item>
-
-      <ion-item>  <ion-icon name="star"></ion-icon>
-  <ion-icon name="star"></ion-icon>
-
-
-  <button ion-button item-end  color='dark'>0</button>
-
-  </ion-item>
-
-        <ion-item>  <ion-icon name="star"></ion-icon>
+  <ion-col  class='animated zoomIn'*ngIf='item==2'>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+  </ion-col>
 
 
+  <ion-col class='animated zoomIn' *ngIf='item==3'>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+  </ion-col>
 
-  <button ion-button item-end  color='dark'>0</button>
-  </ion-item>
+
+  <ion-col class='animated zoomIn' *ngIf='item==4'>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star-outline"></ion-icon>
+  </ion-col>
+
+
+
+
+   <ion-col  class='animated zoomIn' *ngIf='item==5'>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+    <ion-icon   class='estrella' name="star"></ion-icon>
+  </ion-col>
+
+
+  <span class='animated flipInX' style='background: #4e2f6f;
+    padding: 6px;
+    color: #fff;
+    border-radius: 10em;
+    float: right;
+    width: 30px;
+    height: 30px;
+    padding-left: 10px;'>{{item}}</span>
+
+
+
+
+    
+    </ion-item>
+
 
 </ion-content>
 

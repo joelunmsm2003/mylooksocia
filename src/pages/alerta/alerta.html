@@ -110,29 +110,44 @@
   <ion-toolbar padding>
     
 
-		<ion-row *ngIf='estado_pedido=="Aceptado" '>
+		<ion-row >
 
-      <ion-col>
+      <ion-col *ngIf='estado_pedido=="Acepto Socia"'>
 
         <button full  ion-button color="dark" round (click)='encamino()' >En Camino</button>
 
-        </ion-col>
+      </ion-col>
 
-			<ion-col>
+			<ion-col *ngIf='estado_pedido=="En Camino"'>
 
 				<button full  ion-button color="dark" round (click)='yallege()' >Ya Llege</button>
 
-				</ion-col>
+			</ion-col>
 
-				<ion-col>
+			
+      <ion-col *ngIf='estado_pedido=="Ya llego"'>
 
 				<button full  ion-button color="dark" round (click)='finalizarservicio()'>Finalizar</button>
 
 			</ion-col>
 		</ion-row>
 
-		<button  *ngIf='estado_pedido=="Pendiente" ' block ion-button color="dark" round (click)='aceptar()'>Aceptar Servicio</button>
+    <ion-row *ngIf='estado_pedido=="Pendiente" '>
 
+   
+
+      <ion-col>
+
+		<button   block ion-button color="dark" round (click)='aceptar()'>Aceptar Servicio</button>
+    </ion-col>
+
+     <ion-col>
+    <button  block ion-button color="light" round (click)='rechazar()'>Rechazar Servicio</button>
+    </ion-col>
+
+
+    
+   </ion-row>
 
   </ion-toolbar>
 </ion-footer>

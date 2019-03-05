@@ -20,7 +20,7 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.
 
 zip -d /home/joel/myApp/platforms/android/build/outputs/apk/android-debug.apk  META-INF/\*
 
-./zipalign -v 4 /home/joel/socia/platforms/android/build/outputs/apk/android-release-unsigned.apk ms.apk
+./zipalign -v 4 /home/andy/mylooksocia/platforms/android/build/outputs/apk/android-release-unsigned.apk look.apk
 
 /home/joel/Escritorio/gradle-4.2/
 
@@ -40,3 +40,71 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.
 ./zipalign -v 4 /home/andy/mylooksocia/platforms/android/build/outputs/apk/android-release-unsigned.apk mylook55.apk
 
 
+
+Ionic v3 
+--------
+
+Aplicacion de belleza para Android y IOS
+Stilo 
+Android https://play.google.com/store/apps/details?id=io.codigito.mylookexpress
+IOS https://itunes.apple.com/us/app/stilo/id1340597585?mt=8
+
+Stilo Profesionales
+Aplicacion  para trabajar en Stilo para Android y IOS
+https://play.google.com/store/apps/details?id=com.capital.peru
+
+CFP International
+Aplicacion de registro de Citas de Negocios de Seguros para Android y IOS
+user root pass rosa0000
+https://play.google.com/store/apps/details?id=com.capital.peru
+
+CCF Mobile
+Estadisticas y Monitoreo de Call Center
+https://searchman.com/ios/app/us/1339260332/en/contact-center-falabella-sac/ccf-mobile/
+
+Calculadora de Sueldo Interpretia
+https://play.google.com/store/apps/details?id=com.calculadora.interpetria
+
+Python Django y Angular
+-----------------------
+
+Diloo
+Sistema de envio de SMS y Voz Masivo
+https://www.youtube.com/watch?v=4PdEcOHuWp8&t=27s
+
+
+PeruCall
+Sistema de CallCenter
+Integracion con Asterisk 
+
+
+Choose & BookIt
+Sistema de Reserva de habitacion de hoteles
+http://ec2-18-221-248-184.us-east-2.compute.amazonaws.com/cbi-fe/dist/
+
+
+
+Conocimientos
+-------------
+-Python
+
+	Frameworks:
+		Django
+		Odoo
+		Sckity Learn
+		Keras
+		
+
+	Librerias:
+		Pandas
+		Seaborn
+		Plotly
+		Numpy
+			
+
+-Javascript
+	Angular
+	ReactJS
+	Ionic
+	Node
+	Firebase

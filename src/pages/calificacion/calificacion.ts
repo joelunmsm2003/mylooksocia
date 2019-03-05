@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PerfilProvider } from '../../providers/perfil/perfil';
+
 
 /**
  * Generated class for the CalificacionPage page.
@@ -15,11 +17,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CalificacionPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+	historial_estrellas:any;
+
+  constructor(private _perfil: PerfilProvider, public navCtrl: NavController, public navParams: NavParams) {
+
+  	 this._perfil.miperfil()
+      .subscribe(data => {
+
+
+
+
+
+          this.historial_estrellas = data[0]['historial_estrella']
+
+
+          console.log('hshs',this.historial_estrellas)
+
+
+
+      })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalificacionPage');
   }
+
+
+
+     
 
 }

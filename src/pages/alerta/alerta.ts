@@ -261,6 +261,8 @@ detalleservicio(){
 
           console.log(data)
 
+          this.detalleservicio()
+
         })
 
   }
@@ -273,6 +275,8 @@ detalleservicio(){
 
           console.log(data)
 
+           this.detalleservicio()
+
         })
   }
 
@@ -284,6 +288,8 @@ detalleservicio(){
         .subscribe(data => {
 
           console.log(data)
+
+          this.detalleservicio()
 
         })
   }
@@ -383,7 +389,7 @@ detalleservicio(){
 
   }
 
-    cancelar(){
+    rechazar(){
 
 
           this._servicio.detalleservicio(this.navParams.get("servicio"))
