@@ -220,6 +220,25 @@ this._categoria.getcategorias()
 
     console.log(' page-inicio....','ionViewDidLoad')
 
+      this._perfil.miperfil()
+      .subscribe(data => {
+
+          console.log('perfil......',data)
+
+
+      },
+
+      error=>{
+
+        console.log('loginprincipail...',error)
+
+         //this.nav.setRoot(LoginprincipalPage);
+
+          //this.navCtrl1.push('RegistrosociaPage');
+
+      })
+
+
   
   }
   abrimodal(){

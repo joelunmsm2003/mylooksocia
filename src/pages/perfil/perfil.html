@@ -7,6 +7,14 @@
 
       <ion-title>Perfil</ion-title>
 
+       <span class='linea'>En linea</span>
+      <ion-buttons end>
+
+      <ion-toggle color='secondary' [(ngModel)] = "linea" (click)='cambia(linea)'></ion-toggle>
+
+     
+    </ion-buttons>
+
     
 
     </ion-navbar>

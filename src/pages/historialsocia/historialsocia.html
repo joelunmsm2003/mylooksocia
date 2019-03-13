@@ -34,6 +34,13 @@
 
 
       <ion-title>Servicios</ion-title>
+      <span class='linea'>En linea</span>
+      <ion-buttons end>
+
+      <ion-toggle color='secondary' [(ngModel)] = "linea" (click)='cambia(linea)'></ion-toggle>
+
+     
+    </ion-buttons>
 
     
 

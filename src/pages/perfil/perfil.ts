@@ -40,6 +40,7 @@ export class PerfilPage {
   qr:any;
   puntaje:any;
   estrella:any;
+  linea:any;
 
   host='http://mylookxpressapp.com:8000'
 
@@ -137,6 +138,29 @@ export class PerfilPage {
           );
 
 
+            this._perfil.miperfil()
+      .subscribe(data => {
+
+          console.log('perfil......',data)
+
+          this.linea=data
+
+
+      },
+
+      error=>{
+
+        console.log('loginprincipail...',error)
+
+         //this.nav.setRoot(LoginprincipalPage);
+
+          //this.navCtrl1.push('RegistrosociaPage');
+
+      })
+
+
+
+
 
 
 
@@ -157,6 +181,22 @@ export class PerfilPage {
     })
 
   }
+
+  cambia(data){
+
+   console.log(data)
+
+
+      this._perfil.enlinea(data)
+      .subscribe(data => {
+
+         
+          console.log('linea.....',data)
+
+      })
+
+ 
+ }
 
 
 }

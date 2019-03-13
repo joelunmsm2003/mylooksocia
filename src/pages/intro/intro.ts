@@ -82,6 +82,7 @@ loginprincipalPage:any;
 historialsociaPage:any;
 compartirPage:any;
 estado:any;
+linea:any;
 
   constructor(public menuCtrl: MenuController,private authHttp: AuthHttp,public platform: Platform,public modalCtrl: ModalController,private socialSharing: SocialSharing,private storage: Storage,private _perfil: PerfilProvider,private _categoria: CategoriasProvider,public navCtrl: NavController, public navParams: NavParams) {
 
@@ -161,7 +162,28 @@ this._categoria.getcategorias()
 
   ionViewDidLoad() {
 
-    console.log('page-intro....','ionViewDidLoad')
+    console.log(' page-inicio....','ionViewDidLoad')
+
+      this._perfil.miperfil()
+      .subscribe(data => {
+
+          console.log('perfil......',data)
+
+          this.linea=data
+
+
+      },
+
+      error=>{
+
+        console.log('loginprincipail...',error)
+
+         //this.nav.setRoot(LoginprincipalPage);
+
+          //this.navCtrl1.push('RegistrosociaPage');
+
+      })
+
 
   
   }

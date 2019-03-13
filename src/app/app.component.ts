@@ -29,6 +29,8 @@ export class MyApp {
 
   data:any;
 
+  linea:any;
+
   logeado:any=false;
 
   public grupo:any;
@@ -113,6 +115,28 @@ export class MyApp {
 
 
     console.log('App components.','ionViewDidLoad')
+
+      this._perfil.miperfil()
+      .subscribe(data => {
+
+          console.log('perfil......',data)
+
+          this.linea=data
+
+
+      },
+
+      error=>{
+
+        console.log('loginprincipail...',error)
+
+         //this.nav.setRoot(LoginprincipalPage);
+
+          //this.navCtrl1.push('RegistrosociaPage');
+
+      })
+
+
 
   }
 
