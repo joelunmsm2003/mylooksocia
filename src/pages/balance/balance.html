@@ -13,33 +13,66 @@
   </ion-header> 
 
 
-<ion-content >
+<ion-content padding>
 
-<ion-item>Escoja un intervalo de fecha</ion-item>
+<ion-grid style='text-align: center;'>
+  <ion-row>
+    <ion-col col-6><button ion-button color="dark" outline>Semanal</button>
+</ion-col>
 
-<ion-item>
-  <ion-label>Desde</ion-label>
-  <ion-datetime displayFormat="MMM/DD/YYYY"  [(ngModel)]="inicio"></ion-datetime>
-</ion-item>
+    <ion-col col-6>
+    <button ion-button color="dark" outline>Mensual</button></ion-col>
+  </ion-row>
+</ion-grid>
 
-<ion-item>
-  <ion-label>Hasta</ion-label>
-  <ion-datetime displayFormat="MMM/DD/YYYY"  [(ngModel)]="fin"></ion-datetime>
-</ion-item>
 
-<ion-list>
-  <ion-list-header>
-    Semana 20
-  </ion-list-header>
-  <ion-item>Lunes</ion-item>
-  <ion-item>Martes</ion-item>
-  <ion-item>Miercoles</ion-item>
-  <ion-item>Jueves</ion-item>
-  <ion-item>Viernes</ion-item>
-  <ion-item>Sabado</ion-item>
-  <ion-item>Domingo</ion-item>
 
-</ion-list>
+
+<ion-grid>
+  
+  <ion-row>
+  
+  <ion-col col-3 ><div><img  class='circle' src="assets/efectivo.png"></div></ion-col>
+
+ 
+
+  <ion-col col-3 ><img class='circle' src="assets/tarjeta.png"></ion-col>
+
+
+
+  <ion-col col-3 ><img class='circle' src="assets/transferencias.png"></ion-col>
+
+
+  <ion-col col-3 ><div class='circle' >TOTAL</div></ion-col>
+
+  </ion-row>
+
+
+
+
+
+</ion-grid>
+
+<h4 style='text-align: center;'>BALANCE DE INGRESOS GENERADOS</h4>
+
+<h5 style='text-align: center;'>EFECTIVO</h5>
+
+<ion-row><ion-col col-6 >servicios atendidos</ion-col>
+
+<ion-col col-6 style='text-align: center;'>20</ion-col>
+
+</ion-row>
+
+<h5 style='text-align: center;'>Pago</h5>
+
+<h5 style='text-align: center;'>Monto pagado en efectivo</h5>
+
+
+<div style="text-align: center;"> S/.100  </div>
+
+
+
+
 
 </ion-content>
 
